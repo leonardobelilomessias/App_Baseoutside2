@@ -15,7 +15,7 @@ export function PhotoPublication(){
         </HStack>
         <Image source={vl} w={'100%'}  h={300}>
         </Image>
-        <Text fontSize={'$sm'}>
+        <Text fontSize={'$sm'} sx={{overflow:'hidden'}}>
             Dia de  ação social e sem pre um dia de muito aprendizaado,
             obrigado a todos que participaram.
     </Text>

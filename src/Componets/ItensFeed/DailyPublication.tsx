@@ -1,10 +1,10 @@
-import { Avatar, AvatarFallbackText, Badge, BadgeText, HStack, VStack } from "@gluestack-ui/themed";
-import { Text } from "@gluestack-ui/themed/build/components/Badge/styled-components";
+import { Avatar,Text, AvatarFallbackText, Badge, BadgeText, Box, Button, HStack, Heading, VStack, ButtonText } from "@gluestack-ui/themed";
+
 
 export function DailyPublication(){
     return(
-        <>
-            <VStack>
+        <Box bg="$white" p={24}>
+            <VStack space="md">
                 <HStack 
                 p={8}
                 zIndex={1}
@@ -29,7 +29,27 @@ export function DailyPublication(){
                         <BadgeText>New feature</BadgeText>
                     </Badge>
                 </HStack>
+                <HStack>
+                    <Heading mr={'$10'}>25</Heading>
+                    <Heading>Conquista do ano</Heading>
+                </HStack>
+                <Text>
+                Como tinha  dito anteriormente estamos em uma fase de crescimento 
+                aqui  em nossa equipe e cada dia nós temos tido  
+                resultados surpreendentes, 
+                mas hoje aconteceu algo incrivel ...[+]
+                </Text>
+                <Button 
+                bgColor="$white" 
+                borderWidth={1}
+                borderColor="$green400"
+                rounded={'$full'}>
+                    <ButtonText 
+                    color="$green400">
+                        Ler Completo
+                    </ButtonText>
+                </Button>
             </VStack>
-        </>
+        </Box>
     )
 }
