@@ -8,16 +8,14 @@ import { Button, ScrollView, Text, View } from "react-native";
 export default function profile(){
     return(
             
-            <WrapperScreens>
+ 
                 <ScrollView>
-
                 <VStack p={8}>
-
                     <Profile/>
                 </VStack>
                 </ScrollView>
               
-            </WrapperScreens>
+
       
     )
 }

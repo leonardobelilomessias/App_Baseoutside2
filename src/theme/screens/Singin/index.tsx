@@ -5,22 +5,43 @@ import { Link, router } from "expo-router";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import axios from "axios";
+import { AxiosApi } from "@/api";
+import { useDataAgent } from "@/context/UserContext";
 
+type AgentDTO= {
+    agent:{
+        agent_id:string
+        email:string
+        name:string,
+        token:string
+    }
+}
 const schema = yup.object({
     email: yup.string().required("Digite um email valido").email("Digite um email valido"),
     password: yup.string().required("Digite uma senha"),
   }).required();
 export function Singin(){
+    const {dataAgent,loading,handleSign}= useDataAgent()
     const { control, handleSubmit, formState: { errors } } = useForm({
     resolver:yupResolver(schema),
     defaultValues: {
-      email: '',
-      password: ''
+      email: 'leo@email',
+      password: '123'
     }
   });
-  const onSubmit = (data) => console.log(data)
+  async function  onSubmit ({email, password}:{email:string,password:string}){
+    try{
+
+        await handleSign({email,password})
+        
+    }catch(e){
+        console.log(e)
+
+    }
+  }
     return(
-                <KeyboardAvoidingView style={{flex:1}}>
+        <KeyboardAvoidingView style={{flex:1}}>
         <VStack flex={1} alignItems="center" bg="$white" justifyContent="space-around">
                 <VStack width={"80%"}  alignItems="center">
                             <Image 
@@ -110,7 +131,7 @@ export function Singin(){
             borderWidth={1} 
             rounded={'$full'} 
             size="lg" 
-            onPress={()=> router.push("singup")} >
+            onPress={()=> console.log(dataAgent)} >
                         <ButtonText 
                         color="$green400">
                             Criar conta

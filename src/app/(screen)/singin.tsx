@@ -3,8 +3,8 @@ import { Singin } from "@/theme/screens/Singin";
 
 export function singin(){
     return(
-        <WrapperScreens>
+    
             <Singin/>
-        </WrapperScreens>
+
     )
 }

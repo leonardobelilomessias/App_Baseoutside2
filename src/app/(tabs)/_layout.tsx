@@ -1,5 +1,5 @@
 import { WrapperScreens } from '@/Componets/WrapperScreens';
-import { Tabs } from 'expo-router';
+import { Tabs, router } from 'expo-router';
 import { Pressable, Text } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { EvilIcons } from '@expo/vector-icons';
@@ -8,6 +8,8 @@ import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { extendedConfig } from '@/theme/config';
+import { AgentDataProvider, useDataAgent } from '@/context/UserContext';
+
 
 
 
@@ -16,20 +18,25 @@ export const unstable_settings = {
     initialRouteName: 'home',
   };
 
-export default function LayoutTabs(){
+
+
+export default function Root(){
+    const {setTest,setTokenAgent} = useDataAgent()
     const colorSelected = extendedConfig.tokens.colors.green400
     return(
-        <WrapperScreens>
+
+
+     
             <Tabs screenOptions={{tabBarShowLabel:false,tabBarHideOnKeyboard:true } } initialRouteName='home'>
                 <Tabs.Screen
-                name="home"
+                name="index"
                 options={{
                     tabBarIcon:({color,focused})=>
                     <Entypo 
                     name="home" 
                     size={24} 
                     color={focused? colorSelected :"black"} />,
-                    headerRight:()=><Feather name="send" style={{marginHorizontal:18}} size={24} color="black" />,
+                    headerRight:()=><Pressable onPress={()=>{ setTokenAgent('')}}><Feather name="power" style={{marginHorizontal:18}} size={24} color="black" /></Pressable>,
                     title:'Home'
                 }}
                 />
@@ -42,7 +49,7 @@ export default function LayoutTabs(){
                     size={24} 
                     color={focused? colorSelected :"black"} />,
                     title:'Buscar'}}
-            />
+                    />
 
             <Tabs.Screen 
                 name="share"
@@ -57,7 +64,7 @@ export default function LayoutTabs(){
                     </Pressable>,
                     title:'Compartilhar'
                 }}
-            />
+                />
             <Tabs.Screen
                 name="control"
                 options={{
@@ -82,6 +89,7 @@ export default function LayoutTabs(){
             />
 
             </Tabs>
-        </WrapperScreens>
+
+
     )
 }

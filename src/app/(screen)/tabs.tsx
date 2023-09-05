@@ -3,8 +3,8 @@ import LayoutTabs from "../(tabs)/_layout";
 
 export default function roottabs(){
     return(
-        <WrapperScreens>
+
         <LayoutTabs/>
-        </WrapperScreens>
+   
     )
 }

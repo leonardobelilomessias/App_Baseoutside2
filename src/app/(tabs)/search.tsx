@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 export default function Messages() {
   return (
-    <WrapperScreens>
+
       <ScrollView style={{flex:1}}>
         <VStack p={8} >
 
@@ -13,7 +13,6 @@ export default function Messages() {
         </VStack>
       </ScrollView>
 
-    </WrapperScreens>
   );
 }
 

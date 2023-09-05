@@ -3,8 +3,8 @@ import { SingUp } from "@/theme/screens/SingUp";
 
 export default function SingUps(){
     return(
-        <WrapperScreens>
+     
         <SingUp/>
-        </WrapperScreens>
+    
     )
 }
