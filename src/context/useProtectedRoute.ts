@@ -16,13 +16,13 @@ function useProtectedRoute({token,agent_id}:AgentAutenticated) {
         // If the user is not signed in and the initial segment is not anything in the auth group.
         !token 
         ) {
-        console.log('redirect signin')
+
         // Redirect to the sign-in page.
         router.replace('/sign-in');
       } else if (token ) {
         // Redirect away from the sign-in page.
         router.replace('/(tabs)');
-        console.log('redirect tabs')
+
       }
     }, [token]);
   }

@@ -46,7 +46,7 @@ async function handleSign({ email, password }: HandleSignProps) {
           AxiosApi.defaults.headers.common.Authorization = `Barer ${token}`
           setDataAgent(loggedAgent as FullAgentDTO)
         }
-        
+
         catch(error){
           
           throw error
@@ -66,6 +66,7 @@ async function handleSign({ email, password }: HandleSignProps) {
     await storageAuthTokenRemove()
     await storageRemoveUser()
     setDataAgent({} as FullAgentDTO)
+    setTokenAgent('')
   }
   
   /* fetch data at storage when open the app  */
@@ -73,7 +74,7 @@ async function handleSign({ email, password }: HandleSignProps) {
     setLoading(true)
     try{
       const agent = await storageUserGet()
-      console.log(agent)
+   
       const token = await storageTokenGet()
       if(agent&& token){
         setDataAgent(agent)

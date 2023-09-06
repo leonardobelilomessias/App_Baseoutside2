@@ -8,14 +8,11 @@ import { Button, ScrollView, ScrollViewBase, ScrollViewComponent } from 'react-n
 export default function Home() {
   const {setTest,test} = useDataAgent()
 
-  console.log('testeaqii layout tabs index,', test)
 //  golang()
   return (
     <ScrollView>
     <VStack p={8}>
       <Feed/>
-      <Button title='press' onPress={()=>console.log(test)}></Button>
-      <Button title='press2' onPress={()=>{setTest(!test)}}></Button>
     </VStack>
     </ScrollView>
 

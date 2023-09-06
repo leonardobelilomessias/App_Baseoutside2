@@ -1,6 +1,6 @@
 import { WrapperScreens } from '@/Componets/WrapperScreens';
 import { Tabs, router } from 'expo-router';
-import { Pressable, Text } from 'react-native';
+import { Pressable, StyleSheet, Text } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { EvilIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
@@ -21,13 +21,17 @@ export const unstable_settings = {
 
 
 export default function Root(){
-    const {setTest,setTokenAgent} = useDataAgent()
+    const {setTest,setTokenAgent,handleLogout} = useDataAgent()
     const colorSelected = extendedConfig.tokens.colors.green400
     return(
 
 
      
-            <Tabs screenOptions={{tabBarShowLabel:false,tabBarHideOnKeyboard:true } } initialRouteName='home'>
+            <Tabs screenOptions={{
+                tabBarShowLabel:false,
+                tabBarHideOnKeyboard:true,
+                headerStatusBarHeight:-1
+                } } initialRouteName='home'>
                 <Tabs.Screen
                 name="index"
                 options={{
@@ -36,8 +40,10 @@ export default function Root(){
                     name="home" 
                     size={24} 
                     color={focused? colorSelected :"black"} />,
-                    headerRight:()=><Pressable onPress={()=>{ setTokenAgent('')}}><Feather name="power" style={{marginHorizontal:18}} size={24} color="black" /></Pressable>,
-                    title:'Home'
+                    headerRight:()=><Pressable onPress={()=>{ handleLogout()}}><Feather name="power" style={{marginHorizontal:18}} size={24} color="black" /></Pressable>,
+                    title:'Home',
+                    headerStatusBarHeight:-1
+                  
                 }}
                 />
             <Tabs.Screen

@@ -2,9 +2,13 @@
 
 import {  HStack, Icon, Input, InputField, InputIcon, SearchIcon, Text } from "@gluestack-ui/themed";
 import { AntDesign } from '@expo/vector-icons';
-export function TopSearchInput(){
+type TypeSearchInput={
+    textSearch:string
+    setTextSeatch:(text:string)=>void
+}
+export function TopSearchInput({textSearch,setTextSeatch}:TypeSearchInput){
     return(
-    <HStack alignItems="center" flex={1} borderRadius={8} bgColor="$white" p={'$2'} space="md">
+    <HStack alignItems="center"  borderRadius={8} bgColor="$white" p={'$2'} space="md">
         <AntDesign name="arrowleft" size={24} color="black" />
         <Input flex={1}>
             <InputIcon pl="$3">
@@ -15,7 +19,7 @@ export function TopSearchInput(){
                     color={"black"} />
              </Text>
             </InputIcon>
-         <InputField placeholder="Buscar..." />
+         <InputField placeholder="Buscar..."  onChangeText={(text)=>{setTextSeatch(text)}}/>
     </Input>
     </HStack>
     )

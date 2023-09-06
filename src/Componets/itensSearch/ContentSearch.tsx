@@ -1,21 +1,32 @@
-import { Text, VStack } from "@gluestack-ui/themed";
+import { Box, Text, VStack } from "@gluestack-ui/themed";
 import {  SearchCardUser } from "./SearchCard";
+import { FullAgentDTO } from "@/context/context.dtos/Authenticate.dto";
+import { FlatList } from "react-native";
 
-type selecCardRender = 'Agentes'| 'Missions'| 'Actions'| 'Taks'
-export function ContentSearch({selecCardRender}:{selecCardRender:string}){
+
+
+type TypeSelectCardRender = {
+    selecCardRender:string
+    content:FullAgentDTO[]
+}
+
+export function ContentSearch({selecCardRender,content}:TypeSelectCardRender){
     return(
-        <>
-            <VStack 
-            flex={1}
-            minHeight={600}
-            borderRadius={60}
-            backgroundColor="$white"
-            p={24}
-            pt={32}
-            >
-                <Text>{selecCardRender}</Text>
-                <SearchCardUser/>
+
+        <VStack flex={1} backgroundColor="$white" p={16} borderRadius={16}  minHeight={'80%'}>
+
+        <FlatList
+            
+            scrollEnabled={true}
+            data={content}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(resultApi)=>resultApi.id
+            }
+            renderItem={({item})=>(
+                <SearchCardUser name={item.name} />
+            )}
+            />
             </VStack>
-        </>
+
     )
 }

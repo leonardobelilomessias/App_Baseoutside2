@@ -1,18 +1,35 @@
 import { WrapperScreens } from '@/Componets/WrapperScreens';
 import { SearchScreen } from '@/theme/screens/SearchScreen';
-import { VStack, styled } from '@gluestack-ui/themed';
-import { View, Text } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { Box, Text, VStack, styled } from '@gluestack-ui/themed';
+
+import { FlatList, ScrollView } from 'react-native-gesture-handler';
 export default function Messages() {
   return (
 
-      <ScrollView style={{flex:1}}>
-        <VStack p={8} >
 
       <SearchScreen/>
-        </VStack>
-      </ScrollView>
+
+
 
   );
 }
 
+function Control(){
+  const numbers = [1,2,5,4,8,9,6,6,6,6,8,7,7,8,9,]
+  return(
+      <VStack>
+      <VStack>
+          <FlatList
+          data={numbers}
+          keyExtractor={(number)=>number.toString()
+          }
+          renderItem={({item})=>(
+              <Box h={24} m={15}>
+                  <Text fontSize={'$xl'}> {String(item)}</Text>
+              </Box>
+          )}
+          />
+      </VStack>
+      </VStack>
+  )
+}

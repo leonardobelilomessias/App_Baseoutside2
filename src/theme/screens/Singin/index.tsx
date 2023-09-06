@@ -131,7 +131,7 @@ export function Singin(){
             borderWidth={1} 
             rounded={'$full'} 
             size="lg" 
-            onPress={()=> console.log(dataAgent)} >
+            onPress={()=> {router.push('/singup')}} >
                         <ButtonText 
                         color="$green400">
                             Criar conta

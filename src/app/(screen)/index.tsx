@@ -24,7 +24,7 @@ export default function Page() {
    <>
       <Singin/>
 
-    <Button onPress={()=>{setTest(!test)}}><ButtonText>Test</ButtonText></Button>
+
    </>
 
 

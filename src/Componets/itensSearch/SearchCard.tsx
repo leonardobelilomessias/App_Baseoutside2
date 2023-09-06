@@ -1,8 +1,8 @@
-import { Avatar, AvatarFallbackText, HStack, Text, VStack } from "@gluestack-ui/themed";
+import { Avatar, AvatarFallbackText, Box, HStack, Text, VStack } from "@gluestack-ui/themed";
 
-export function SearchCardUser(){
+export function SearchCardUser({name}:{name:string}){
     return(
-        <>
+        <Box marginBottom={16}>
             <HStack alignItems="center"
             space="md"
             >
@@ -11,18 +11,18 @@ export function SearchCardUser(){
                     size="md"
                     borderRadius="$full">
                         <AvatarFallbackText>
-                            Sandeep Srivastava
+                            {name}
                         </AvatarFallbackText>
                     </Avatar>
                     <VStack>
                         <Text fontWeight="$bold">
-                            Mike Jery
+                           {name}
                         </Text>
                         <Text fontSize={'$sm'} color="$gray300">
                             Empreendedor
                         </Text>
                     </VStack>
             </HStack>
-        </>
+        </Box>
     )
 }

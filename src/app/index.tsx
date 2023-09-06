@@ -12,10 +12,10 @@ export default function Index() {
  const {setTest} = useDataAgent()
   return (
 <WrapperScreens>
-<>
+
 <Page/>    
 
-</>
+
 
 </WrapperScreens>
 
