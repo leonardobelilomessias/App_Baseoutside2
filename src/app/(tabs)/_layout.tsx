@@ -1,6 +1,5 @@
 import { WrapperScreens } from '@/Componets/WrapperScreens';
 import { Tabs, router } from 'expo-router';
-import { Pressable, StyleSheet, Text } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { EvilIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
@@ -9,6 +8,8 @@ import { Feather } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { extendedConfig } from '@/theme/config';
 import { AgentDataProvider, useDataAgent } from '@/context/UserContext';
+import { Actionsheet, ActionsheetBackdrop, ActionsheetContent, ActionsheetDragIndicator, ActionsheetDragIndicatorWrapper, ActionsheetItem, ActionsheetItemText, Box, Button, ButtonText, Pressable, Text } from '@gluestack-ui/themed';
+import React from 'react';
 
 
 
@@ -20,9 +21,9 @@ export const unstable_settings = {
 
 
 
+const colorSelected = extendedConfig.tokens.colors.green400
 export default function Root(){
     const {setTest,setTokenAgent,handleLogout} = useDataAgent()
-    const colorSelected = extendedConfig.tokens.colors.green400
     return(
 
 
@@ -40,7 +41,7 @@ export default function Root(){
                     name="home" 
                     size={24} 
                     color={focused? colorSelected :"black"} />,
-                    headerRight:()=><Pressable onPress={()=>{ handleLogout()}}><Feather name="power" style={{marginHorizontal:18}} size={24} color="black" /></Pressable>,
+                    headerRight:()=><Pressable  onPress={()=>{ handleLogout()}}><Feather name="power" style={{marginHorizontal:18}} size={24} color="black" /></Pressable>,
                     title:'Home',
                     headerStatusBarHeight:-1
                   
@@ -61,13 +62,7 @@ export default function Root(){
                 name="share"
                 options={{
                     tabBarIcon:({color,focused})=>
-                    <Pressable  onPress={()=>{console.log('oi')}}>
-
-                    <Feather 
-                    name="share" 
-                    size={24} 
-                    color={focused? colorSelected :"black"}/>
-                    </Pressable>,
+                    <SelectShare focused={focused}/>,
                     title:'Compartilhar'
                 }}
                 />
@@ -97,5 +92,51 @@ export default function Root(){
             </Tabs>
 
 
+    )
+}
+
+function SelectShare({focused}:{focused:boolean}){
+    const [showActionsheet, setShowActionsheet] = React.useState(false)
+    const handleClose = () => setShowActionsheet(!showActionsheet)
+    function handleShare(route:string,choice:string){
+      console.log(choice)
+        router.push({ pathname: route, params: { choice:choice } })
+        handleClose()
+    }
+    return (
+      <>
+    <Pressable onPress={handleClose} alignItems='center' justifyContent='center'  flex={1} width={"$full"} >
+
+    <Feather 
+    name="share" 
+    size={24} 
+    color={focused? colorSelected :"black"}/>
+</Pressable>
+        <Actionsheet isOpen={showActionsheet} onClose={handleClose} zIndex={999}>
+          <ActionsheetBackdrop />
+          <ActionsheetContent zIndex={999}>
+            <ActionsheetDragIndicatorWrapper>
+              <ActionsheetDragIndicator />
+              
+            <Text paddingVertical={24} fontWeight='$bold' fontSize={'$xl'}>Compartilhar</Text>
+            </ActionsheetDragIndicatorWrapper>
+            <ActionsheetItem onPress={()=>{handleShare('/share','daily')}}>
+              <ActionsheetItemText>Daily</ActionsheetItemText>
+            </ActionsheetItem>
+            <ActionsheetItem onPress={()=>{handleShare('/share','quote')}}>
+              <ActionsheetItemText>Citação</ActionsheetItemText>
+            </ActionsheetItem>
+            <ActionsheetItem onPress={handleClose}>
+              <ActionsheetItemText>Foto</ActionsheetItemText>
+            </ActionsheetItem>
+            <ActionsheetItem onPress={handleClose}>
+              <ActionsheetItemText>Video</ActionsheetItemText>
+            </ActionsheetItem>
+            <ActionsheetItem onPress={handleClose}>
+              <ActionsheetItemText>Balanço</ActionsheetItemText>
+            </ActionsheetItem>
+          </ActionsheetContent>
+        </Actionsheet>
+      </>
     )
 }

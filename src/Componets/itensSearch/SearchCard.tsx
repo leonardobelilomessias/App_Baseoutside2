@@ -2,12 +2,12 @@ import { Avatar, AvatarFallbackText, Box, HStack, Text, VStack } from "@gluestac
 
 export function SearchCardUser({name}:{name:string}){
     return(
-        <Box marginBottom={16}>
+        <Box marginVertical={8}>
             <HStack alignItems="center"
             space="md"
             >
             <Avatar 
-                    bgColor="$amber600"
+                    bgColor="$black"
                     size="md"
                     borderRadius="$full">
                         <AvatarFallbackText>

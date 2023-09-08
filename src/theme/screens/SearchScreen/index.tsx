@@ -10,6 +10,9 @@ import { SearchCardUser } from "@/Componets/itensSearch/SearchCard";
 import { ContentSearch } from "@/Componets/itensSearch/ContentSearch";
 import Empty from '@/assets/searchInit1.png'
 import { Stack } from "expo-router";
+import { MissionContentSearch } from "@/Componets/itensSearch/MissonContentSearch";
+import { ActionContentSearch } from "@/Componets/itensSearch/ActionContentSearch";
+import { TaksContentSearch } from "@/Componets/itensSearch/TaskContentSearch";
 
 
 export function SearchScreen(){
@@ -35,27 +38,36 @@ export function SearchScreen(){
     const numbers = [1,2,5,4,8,9,6,6,6,6,8,7,7,8,9,10]
     return(
     <VStack space="md"   p={8}   flex={1} >
-        <Box  flex={1}>
+        <VStack  flex={1} space="xs" >
         <TopSearchInput textSearch={textSearch} setTextSeatch={setTextSeatch}/>
         <SelectSearch itemSelected={itemSelected} setItemSelected={setItemSelected}/>
-        <Text>{textSearch}</Text>
+
         {
-            resultApi.length>0&&
+            (resultApi.length>0 &&itemSelected=='Agents')&&
         <ContentSearch  content={resultApi} selecCardRender={itemSelected}/>
         }
-        <Text>
-
-
-        </Text>
+       {
+        (resultApi.length>0 &&itemSelected=='Missions')&&
+        <MissionContentSearch content={resultApi} selecCardRender=""/>
+        }
+               {
+        (resultApi.length>0 &&itemSelected=='Actions')&&
+        <ActionContentSearch content={resultApi} selecCardRender=""/>
+        }
+         {
+        (resultApi.length>0 &&itemSelected=='Tasks')&&
+        <TaksContentSearch content={resultApi} selecCardRender=""/>
+        }
         {!textSearch&&
         <VStack alignItems="center" flex={1} backgroundColor="$white" p={16} borderRadius={16}>
-            <Image  source={Empty}></Image>
-            <Text m={8} textAlign="center" color={'$green400'}>
+            <Image mt={40} width={150} height={160} source={Empty}></Image>
+            <Text m={8} mt={18} textAlign="center" color={'$green400'}>
                 Digite no campo de busca para encontrarmos algo 
                 relacionado a sua pesquisa </Text>
         </VStack>
         }
-        </Box>
+        
+        </VStack>
 
     </VStack>
     )

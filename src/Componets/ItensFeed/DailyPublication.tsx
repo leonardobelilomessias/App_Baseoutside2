@@ -3,13 +3,16 @@ import { Avatar,Text, AvatarFallbackText, Badge, BadgeText, Box, Button, HStack,
 
 export function DailyPublication(){
     return(
-        <Box bg="$white" p={24}>
+        <Box bg="$white" p={24} borderRadius={'$xl'}>
             <VStack space="md">
                 <HStack 
                 p={8}
                 zIndex={1}
                 alignItems="center"
+                justifyContent="space-between"
                 space={'md'}>
+                    <HStack alignItems="center" space="md">
+
                     <Avatar 
                     bgColor="$amber600"
                     size="sm"
@@ -21,6 +24,7 @@ export function DailyPublication(){
                     <Text>
                         Mike Jery
                     </Text>
+                </HStack>
                     <Badge
                     size="sm" 
                     variant="solid" 
