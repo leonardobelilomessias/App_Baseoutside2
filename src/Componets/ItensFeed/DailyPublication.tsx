@@ -14,7 +14,7 @@ export function DailyPublication(){
                     <HStack alignItems="center" space="md">
 
                     <Avatar 
-                    bgColor="$amber600"
+                    bgColor="$green400"
                     size="sm"
                     borderRadius="$full">
                         <AvatarFallbackText>

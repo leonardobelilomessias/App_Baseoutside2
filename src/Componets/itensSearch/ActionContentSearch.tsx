@@ -12,7 +12,7 @@ type TypeSelectCardRender = {
 export function ActionContentSearch({selecCardRender,content}:TypeSelectCardRender){
     return(
 
-        <VStack flex={1} backgroundColor="$white" p={16} borderRadius={16}  >
+        <VStack flex={1} backgroundColor="$white" paddingHorizontal={16} borderRadius={16}  >
 
         <FlatList
             

@@ -37,7 +37,7 @@ export function SearchScreen(){
     },[textSearch])
     const numbers = [1,2,5,4,8,9,6,6,6,6,8,7,7,8,9,10]
     return(
-    <VStack space="md"   p={8}   flex={1} >
+    <VStack space="md"   p={8}   flex={1} bg="white" >
         <VStack  flex={1} space="xs" >
         <TopSearchInput textSearch={textSearch} setTextSeatch={setTextSeatch}/>
         <SelectSearch itemSelected={itemSelected} setItemSelected={setItemSelected}/>

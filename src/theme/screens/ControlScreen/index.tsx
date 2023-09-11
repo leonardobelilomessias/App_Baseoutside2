@@ -6,7 +6,7 @@ import { extendedConfig } from "@/theme/config";
 export function ControlScreen(){
     return(
         <>
-            <VStack p={8} space="md">
+            <VStack p={8} space="md" bgColor="white">
                 <RequireColab/>
                 <NewSponsors/>
                 <Warnings/>
@@ -18,7 +18,7 @@ export function ControlScreen(){
 
 function RequireColab(){
     return(
-        <VStack bg="$white" p={16} space="md" borderRadius={12}>
+        <VStack bg="$white" p={16} space="md" borderRadius={12} softShadow="1">
             <HStack justifyContent="space-between">
                 <Text fontWeight="$bold">
                     Solicitaçoes de colab 
@@ -37,7 +37,7 @@ function RequireColab(){
 function NewSponsors(){
     return(
         <>
-        <VStack bg="$white" p={12} space="md" borderRadius={12}>
+        <VStack bg="$white" p={12} space="md" borderRadius={12} softShadow="1">
             <HStack justifyContent="space-between">
                 <Text fontWeight="$bold">
                     Novos Patriocinadores
@@ -97,7 +97,7 @@ function CardAgent(){
 function Balance(){
     return(
         <>
-        <VStack  bg="$white" p={16} space="lg" borderRadius={12}>
+        <VStack  bg="$white" p={16} space="lg" borderRadius={12} softShadow="1">
                 <Text textAlign="center" fontWeight="$bold">
                     Balancço Financeiro
                 </Text>
@@ -138,7 +138,7 @@ function Balance(){
 function Warnings(){
     return(
         <>
-                <VStack bg="$white" p={16} space="md" borderRadius={12}>
+                <VStack bg="$white" p={16} space="md" borderRadius={12} softShadow="1">
             <HStack justifyContent="space-between">
                 <Text fontWeight="$bold">
                     Avisos

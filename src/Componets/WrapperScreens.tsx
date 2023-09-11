@@ -21,7 +21,7 @@ export function WrapperScreens({children}:{children:ReactElement}){
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: extendedConfig.tokens.colors.gray100,
+      backgroundColor: extendedConfig.tokens.colors.white,
       
     },
   });

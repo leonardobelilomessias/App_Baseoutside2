@@ -8,7 +8,7 @@ export const extendedConfig = createConfig({
           variants: {
             variant: {
               ghost: {
-                bg: "$grey500",
+                
               },
             },
           },

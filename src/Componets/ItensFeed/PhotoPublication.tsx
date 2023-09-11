@@ -6,7 +6,7 @@ export function PhotoPublication(){
     <VStack bg="$white" borderRadius={'$2xl'} p={12}  width={'100%'} >
         <HStack p={8}  zIndex={1} alignItems="center" space={'md'} justifyContent="space-between">
             <HStack alignItems="center" space="md">
-            <Avatar bgColor="$amber600" size="sm" borderRadius="$full">
+            <Avatar bgColor="$green400" size="sm" borderRadius="$full">
                 <AvatarFallbackText>Sandeep Srivastava</AvatarFallbackText>
             </Avatar>
             <Text>Mike Jery</Text>

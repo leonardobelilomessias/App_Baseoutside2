@@ -11,7 +11,7 @@ export default function Home() {
 //  golang()
   return (
     <ScrollView>
-    <VStack p={8}>
+    <VStack p={8} bgColor='$white'>
       <Feed/>
     </VStack>
     </ScrollView>

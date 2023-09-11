@@ -106,7 +106,7 @@ function StartCreateDailyPost({publisher}:{publisher:()=>void}){
         <Image source={CreatedPostPng} width={215} height={145} />
         <Text textAlign='center' marginVertical={32} color='$green400' fontSize={'$sm'}>Sua publicação já está disponivel</Text>
         <Pressable bg="$green400" width={'$1/2'} p={8} borderRadius={'$full'}>
-            <Text textAlign="center" color="$white">
+            <Text textAlign="center" color="$white" onPress={()=>{handlerFinishedPublication('/dailyPublication')}}>
              Ver Publicação
             </Text>
         </Pressable>
