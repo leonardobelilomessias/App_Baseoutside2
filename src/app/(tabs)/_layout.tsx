@@ -35,7 +35,7 @@ export default function Root(){
                 tabBarShowLabel:false,
                 tabBarHideOnKeyboard:true,
                 headerStatusBarHeight:-1
-                } } initialRouteName='home'>
+                } } >
                 <Tabs.Screen
                 name="index"
                 options={{
@@ -107,6 +107,24 @@ export default function Root(){
                 }}
                 
             />
+ 
+            <Tabs.Screen
+                name="screens" 
+                options={{
+                    headerShown:false, 
+                    tabBarButton:()=>null
+                }}
+                
+            />
+                     <Tabs.Screen
+                name="screensMission"  
+                options={{
+                    headerShown:false, 
+                    tabBarButton:()=>null
+                }}
+                
+            />
+            
             </Tabs>
             
 

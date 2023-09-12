@@ -6,7 +6,7 @@ import Root from './(tabs)/_layout';
 import { Profile } from '@/theme/screens/Profile';
 import { AgentDataProvider, useDataAgent } from '@/context/UserContext';
 import { ScrollView } from 'react-native-gesture-handler';
-import Page from './(screen)';
+import Page from './(stack)';
 
 export default function Index() {
  const {setTest} = useDataAgent()

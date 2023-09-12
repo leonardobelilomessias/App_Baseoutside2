@@ -77,12 +77,12 @@ function CardAgent(){
                     size="md"
                     borderRadius="$full">
                         <AvatarFallbackText>
-                            Angel Loker
+                            Matin Miller
                         </AvatarFallbackText>
                     </Avatar>
                     <VStack>
                         <Text fontWeight="$bold">
-                        Angel Loker
+                        Matin Miller
                         </Text>
                         <Text fontSize={'$sm'} color="$gray300">
                             Empreendedor

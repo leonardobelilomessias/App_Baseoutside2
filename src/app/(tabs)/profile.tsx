@@ -6,6 +6,7 @@ import { Link } from "expo-router";
 import { Button, ScrollView, Text, View } from "react-native";
 
 export default function profile(){
+    
     return(
             
  

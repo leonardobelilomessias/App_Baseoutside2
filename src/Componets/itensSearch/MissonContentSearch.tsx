@@ -1,9 +1,10 @@
 import { Avatar, AvatarFallbackText, Box, HStack, Text, VStack } from "@gluestack-ui/themed";
 import {  SearchCardUser } from "./SearchCard";
 import { FullAgentDTO } from "@/context/context.dtos/Authenticate.dto";
-import { FlatList } from "react-native";import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FlatList, Pressable } from "react-native";import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Link } from "expo-router";
 
 type TypeSelectCardRender = {
     selecCardRender:string
@@ -23,7 +24,9 @@ export function MissionContentSearch({selecCardRender,content}:TypeSelectCardRen
             keyExtractor={(resultApi)=>resultApi.id
             }
             renderItem={({item})=>(
+                <Link href={'/screensMission/profileMission'}>
                 <MissionCardSearch name=""/>
+                </Link>
             )}
             />
             </VStack>
