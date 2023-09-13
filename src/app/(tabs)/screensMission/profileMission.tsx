@@ -70,15 +70,15 @@ function ButtonsMission(){
     return(
         <>
         <HStack bg="$green100" p={12} mt={4} justifyContent="space-between">
-            <Pressable p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8} bg="$white" borderWidth={1} borderColor="$green400" >
+            <Pressable p={4} onPress={()=>{router.push('/screensMission/actionsMission')}} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8} bg="$white" borderWidth={1} borderColor="$green400" >
             <SimpleLineIcons name="energy" size={24} color={extendedConfig.tokens.colors.green400} />
             <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Actions</Text>
             </Pressable>
-            <Pressable p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8} bg="$white" borderWidth={1} borderColor="$green400" >
+            <Pressable onPress={()=>{router.push('/screensMission/areasMission')}} p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8} bg="$white" borderWidth={1} borderColor="$green400" >
             <SimpleLineIcons name="energy" size={24} color={extendedConfig.tokens.colors.green400} />
             <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Areas</Text>
             </Pressable>
-            <Pressable p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8} bg="$white" borderWidth={1} borderColor="$green400" >
+            <Pressable onPress={()=>{router.push('/screensMission/tasksMission')}} p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8} bg="$white" borderWidth={1} borderColor="$green400" >
             <FontAwesome5 name="tasks" size={24} color={extendedConfig.tokens.colors.green400} />
             <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Tarefas</Text>
             </Pressable>

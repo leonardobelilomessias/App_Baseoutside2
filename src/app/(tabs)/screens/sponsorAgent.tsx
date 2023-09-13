@@ -11,10 +11,7 @@ export default function SponsorAgent(){
         return true
 
     }
-    useEffect(()=>{
-        const event =BackHandler.addEventListener('hardwareBackPress', onBackPress);
-        return ()=>event.remove()
-    },[])
+
     return(
         <>
         <VStack>

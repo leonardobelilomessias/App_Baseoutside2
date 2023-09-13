@@ -34,7 +34,7 @@ export default function Root(){
             <Tabs screenOptions={{
                 tabBarShowLabel:false,
                 tabBarHideOnKeyboard:true,
-                headerStatusBarHeight:-1
+      
                 } } >
                 <Tabs.Screen
                 name="index"
@@ -46,13 +46,15 @@ export default function Root(){
                     color={focused? colorSelected :"black"} />,
                     headerRight:()=><Pressable  onPress={()=>{ handleLogout()}}><Feather name="power" style={{marginHorizontal:18}} size={24} color="black" /></Pressable>,
                     title:'Home',
-                    headerStatusBarHeight:-1
+                
                   
                 }}
                 />
             <Tabs.Screen
                 name="search"
                 options={{
+                    headerShown:false
+                    ,
                     tabBarIcon:({color,focused})=>
                     <AntDesign 
                     name="search1" 
