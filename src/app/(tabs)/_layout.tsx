@@ -120,7 +120,7 @@ export default function Root(){
                 name="screensMission"  
                 options={{
                     headerShown:false, 
-                    tabBarButton:()=>null
+                   // tabBarButton:()=>null
                 }}
                 
             />
