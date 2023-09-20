@@ -37,9 +37,10 @@ export function MissionContentSearch({selecCardRender,content}:TypeSelectCardRen
 function MissionCardSearch({name}:{name:string}){
     return(
         <>
-                <Box marginBottom={16}>
+                <Box marginBottom={16} >
             <HStack alignItems="center"
             space="lg"
+            mb={16} 
             >
             <Avatar 
                     bgColor="$black"

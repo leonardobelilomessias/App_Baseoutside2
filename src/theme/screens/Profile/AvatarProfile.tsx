@@ -7,10 +7,10 @@ export function AvatarProfile(){
     return(
         <VStack space="md"   alignItems="center">
         <Avatar size="xl" borderColor="$white" borderWidth={5}>
-          <AvatarFallbackText>SS</AvatarFallbackText>
+          <AvatarFallbackText>Leonardo Belilo</AvatarFallbackText>
           <AvatarImage 
             source={{
-              uri: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+              uri: "https://images.unsplash.com/profile-fb-1597267794-eb023d64bf1d.jpg?dpr=1&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
             }}
             
           />
@@ -24,8 +24,8 @@ export function AvatarProfile(){
           
         </Avatar>
         <VStack>
-          <Heading size="sm">Ronald Richards</Heading>
-          <Text size="sm">Nursing Assistant</Text>
+          <Heading size="sm" textAlign="center">Leonardo Belilo</Heading>
+          <Text size="sm" textAlign="center" color="$gray500">Empreendedor Social</Text>
         </VStack>
         <HStack space="md">
           {

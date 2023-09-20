@@ -34,7 +34,7 @@ export default function Root(){
             <Tabs screenOptions={{
                 tabBarShowLabel:false,
                 tabBarHideOnKeyboard:true,
-      
+                headerStatusBarHeight:-1
                 } } >
                 <Tabs.Screen
                 name="index"

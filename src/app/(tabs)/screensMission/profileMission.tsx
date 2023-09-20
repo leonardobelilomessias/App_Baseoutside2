@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallbackText, Badge, BadgeText, Box, Button, ButtonText, HStack, Heading, Icon, Image, Pressable, Text, VStack } from "@gluestack-ui/themed";
+import { Avatar, AvatarFallbackText, AvatarImage, Badge, BadgeText, Box, Button, ButtonText, HStack, Heading, Icon, Image, Pressable, Text, VStack } from "@gluestack-ui/themed";
 import cover from '@/assets/vl.jpg'
 import { useState } from "react";
 import { router } from "expo-router";
@@ -8,6 +8,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ScrollView } from "react-native-gesture-handler";
 import { FlatList } from "react-native";
+import imgDepoiment from '@/assets/vl.jpg'
 export default function ProfileMission(){
     const [isFollower,setIsFollower] = useState(false)
     return(
@@ -17,6 +18,8 @@ export default function ProfileMission(){
                 </Box>
                 <HeaderProfileMission/>
                 <Avatar alignSelf="center" size="xl" mt={'$24'}>
+                <AvatarImage source={imgDepoiment}></AvatarImage>
+                    
                     <AvatarFallbackText>Base outside</AvatarFallbackText>
                 </Avatar>
                 <Heading textAlign="center">Base outside</Heading>
@@ -37,7 +40,6 @@ export default function ProfileMission(){
             </Button>
         </HStack>
 
-                <ButtonsMission/>
                 <InfoMission/>
                 <Depoments/>
                 <ActivitInfo/>
@@ -116,7 +118,7 @@ function InfoMission(){
                     ))
                 }
             </Text>
-            <Pressable borderWidth={1} padding={12} borderColor="$green400">
+            <Pressable borderRadius={8} borderWidth={1} padding={12} borderColor="$green400">
                 <Text fontWeight="$bold" color="$green400" textAlign="center">
                     Ver card de apresentação
                 </Text>
@@ -137,7 +139,8 @@ function Depoments(){
                 <Box borderWidth={1} borderColor="$gray200" p={12} bg="$white" borderRadius={8} ml={12} width={250} height={150}>
                     <HStack alignItems="center" space="md">
 
-                        <Avatar size="sm">
+                        <Avatar size="sm" >
+                            <AvatarImage source={imgDepoiment}></AvatarImage>
                             <AvatarFallbackText>
                                 {item.item}
                             </AvatarFallbackText>

@@ -24,6 +24,7 @@ function DailyPost(){
         setLoadPublisher(false)
         setCreatedPublication(false)
         router.push(routeDirection)
+        router.push({ pathname: routeDirection, params: { idPublication:'01' } })
     }
     return(
         <>

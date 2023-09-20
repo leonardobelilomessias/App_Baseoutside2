@@ -59,12 +59,12 @@ export function SearchScreen(){
         <TaksContentSearch content={resultApi} selecCardRender=""/>
         }
         {!textSearch&&
-        <Center alignItems="center" flex={1} backgroundColor="$white" p={16} borderRadius={16}>
-            <Image  width={150} height={160} source={Empty}></Image>
+        <Box alignItems="center" flex={1} backgroundColor="$white" p={16} borderRadius={16}>
+            <Image  width={130} mt={'$24'} height={140} source={Empty}></Image>
             <Text m={8} mt={18} textAlign="center" color={'$green400'}>
                 Digite no campo de busca para encontrarmos algo 
                 relacionado a sua pesquisa </Text>
-        </Center>
+        </Box>
         }
         
         </VStack>
