@@ -1,6 +1,7 @@
-import { Avatar, AvatarFallbackText, Badge, BadgeIcon, BadgeText, Box, HStack, Image, Text, VStack } from "@gluestack-ui/themed";
+import { Avatar, AvatarFallbackText, Badge, BadgeIcon, BadgeText, Box, HStack, Image, Pressable, Text, VStack } from "@gluestack-ui/themed";
 import vl from '@/assets/vl.jpg'
 import { AgentDTO, AgentsFake } from "@/mocks/agents/fakerAgents";
+import { router } from "expo-router";
 export function PhotoPublication(){
     
     return(
@@ -17,6 +18,8 @@ function CardPublication({agent}:{agent:AgentDTO}){
         <>
         <Box>
             <VStack bg="$white" borderRadius={'$2xl'} p={12}  width={'100%'} >
+                <Pressable onPress={()=>{router.push('/screens/agentProfile')}}>
+
                 <HStack p={8}  zIndex={1} alignItems="center" space={'md'} justifyContent="space-between">
                     <HStack alignItems="center" space="md">
                     <Avatar bgColor="$green400" size="sm" borderRadius="$full">
@@ -28,6 +31,7 @@ function CardPublication({agent}:{agent:AgentDTO}){
                         <BadgeText>New feature</BadgeText>
                     </Badge>
                 </HStack>
+                </Pressable>
                 <Image source={vl} w={'100%'}  h={300}>
                 </Image>
                 <Text fontSize={'$sm'} sx={{overflow:'hidden'}}>

@@ -1,4 +1,4 @@
-import { ControlScreen } from "@/theme/screens/ControlScreen"
+import { ControlScreen } from "@/screens/ControlScreen"
 import { Box, Text, VStack } from "@gluestack-ui/themed"
 import { ScrollView } from "react-native"
 import { FlatList } from "react-native-gesture-handler"

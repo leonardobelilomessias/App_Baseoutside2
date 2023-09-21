@@ -1,4 +1,4 @@
-import { DailyPostScreen } from "@/theme/screens/DailyPostScreen";
+import { DailyPostScreen } from "@/screens/DailyPostScreen";
 import { Heading, VStack } from "@gluestack-ui/themed";
 import { ScrollView } from "react-native";
 

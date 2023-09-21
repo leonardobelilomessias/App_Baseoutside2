@@ -1,9 +1,9 @@
 import { WrapperScreens } from "@/Componets/WrapperScreens";
 import { AgentDataProvider, useDataAgent } from "@/context/UserContext";
 import { extendedConfig } from "@/theme/config";
-import { Profile } from "@/theme/screens/Profile";
-import { SingUp } from "@/theme/screens/SingUp";
-import { Singin } from "@/theme/screens/Singin";
+import { Profile } from "@/screens/Profile";
+import { SingUp } from "@/screens/SingUp";
+import { Singin } from "@/screens/Singin";
 import { Button, ButtonText, GluestackUIProvider, VStack } from "@gluestack-ui/themed";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView,  StyleSheet} from "react-native";

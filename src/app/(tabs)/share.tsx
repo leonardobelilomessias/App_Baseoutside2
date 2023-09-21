@@ -6,7 +6,7 @@ import { ScrollView, TextInput } from 'react-native';
 import { extendedConfig } from '@/theme/config';
 import { useState } from 'react';
 import CreatingPng from '@/assets/dailypost1.png'
-import { ShareScreen } from '@/theme/screens/ShareScreeen';
+import { ShareScreen } from '@/screens/ShareScreeen';
 
 
 

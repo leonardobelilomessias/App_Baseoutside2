@@ -1,4 +1,4 @@
-import { SponsorScreen } from "@/theme/screens/SponsorScreen";
+import { SponsorScreen } from "@/screens/SponsorScreen";
 import { Button, ButtonText, Text, VStack } from "@gluestack-ui/themed";
 import { Link, router } from "expo-router";
 import { useEffect } from "react";
