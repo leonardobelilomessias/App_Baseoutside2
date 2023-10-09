@@ -2,11 +2,12 @@ import { Button, ButtonText, Image, Input, InputField, Pressable, Text, VStack }
 import RecouveryImage from "@/assets/recouveryImage.png"
 import { KeyboardAvoidingView, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { router } from "expo-router";
 export function RecouveryScreen(){
     return(
-        <KeyboardAvoidingView behavior="position" contentContainerStyle={{backgroundColor:'green'}} >
         
-        <VStack bg="$white" p={20}  alignItems="center" >
+        <VStack bg="$white" p={20}  alignItems="center" height={'$full'} >
+            <KeyboardAvoidingView behavior="position" contentContainerStyle={{ paddingBottom:20}} >
             <Text fontSize={26} fontWeight="$bold" lineHeight={26} textAlign="center" marginVertical={20}>
                 Recuperar conta
             </Text>
@@ -24,16 +25,16 @@ export function RecouveryScreen(){
               <Input size="xl" bgColor="$gray100" borderColor="$gray100" marginVertical={20}>
               <InputField paddingLeft={30} placeholder="Email" fontSize={16} borderRadius={8}/>
               </Input>
-                <Pressable bgColor="$green400"  p={16} borderRadius={8} marginVertical={20}>
+                <Pressable bgColor="$green400"  p={16} borderRadius={8} marginVertical={20} onPress={()=>{router.push('/coderecouvery')}}>
                     <Text color="white" textAlign="center" fontWeight="$medium">
                         Enviar
                     </Text>
                 </Pressable>
 
             </VStack>
+           </KeyboardAvoidingView>
          
         </VStack>
-           </KeyboardAvoidingView>
     
     )
 }
