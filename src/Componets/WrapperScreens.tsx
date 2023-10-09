@@ -10,7 +10,7 @@ export function WrapperScreens({children}:{children:ReactElement}){
 <GluestackUIProvider config={extendedConfig}>
 <SafeAreaView style={styles.container}>
   <VStack  flex={1} space='md'>
-  <StatusBar  translucent={false} style="dark"  />
+  <StatusBar   backgroundColor="white" style="dark"  />
     {children}
   </VStack>
 </SafeAreaView>

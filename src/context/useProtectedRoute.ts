@@ -19,12 +19,12 @@ function useProtectedRoute({token,agent_id}:AgentAutenticated) {
 
         // Redirect to the sign-in page.
         router.replace('/sign-in');
-      } else if (token ) {
+      } else if (token &&agent_id) {
         // Redirect away from the sign-in page.
         router.replace('/(tabs)');
 
       }
-    }, [token]);
+    }, [token,agent_id]);
   }
 
   export{useProtectedRoute}

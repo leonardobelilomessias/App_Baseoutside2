@@ -1,7 +1,7 @@
 import { Avatar,Text, AvatarFallbackText, Badge, BadgeText, Box, Button, HStack, Heading, VStack, ButtonText } from "@gluestack-ui/themed";
 
 
-export function DailyPublication(){
+export function DailyPublications(){
     return(
         <Box bg="$white" p={24} borderRadius={'$xl'}>
             <VStack space="md">

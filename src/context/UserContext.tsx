@@ -74,7 +74,6 @@ async function handleSign({ email, password }: HandleSignProps) {
     setLoading(true)
     try{
       const agent = await storageUserGet()
-   
       const token = await storageTokenGet()
       if(agent&& token){
         setDataAgent(agent)
@@ -92,8 +91,10 @@ async function handleSign({ email, password }: HandleSignProps) {
   useEffect(() => {
     fetchData()
   }, [])
-
-  useProtectedRoute({token:tokenAgent,agent_id:dataAgent?.id})
+useEffect(()=>{
+  
+},[])
+useProtectedRoute({token:tokenAgent,agent_id:dataAgent?.id})
 
     return(
         <AgentContext.Provider value={{handleLogout, handleSign,dataAgent,loading,test,setTest,tokenAgent,setTokenAgent }}>

@@ -1,23 +1,26 @@
-import { Image } from "react-native";
+import { Image, KeyboardAvoidingView } from "react-native";
 import { Button, ButtonText, Input, InputField, Text, VStack } from "@gluestack-ui/themed";
 import {Logo} from '@/assets/logoSingin.png'
 import { router } from "expo-router";
+import { ScrollView } from "react-native";
 export function SingUp(){
     return(
-        <>
-            <VStack flex={1} alignItems="center" bg="$white" justifyContent="space-around">
-                <VStack width={"80%"} space={'lg'} alignItems="center">
-                            <Image 
-                            style={{backgroundColor:'blue',width:200,height:200}}
-                            width={50}
-                            height={50}
-                                
-                                source={require('@/assets/logoSingin.png')}
-                                
-                />
-                <Text size="4xl" textAlign="center" fontWeight="$bold">
+        <ScrollView>
+
+        <KeyboardAvoidingView style={{flex:1}}>
+            <VStack flex={1} alignItems="center" bg="$white" >
+            <Text size="2xl" textAlign="center" fontWeight="$bold">
                     Criar nova conta
                 </Text>
+                <VStack width={"80%"} space={'lg'} alignItems="center">
+                            <Image 
+                            style={{width:200,height:250}}
+                            
+                            
+                            source={require('@/assets/createcountImage.png')}
+                                
+                />
+
                 <Input
                     borderColor="$white"
                     bg="$gray100"
@@ -27,7 +30,7 @@ export function SingUp(){
                     isInvalid={false}
                     isReadOnly={false}
                     >
-                    <InputField placeholder="Email" />
+                    <InputField placeholder="Email" fontSize={'$sm'}/>
                 </Input>
                 <Input 
                     borderColor="$white"
@@ -38,7 +41,7 @@ export function SingUp(){
                     isInvalid={false}
                     isReadOnly={false}
                     >
-                    <InputField placeholder="Senha" />
+                    <InputField placeholder="Nick" fontSize={'$sm'} />
 
                 </Input>
                 <Input 
@@ -50,21 +53,34 @@ export function SingUp(){
                     isInvalid={false}
                     isReadOnly={false}
                     >
-                    <InputField placeholder="Senha" />
+                    <InputField placeholder="Senha"  fontSize={'$sm'}/>
 
                 </Input>
-                <Button bg="$green500" rounded={'$full'} size="lg" width={"100%"}>
+                <Input 
+                    borderColor="$white"
+                    bg="$gray100"
+                    variant="outline"
+                    size="lg"
+                    isDisabled={false}
+                    isInvalid={false}
+                    isReadOnly={false}
+                    >
+                    <InputField placeholder="Confirmar Senha" fontSize={'$sm'} />
+
+                </Input>
+                <Button bg="$green500" rounded={'$md'} size="lg" width={"100%"}>
                         <ButtonText>
                             Criar Conta
                         </ButtonText>
                 </Button>
             </VStack>
             <Button 
+            marginVertical={40}
             width={"80%"} 
             borderColor="$green400" 
             bg="$white" 
             borderWidth={1} 
-            rounded={'$full'} 
+            rounded={'$md'} 
             size="lg"
             onPress={()=>{router.back()}}>
                        
@@ -75,6 +91,7 @@ export function SingUp(){
             </Button>
 
             </VStack>
-        </>
+        </KeyboardAvoidingView>
+</ScrollView>
     )
 }

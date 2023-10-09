@@ -20,8 +20,9 @@ export default function Layout() {
       }}>
       {/* Optionally configure static options outside the route. */}
 
-      <Stack.Screen name="singup" options={{}}  />
+      <Stack.Screen name="singup" options={{ headerShadowVisible:false,headerShown:false}}  />
       <Stack.Screen name="tabs" options={{}}  />
+      <Stack.Screen name="recouvery" options={{}}  />
     </Stack>
 
 
