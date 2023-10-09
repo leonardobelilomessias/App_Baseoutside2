@@ -25,7 +25,7 @@ export function RecouveryScreen(){
               <Input size="xl" bgColor="$gray100" borderColor="$gray100" marginVertical={20}>
               <InputField paddingLeft={30} placeholder="Email" fontSize={16} borderRadius={8}/>
               </Input>
-                <Pressable bgColor="$green400"  p={16} borderRadius={8} marginVertical={20} onPress={()=>{router.push('/coderecouvery')}}>
+                <Pressable bgColor="$green400"  p={16} borderRadius={8}  onPress={()=>{router.push('/coderecouvery')}}>
                     <Text color="white" textAlign="center" fontWeight="$medium">
                         Enviar
                     </Text>

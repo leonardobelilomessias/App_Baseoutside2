@@ -5,9 +5,9 @@ import { KeyboardAvoidingView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 export function CodeRecouveryScreen(){
     return(
-        <ScrollView style={{backgroundColor:'white'}}>
-        <VStack flex={1} bg="white" padding={20} alignItems="center">
+        <ScrollView style={{backgroundColor:'white', padding:20}}>
             <KeyboardAvoidingView behavior="position" contentContainerStyle={{  alignItems:'center', }} >
+        <VStack flex={1} bg="white"  alignItems="center" width={'100%'}>
             <Text fontSize={30} alignSelf="center" fontWeight="$bold" lineHeight={30} textAlign="center" marginVertical={20}> Codigo de recuperação </Text>
             <Image source={ImageCodeRecouvery}
             width={250}
@@ -21,14 +21,20 @@ export function CodeRecouveryScreen(){
             <Input paddingLeft={30} bgColor="$gray100" borderColor="$gray100" size="xl" marginVertical={30}>
             <InputField placeholder="codigo" fontSize={14} />
             </Input>
-            <Pressable bgColor="$green400"  p={16} borderRadius={8}  onPress={()=>{router.push('/coderecouvery')}}>
+            <Pressable bgColor="$green400"  p={16} borderRadius={8}  onPress={()=>{router.push('/resetpassword')}}>
                     <Text color="white" textAlign="center" fontWeight="$medium">
                         Enviar
                     </Text>
-                </Pressable>
+            </Pressable>
+ 
             </VStack>
-            </KeyboardAvoidingView>
         </VStack>
+            </KeyboardAvoidingView>
+            <Pressable marginVertical={10} bgColor='$white' borderColor="$green400"  borderWidth={1} p={16} borderRadius={8}  onPress={()=>{router.push('/coderecouvery')}}>
+                    <Text color="$green400"  textAlign="center" fontWeight="$medium">
+                        Renviar codigo
+                    </Text>
+            </Pressable>
         </ScrollView>
     )
 }
