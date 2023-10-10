@@ -24,7 +24,7 @@ export function ResetPassword(){
                 <Input paddingLeft={20} size="xl" bg="$gray100" borderColor="$gray100">
                     <InputField fontSize={16} placeholder="Repita nova senha"/>
                 </Input>
-                <Pressable bgColor="$green400" width={'$full'} p={16} borderRadius={8} marginVertical={20} onPress={()=>{router.push('/resetpassword')}}>
+                <Pressable  bgColor="$green400" width={'$full'} p={16} borderRadius={8} marginVertical={20} onPress={()=>{router.push('/resetpasswordsuccess')}}>
                     <Text color="white" textAlign="center" fontWeight="$medium">
                         Enviar
                     </Text>
