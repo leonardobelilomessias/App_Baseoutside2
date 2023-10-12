@@ -5,6 +5,7 @@ import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { AxiosApi } from "@/api";
 import { useDataAgent } from "@/context/UserContext";
+import { BottonItemFeed } from "../BottonItemFeed";
 
 
 type ContentDTO={
@@ -59,8 +60,8 @@ export function PhotoPublications({id_colab}:{id_colab:string}){
 function CardPublication({publication}:{publication:ContentDTO}){
     return(
         <>
-        <Box>
-            <VStack bg="$white" borderRadius={'$2xl'} p={12}  width={'100%'} >
+        <Box borderBottomColor="$gray300" borderBottomWidth={0.35}>
+            <VStack bg="$white"  borderRadius={'$2xl'} p={12}  width={'100%'} >
                 <Pressable onPress={()=>{router.push('/screens/agentProfile')}}>
 
                 <HStack p={8}  zIndex={1} alignItems="center" space={'md'} justifyContent="space-between">
@@ -80,6 +81,7 @@ function CardPublication({publication}:{publication:ContentDTO}){
                 <Text fontSize={'$sm'} sx={{overflow:'hidden'}}>
                     {publication.description}
             </Text>
+            <BottonItemFeed/>
             </VStack>
 
             </Box>

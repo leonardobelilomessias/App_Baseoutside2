@@ -11,12 +11,8 @@ import Page from './(stack)';
 export default function Index() {
  const {setTest} = useDataAgent()
   return (
-<WrapperScreens>
-
-<Page/>    
-
-
-
+<WrapperScreens >
+    <Page/>    
 </WrapperScreens>
 
   );

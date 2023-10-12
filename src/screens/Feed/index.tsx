@@ -20,7 +20,7 @@ export function Feed(){
 
 
     return(
-        <VStack space={'md'}>
+        <VStack space={'md'} >
         <PhotoPublications  id_colab={dataAgent.id}  />
         <DailyPublications/>
         </VStack>

@@ -21,11 +21,10 @@ export default function Page() {
     
 
   
-   <>
+  
       <Singin/>
 
 
-   </>
 
 
   );

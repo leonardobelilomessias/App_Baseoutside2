@@ -8,9 +8,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export function WrapperScreens({children}:{children:ReactElement}){
     return(
 <GluestackUIProvider config={extendedConfig}>
+<StatusBar   backgroundColor="white" translucent={false} style="dark"  />
 <SafeAreaView style={styles.container}>
-  <VStack  flex={1} space='md'>
-  <StatusBar   backgroundColor="white" style="dark"  />
+  <VStack  flex={1} bgColor="red" >
     {children}
   </VStack>
 </SafeAreaView>

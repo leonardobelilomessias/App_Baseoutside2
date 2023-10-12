@@ -6,7 +6,7 @@ import { router } from "expo-router";
 export function RecouveryScreen(){
     return(
         
-        <VStack bg="$white" p={20}  alignItems="center" height={'$full'} >
+        <VStack bg="$white" p={20}  alignItems="center" height={'$full'} justifyContent="center" >
             <KeyboardAvoidingView behavior="position" contentContainerStyle={{ paddingBottom:20}} >
             <Text fontSize={26} fontWeight="$bold" lineHeight={26} textAlign="center" marginVertical={20}>
                 Recuperar conta

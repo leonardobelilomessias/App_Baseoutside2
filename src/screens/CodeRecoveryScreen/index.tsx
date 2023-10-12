@@ -7,7 +7,7 @@ export function CodeRecouveryScreen(){
     return(
         <ScrollView style={{backgroundColor:'white', padding:20}}>
             <KeyboardAvoidingView behavior="position" contentContainerStyle={{  alignItems:'center', }} >
-        <VStack flex={1} bg="white"  alignItems="center" width={'100%'}>
+        <VStack flex={1} bg="white"  alignItems="center" width={'100%'} justifyContent="center">
             <Text fontSize={30} alignSelf="center" fontWeight="$bold" lineHeight={30} textAlign="center" marginVertical={20}> Codigo de recuperação </Text>
             <Image source={ImageCodeRecouvery}
             width={250}
