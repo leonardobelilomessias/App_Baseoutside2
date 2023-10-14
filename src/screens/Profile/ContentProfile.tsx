@@ -1,21 +1,27 @@
-import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Text, VStack } from "@gluestack-ui/themed";
+import { BottonItemFeed } from "@/Componets/BottonItemFeed";
+import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Pressable, Text, VStack } from "@gluestack-ui/themed";
+import { FlatList, ImageBackground } from "react-native";
+import ImageVideo from '@/assets/develop.jpg'
+import { FontAwesome5 } from '@expo/vector-icons';
+import { extendedConfig } from "@/theme/config";
 
 export function ContentProfile(){
     return(
         <>
-        <HStack  justifyContent="space-around" marginVertical={4} >
-            <Button  variant="link">
-                <ButtonText color="$green400" borderBottomColor="$green400" borderBottomWidth={4}>
-                    info
-                </ButtonText>
-            </Button>
-            <Button  variant="link">
-                <ButtonText color="$gray400">
-                    Area exclusiva
-                </ButtonText>
-            </Button>
+        <HStack  justifyContent="space-around" marginVertical={4} > 
+        <Pressable bg="$green100" flex={1} p={8} borderTopStartRadius={8} borderTopEndRadius={8}>
+            <Text textAlign="center" color="$green400">
+                Info
+            </Text>
+        </Pressable>
+        <Pressable flex={1} p={8}>
+            <Text textAlign="center">
+                Area exclusiva
+            </Text>
+        </Pressable>
         </HStack>
             <VStack borderRadius={"$lg"} bgColor="$white" space="md" p={8}>
+                <Teasers/>
                 <VStack>
                     <Text fontWeight="$bold">Sobre</Text>
                     <Text fontSize={'$sm'}>
@@ -27,12 +33,37 @@ export function ContentProfile(){
                 </VStack>
                 <Skills/>
                 <Interests/>
-                <ActivitInfo/>
+                <Transparance/>
+                <Depoiments/>
+                <Quote/>
+                <DailyPost/>
+                <VidePublication/>
             </VStack>
         </>
     )
 }
+ function Teasers(){
+    const itens = ['item1','item2', 'item3', 'item4', 'item5']
+    return(
+        <>
+        <Text fontWeight="$bold" marginVertical={8}>
+            Teasers
+        </Text>
+        <FlatList 
+        showsHorizontalScrollIndicator={false}
+        horizontal
+        data={itens}
+        renderItem={(itens)=>(
+            <Pressable key={itens.item} width={'$16'} borderRadius={'$full'} height={'$16'} bgColor="$green200" marginRight={8}>
 
+            </Pressable>
+        )}
+        >
+
+        </FlatList>
+        </>
+    )
+ }
 function Skills(){
     return(
         <>
@@ -77,43 +108,113 @@ function Interests(){
     )
 }
 
-function ActivitInfo(){
+function Transparance(){
     return(
         <>
-        <VStack alignItems="center" p={16} space="lg">
-            <VStack alignItems="center">
-                <Text textAlign="center" fontSize={'$md'} fontWeight="$semibold">Atividade</Text>
-                <HStack  space="sm" alignItems="center" justifyContent="center">
-                    <Box rounded={'$full'} width={10} height={10} bg='$blue400'></Box>
-                    <Text sx={{fontSize:25}} fontWeight="$bold" lineHeight={30}>25</Text>
+            <VStack>
+                <Text marginVertical={12} fontWeight="$bold">Transparencia</Text>
+                <HStack justifyContent="space-between">
+                    <Text fontSize={'$sm'} color="$gray400">Subexistenica</Text>
+                    <Text fontSize={'$sm'} color="$green400" fontWeight="$bold">75%</Text>
                 </HStack>
-                <Text fontSize={'$sm'} textAlign="center">
-                    Mantendo a mesma quantidade da semana passada.
-                </Text>
-            </VStack>
+                <HStack justifyContent="space-between">
+                    <Text fontSize={'$sm'} color="$gray400">Estrutura</Text>
+                    <Text fontSize={'$sm'} color="$green400" fontWeight="$bold">13%</Text>
+                </HStack>
+                <HStack justifyContent="space-between">
+                    <Text fontSize={'$sm'} color="$gray400">outros</Text>
+                    <Text fontSize={'$sm'} color="$green400" fontWeight="$bold">12%</Text>
+                </HStack>
+                <Pressable>
 
-            <VStack alignItems="center">
-                <Text textAlign="center" fontSize={'$md'} fontWeight="$semibold">Engajamento</Text>
-                <HStack  space="sm" alignItems="center" justifyContent="center">
-                    <Box rounded={'$full'} width={10} height={10} bg='$red400'></Box>
-                    <Text sx={{fontSize:25}} fontWeight="$bold" lineHeight={30}>25</Text>
-                </HStack>
-                <Text fontSize={'$sm'} textAlign="center">
-                4 a menos que semana passada.
-                </Text>
+                    <Text textAlign="center" paddingVertical={12} color="$green400" fontWeight="$bold">Ver relatorio completo</Text>
+                </Pressable>
             </VStack>
-            <VStack alignItems="center">
-                <Text textAlign="center" fontSize={'$md'} fontWeight="$semibold">Transparência</Text>
-                <HStack  space="sm" alignItems="center" justifyContent="center">
-                    <Box rounded={'$full'} width={10} height={10} bg='$green400'></Box>
-                    <Text sx={{fontSize:25}} fontWeight="$bold" lineHeight={30}>100%</Text>
-                </HStack>
-                <Text fontSize={'$sm'} textAlign="center">
-                De suas atividade financeiras foram declaradas.
-                </Text>
-            </VStack>
-        </VStack>
         </>
+    )
+}
+
+function Depoiments(){
+    const depoiments = [{id:'',name:'julia neds', content:'Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!'},
+    {id:2,name:'julia neds', content:'Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!'},
+    {id:3,name:'julia neds', content:'Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!'},
+    {id:4,name:'julia neds', content:'Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!'}
+
+]
+    return(
+        <>
+        <Text marginBottom={12} fontWeight="$bold">Depoimentos</Text>
+        <FlatList 
+        showsHorizontalScrollIndicator={false}
+        horizontal
+        data={depoiments}
+        renderItem={(depoiment)=>(
+            <VStack borderColor="$gray200" borderRadius={8} width={260} borderWidth={1} key={depoiment.item.id} marginRight={8} p={12}>
+            <HStack alignItems="center">
+                <Box width={'$8'} borderRadius={'$full'} height={'$8'} bg="$green300" marginRight={8}></Box>
+                <Text fontWeight="$bold">{depoiment.item.name}</Text>
+            </HStack>
+            <Text size="sm">
+                {depoiment.item.content}
+            </Text>
+            </VStack>
+        )}
+        />
+        </>
+    )
+}
+function Quote(){
+ return(
+    <>
+    <VStack space="xl">
+    <HStack alignItems="center">
+            <Box width={'$8'} borderRadius={'$full'} height={'$8'} bg="$green300" marginRight={8}></Box>
+            <Text fontWeight="$medium">Mike JHerry</Text>
+        </HStack>
+        <Text textAlign="center" fontSize={'$xl'} fontWeight="$normal">
+        Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!
+        </Text>
+        <BottonItemFeed/>
+    </VStack>
+</>
+ )
+}
+function DailyPost(){
+    return(
+        <VStack space="xl" marginVertical={8}>
+            <HStack bgColor="$green100" space="xl" p={8} alignContent="center" alignItems="center">
+                <VStack >
+                    <Text color="$gray400" fontWeight="$bold" fontSize={'$lg'} >
+                        25
+                    </Text>
+                    <Text color="$gray400" fontWeight="$bold" size="xs" lineHeight={12} >out</Text>
+                </VStack>
+            <Text  fontWeight="$bold" color="$green400" textAlign="center" >Dias de lutas dias de gloria</Text>
+            </HStack>
+            <Text>
+            Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens...
+            </Text>
+            <Pressable>
+                <Text textAlign="center" fontWeight="bold" color="$green400">Ver Completo</Text>
+            </Pressable>
+            <BottonItemFeed/>
+        </VStack>
+    )
+}
+function VidePublication(){
+    return(
+        <VStack space="md">
+        <ImageBackground source={ImageVideo}
+        width={300}
+        height={600}
+        borderRadius={8}
+        >
+            <Box height={400} alignContent="center" justifyContent="center" alignItems="center">
+            <FontAwesome5 name="play-circle" size={94} color={extendedConfig.tokens.colors.green400} />
+            </Box>
+        </ImageBackground>
+        <BottonItemFeed/>
+        </VStack>
     )
 }
 const skillsProfile = ['tecnologia','liderança','gestão','desenvolvimento de projetos']

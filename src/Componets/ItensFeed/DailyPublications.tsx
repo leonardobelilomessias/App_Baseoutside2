@@ -1,12 +1,15 @@
 import { Avatar,Text, AvatarFallbackText, Badge, BadgeText, Box, Button, HStack, Heading, VStack, ButtonText } from "@gluestack-ui/themed";
+import { BottonItemFeed } from "../BottonItemFeed";
+import { router } from "expo-router";
 
 
 export function DailyPublications(){
     return(
-        <Box bg="$white" p={24} borderRadius={'$xl'}>
+        <Box bg="$white" p={12} borderRadius={'$xl'} borderColor="$gray200" borderWidth={0.45} >
             <VStack space="md">
                 <HStack 
                 p={8}
+               
                 zIndex={1}
                 alignItems="center"
                 justifyContent="space-between"
@@ -33,7 +36,9 @@ export function DailyPublications(){
                         <BadgeText>New feature</BadgeText>
                     </Badge>
                 </HStack>
-                <HStack>
+                <VStack space="md">
+
+                <HStack >
                     <Heading mr={'$10'}>25</Heading>
                     <Heading>Conquista do ano</Heading>
                 </HStack>
@@ -45,7 +50,7 @@ export function DailyPublications(){
                 </Text>
                 <Button 
                 bgColor="$white" 
-                borderWidth={1}
+                onPress={()=>{router.push('/dailyPublication')}}
                 borderColor="$green400"
                 rounded={'$full'}>
                     <ButtonText 
@@ -53,6 +58,8 @@ export function DailyPublications(){
                         Ler Completo
                     </ButtonText>
                 </Button>
+                <BottonItemFeed/>
+                        </VStack>
             </VStack>
         </Box>
     )

@@ -1,5 +1,6 @@
 import { DailyPublications } from "@/Componets/ItensFeed/DailyPublications";
 import { PhotoPublications } from "@/Componets/ItensFeed/PhotoPublications";
+import { VideoPublication } from "@/Componets/ItensFeed/VideoPulication";
 import { useDataAgent } from "@/context/UserContext";
 import { VStack } from "@gluestack-ui/themed";
 import { Stack } from "expo-router";
@@ -23,6 +24,7 @@ export function Feed(){
         <VStack space={'md'} >
         <PhotoPublications  id_colab={dataAgent.id}  />
         <DailyPublications/>
+        <VideoPublication/>
         </VStack>
     )
 }

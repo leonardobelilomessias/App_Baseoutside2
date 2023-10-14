@@ -60,8 +60,8 @@ export function PhotoPublications({id_colab}:{id_colab:string}){
 function CardPublication({publication}:{publication:ContentDTO}){
     return(
         <>
-        <Box borderBottomColor="$gray300" borderBottomWidth={0.35}>
-            <VStack bg="$white"  borderRadius={'$2xl'} p={12}  width={'100%'} >
+        <Box borderBottomColor="$gray300" borderBottomWidth={0}>
+            <VStack bg="$white"  borderRadius={'$2xl'} p={12}  width={'100%'}  borderColor="$gray200" borderWidth={0.35} >
                 <Pressable onPress={()=>{router.push('/screens/agentProfile')}}>
 
                 <HStack p={8}  zIndex={1} alignItems="center" space={'md'} justifyContent="space-between">
@@ -82,6 +82,7 @@ function CardPublication({publication}:{publication:ContentDTO}){
                     {publication.description}
             </Text>
             <BottonItemFeed/>
+
             </VStack>
 
             </Box>

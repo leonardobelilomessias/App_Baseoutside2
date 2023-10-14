@@ -30,15 +30,15 @@ export function AvatarProfile(){
         <HStack space="md">
           {
             isFollower?
-            <Button bg="$white" borderColor="$green400" borderWidth={1} borderRadius={'$full'} onPress={()=>{setIsFollower(false)}}>
+            <Button bg="$white" borderColor="$green400" borderWidth={1} borderRadius={8} size="sm" onPress={()=>{setIsFollower(false)}}>
               <ButtonText color="$green400">+ Seguindo</ButtonText>
             </Button>:
-            <Button bg="$green400" borderRadius={'$full'} onPress={()=>{setIsFollower(true)}}>
+            <Button bg="$green400" size="sm" borderRadius={8} onPress={()=>{setIsFollower(true)}}>
               <ButtonText color="$white" >+ Seguir</ButtonText>
             </Button>
           }
 
-            <Button action="secondary" variant="outline" borderRadius={'$full'} onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
+            <Button action="secondary" variant="outline" size="sm" borderRadius={8} onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
                 <ButtonText >$ Sponsor</ButtonText>
             </Button>
         </HStack>

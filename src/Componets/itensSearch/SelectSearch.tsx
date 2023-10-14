@@ -14,9 +14,9 @@ export function SelectSearch({itemSelected,setItemSelected}:{itemSelected:string
                         key={item} 
                         borderWidth={1}
                         borderColor={item===itemSelected?'$white':'$green400'} 
-                        minWidth={'$16'}
-                        bg={item===itemSelected?'$green600':'$white'}
-                        borderRadius={'$full'}
+                        minWidth={'$12'}
+                        bg={item===itemSelected?'$green400':'$white'}
+                        borderRadius={8}
                         p={2}
                         m={2}
                         onPress={()=>{setItemSelected(item)}}
@@ -25,6 +25,7 @@ export function SelectSearch({itemSelected,setItemSelected}:{itemSelected:string
                             <Text 
                             textAlign="center" 
                             color={itemSelected===item?'$white':"$green400"}
+                            fontSize={'$sm'}
                             >
                                 {item==="Actions"&& "Ação"}
                                 {item==="Missions"&& "Missão"}

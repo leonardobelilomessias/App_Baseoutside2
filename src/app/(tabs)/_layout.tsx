@@ -90,7 +90,8 @@ export default function Root(){
                     name="user-circle-o" 
                     size={24} 
                     color={focused? colorSelected :"black"} />,
-                    title:"Perfil"
+                    title:"Perfil",
+                    headerShown:false
                 }}
             />
             <Tabs.Screen
