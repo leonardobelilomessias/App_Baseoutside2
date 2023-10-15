@@ -1,13 +1,16 @@
 import { BottonItemFeed } from "@/Componets/BottonItemFeed";
 import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Pressable, Text, VStack } from "@gluestack-ui/themed";
-import { FlatList, ImageBackground } from "react-native";
+import { Dimensions, FlatList, ImageBackground, useWindowDimensions } from "react-native";
 import ImageVideo from '@/assets/develop.jpg'
 import { FontAwesome5 } from '@expo/vector-icons';
 import { extendedConfig } from "@/theme/config";
+import { useEffect, useRef, useState } from "react";
 export function VideoPublication(){
+
     return(
         <VStack space="md" p={8}>
         <ImageBackground source={ImageVideo}
+        
         width={300}
         height={600}
         borderRadius={8}

@@ -1,12 +1,14 @@
-import { HStack, Avatar, AvatarFallbackText, AvatarImage, VStack, Heading, Text, AvatarBadge, Button, ButtonText } from "@gluestack-ui/themed";
+import { HStack, Avatar, AvatarFallbackText, AvatarImage, VStack, Heading, Text, AvatarBadge, Button, ButtonText, Box } from "@gluestack-ui/themed";
 import { router } from "expo-router";
 import { useState } from "react";
+import { FontAwesome } from '@expo/vector-icons';
 
 export function AvatarProfile(){
   const [isFollower,setIsFollower] = useState(false)
     return(
         <VStack space="md"   alignItems="center">
-        <Avatar size="xl" borderColor="$white" borderWidth={5}>
+
+        <Avatar size="2xl" borderColor="$white" borderWidth={5}>
           <AvatarFallbackText>Leonardo Belilo</AvatarFallbackText>
           <AvatarImage 
             source={{
@@ -26,12 +28,13 @@ export function AvatarProfile(){
         <VStack>
           <Heading size="sm" textAlign="center">Leonardo Belilo</Heading>
           <Text size="sm" textAlign="center" color="$gray500">Empreendedor Social</Text>
+     
         </VStack>
         <HStack space="md">
           {
             isFollower?
             <Button bg="$white" borderColor="$green400" borderWidth={1} borderRadius={8} size="sm" onPress={()=>{setIsFollower(false)}}>
-              <ButtonText color="$green400">+ Seguindo</ButtonText>
+              <ButtonText color="$green400"> Seguindo</ButtonText>
             </Button>:
             <Button bg="$green400" size="sm" borderRadius={8} onPress={()=>{setIsFollower(true)}}>
               <ButtonText color="$white" >+ Seguir</ButtonText>
@@ -39,7 +42,7 @@ export function AvatarProfile(){
           }
 
             <Button action="secondary" variant="outline" size="sm" borderRadius={8} onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
-                <ButtonText >$ Sponsor</ButtonText>
+                <ButtonText >Assinar</ButtonText>
             </Button>
         </HStack>
       </VStack>

@@ -1,26 +1,43 @@
 import { BottonItemFeed } from "@/Componets/BottonItemFeed";
-import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Pressable, Text, VStack } from "@gluestack-ui/themed";
+import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, InfoIcon, Pressable, Text, VStack } from "@gluestack-ui/themed";
 import { FlatList, ImageBackground } from "react-native";
 import ImageVideo from '@/assets/develop.jpg'
 import { FontAwesome5 } from '@expo/vector-icons';
 import { extendedConfig } from "@/theme/config";
+import { useState } from "react";
+import { ExclusiveArea } from "./ExclusiveArea";
+import { FontAwesome } from '@expo/vector-icons';
 
 export function ContentProfile(){
+    const [selectContent,setSelectContent] = useState('info')
+
     return(
         <>
         <HStack  justifyContent="space-around" marginVertical={4} > 
-        <Pressable bg="$green100" flex={1} p={8} borderTopStartRadius={8} borderTopEndRadius={8}>
-            <Text textAlign="center" color="$green400">
+        <Pressable onPress={()=>{setSelectContent('info')}} bg= {selectContent==='info'?"$green400":'$white'} flex={1} p={8} borderTopStartRadius={8} borderTopEndRadius={8} borderColor="$gray100" borderWidth={1}>
+            <Text size="sm" textAlign="center" color={selectContent==='info'?"$white":'$gray400'} bold={selectContent==='info'} >
                 Info
             </Text>
         </Pressable>
-        <Pressable flex={1} p={8}>
-            <Text textAlign="center">
+        <Pressable onPress={()=>{setSelectContent('exclusive')}} bg={selectContent==='exclusive'?"$green400":'$white'} borderWidth={1} borderColor="$gray100" flex={1} p={8} borderTopStartRadius={8} borderTopEndRadius={8}>
+            <Text size="sm"  textAlign="center" color={selectContent==='exclusive'?"$white":'$gray400'} bold={selectContent==='exclusive'} >
                 Area exclusiva
             </Text>
         </Pressable>
         </HStack>
-            <VStack borderRadius={"$lg"} bgColor="$white" space="md" p={8}>
+        {
+            selectContent==='info'&&<ContentInfo/>        
+        }
+        {
+            selectContent==='exclusive'&&<ExclusiveArea/>
+        }
+        </>
+    )
+}
+function ContentInfo(){
+    return(
+        <>
+         <VStack borderRadius={"$lg"} bgColor="$white" space="xl" p={8}>
                 <Teasers/>
                 <VStack>
                     <Text fontWeight="$bold">Sobre</Text>
@@ -30,11 +47,9 @@ export function ContentProfile(){
                     projetos em curso e mais de 2 mil jovens 
                     alcançados.
                     </Text>
+
                 </VStack>
-                <Skills/>
-                <Interests/>
                 <Transparance/>
-                <Depoiments/>
                 <Quote/>
                 <DailyPost/>
                 <VidePublication/>
@@ -217,4 +232,5 @@ function VidePublication(){
         </VStack>
     )
 }
+
 const skillsProfile = ['tecnologia','liderança','gestão','desenvolvimento de projetos']

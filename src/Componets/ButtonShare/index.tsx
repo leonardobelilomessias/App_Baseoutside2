@@ -13,6 +13,7 @@ import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 
 const colorSelected = extendedConfig.tokens.colors.green400
@@ -67,11 +68,18 @@ export function ButtonShare({focused}:{focused:boolean}){
               </HStack>
             </ActionsheetItem>
             <ActionsheetItem onPress={handleClose}>
+              <HStack alignItems='center'>
+              <FontAwesome5 name="tasks" size={18} color="black" />
+              <ActionsheetItemText>Task</ActionsheetItemText>
+              </HStack>
+            </ActionsheetItem>
+            <ActionsheetItem onPress={handleClose}>
               <HStack>
               <MaterialIcons name="attach-money" size={20} color="black" />
               <ActionsheetItemText>Balanço</ActionsheetItemText>
               </HStack>
             </ActionsheetItem>
+
           </ActionsheetContent>
         </Actionsheet>
       </>

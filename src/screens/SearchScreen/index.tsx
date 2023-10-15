@@ -40,7 +40,7 @@ export function SearchScreen(){
     <VStack space="md"   p={8}   flex={1} bg="white" >
         <VStack  flex={1} space="xs" >
         <TopSearchInput textSearch={textSearch} setTextSeatch={setTextSeatch}/>
-        <SelectSearch itemSelected={itemSelected} setItemSelected={setItemSelected}/>
+{/*        <SelectSearch itemSelected={itemSelected} setItemSelected={setItemSelected}/>*/}
 
         {
             (resultApi.length>0 &&itemSelected=='Agents')&&

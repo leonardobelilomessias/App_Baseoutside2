@@ -45,9 +45,7 @@ export default function Root(){
                     size={24} 
                     color={focused? colorSelected :"black"} />,
                     headerRight:()=><Pressable  onPress={()=>{ handleLogout()}}><Feather name="power" style={{marginHorizontal:18}} size={24} color="black" /></Pressable>,
-                    title:'Home',
-                
-                  
+                    title:'BaseOutside',
                 }}
                 />
             <Tabs.Screen
@@ -123,7 +121,7 @@ export default function Root(){
                 name="screensMission"  
                 options={{
                     headerShown:false, 
-                   // tabBarButton:()=>null
+                    tabBarButton:()=>null
                 }}
                 
             />
