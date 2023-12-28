@@ -14,21 +14,21 @@ export function ExclusiveArea(){
 
 function ExclusicePhotos(){
     return(
-        <VStack marginVertical={24} space="md">
+        <VStack marginVertical={2} space="sm">
             <HStack space="xs" alignItems="center">
-            <FontAwesome name="photo" size={14} color="black" />
-                <Text fontWeight="$medium">Fotos</Text>
+            <FontAwesome name="play" size={14} color="black" />
+                <Text fontWeight="$medium">Fotos e Videos</Text>
             </HStack>
-            <HStack space="lg" alignItems="center" justifyContent="center">
-                <Image borderRadius={8}  source={ImagePhoto} size="lg"/>
-                <Image borderRadius={8}  source={ImagePhoto} size="lg"/>
-                <Image borderRadius={8}  source={ImagePhoto} size="lg"/>
+            <HStack space="xs" alignItems="center" justifyContent="center">
+                <Image   source={ImagePhoto} size="lg"/>
+                <Image   source={ImagePhoto} size="lg"/>
+                <Image   source={ImagePhoto} size="lg"/>
             </HStack>
-            <HStack space="lg" alignItems="center" justifyContent="center">
-                <Image borderRadius={8}  source={ImagePhoto} size="lg"/>
-                <Image borderRadius={8}  source={ImagePhoto} size="lg"/>
-                <ImageBackground borderRadius={8} style={{alignContent:'center', justifyContent:'center',alignItems:'center'}}  source={ImagePhoto} >
-                <Image borderRadius={8}  source={ImagePhoto} size="lg"/>
+            <HStack space="xs" alignItems="center" justifyContent="center">
+                <Image   source={ImagePhoto} size="lg"/>
+                <Image   source={ImagePhoto} size="lg"/>
+                <ImageBackground  style={{alignContent:'center', justifyContent:'center',alignItems:'center'}}  source={ImagePhoto} >
+                <Image   source={ImagePhoto} size="lg"/>
                 <Box bg="white" opacity={0.78} flex={1} width={110} height={100} zIndex={99} position="absolute"></Box>
                     <Text size="sm" padding={8}  position="absolute" zIndex={100} textAlign="center" color="$green500" bold>Ver todas fotos</Text>
                 </ImageBackground>
@@ -42,14 +42,14 @@ function ExclusiveVideos(){
     return(
         <VStack marginVertical={24} space="md">
             <HStack space="xs" alignItems="center">
-            <FontAwesome name="video-camera" size={14} color="black" />
-                <Text fontWeight="$medium"  >Videos</Text>
+            <FontAwesome name="group" size={14} color="black" />
+                <Text fontWeight="$medium"  >Comunidade</Text>
             </HStack>
             <HStack space="lg" alignItems="center" justifyContent="center">
-                <Image borderRadius={8}  source={ImagePhoto} size="lg" height={150}/>
-                <Image borderRadius={8}  source={ImagePhoto} size="lg" height={150}/>
-                <ImageBackground borderRadius={8} style={{alignContent:'center', justifyContent:'center',alignItems:'center'}}  source={ImagePhoto} >
-                <Image borderRadius={8}  source={ImagePhoto} size="lg" height={150}/>
+                <Image  source={ImagePhoto} size="lg" height={150}/>
+                <Image   source={ImagePhoto} size="lg" height={150}/>
+                <ImageBackground  style={{alignContent:'center', justifyContent:'center',alignItems:'center'}}  source={ImagePhoto} >
+                <Image  source={ImagePhoto} size="lg" height={150}/>
                 <Box bg="white" opacity={0.78} flex={1} width={110} zIndex={99} position="absolute" height={150}></Box>
                     <Text  position="absolute" zIndex={100} textAlign="center" size="sm" color="$green500" bold>Ver todos videos</Text>
                 </ImageBackground>

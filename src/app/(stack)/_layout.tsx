@@ -18,7 +18,10 @@ export default function Layout() {
     // https://reactnavigation.org/docs/headers#sharing-common-options-across-screens
       screenOptions={{
         headerShown:false,
-        headerStyle:{backgroundColor:'yellow'}
+        headerStyle:{backgroundColor:'yellow'},
+        headerTitle:()=>null,
+        header:()=>null,
+       
       }}>
       {/* Optionally configure static options outside the route. */}
 

@@ -40,7 +40,7 @@ export function SearchScreen(){
     <VStack space="md"   p={8}   flex={1} bg="white" >
         <VStack  flex={1} space="xs" >
         <TopSearchInput textSearch={textSearch} setTextSeatch={setTextSeatch}/>
-{/*        <SelectSearch itemSelected={itemSelected} setItemSelected={setItemSelected}/>*/}
+{       <SelectSearch itemSelected={itemSelected} setItemSelected={setItemSelected}/>}
 
         {
             (resultApi.length>0 &&itemSelected=='Agents')&&
@@ -60,8 +60,8 @@ export function SearchScreen(){
         }
         {!textSearch&&
         <Box alignItems="center" flex={1} backgroundColor="$white" p={16} borderRadius={16}>
-            <Image  width={130} mt={'$24'} height={140} source={Empty}></Image>
-            <Text m={8} mt={18} textAlign="center" color={'$green400'}>
+            <Image  width={100} mt={'$24'} height={110} source={Empty}></Image>
+            <Text size="sm" m={8} mt={18} textAlign="center" color={'$green400'}>
                 Digite no campo de busca para encontrarmos algo 
                 relacionado a sua pesquisa </Text>
         </Box>

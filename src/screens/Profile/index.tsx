@@ -5,7 +5,7 @@ import { ContentProfile } from "./ContentProfile";
 
 export function Profile(){
     return(
-        <VStack space="md" >
+        <VStack space="sm" >
         <TopHeaderProfile/>
         <AvatarProfile/>
         <ContentProfile/>

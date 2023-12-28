@@ -17,7 +17,7 @@ export default function ProfileMission(){
                 <Box   bg="red" height={'$48'} mt={'$4'} position="absolute" >
                 </Box>
                 <HeaderProfileMission/>
-                <Avatar alignSelf="center" size="xl" mt={'$24'}>
+                <Avatar alignSelf="center" size="xl" mt={'$1'}>
                 <AvatarImage source={imgDepoiment}></AvatarImage>
                     
                     <AvatarFallbackText>Base outside</AvatarFallbackText>

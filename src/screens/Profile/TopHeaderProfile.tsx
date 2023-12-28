@@ -4,10 +4,10 @@ export function TopHeaderProfile(){
     return(
         
         <HStack hardShadow="4"  borderRadius={'$lg'} bgColor="$white" justifyContent="space-between" p={8} paddingHorizontal={16} softShadow="3">
-          <ItemTopHeader  name="Seguidores" number="10" />
-          <ItemTopHeader name="Seguindo" number="245" />
+          <ItemTopHeader  name="Missões" number="10" />
+          <ItemTopHeader name="Ações" number="245" />
           <ItemTopHeader name="Colabs" number="26" />
-          <ItemTopHeader name="Tasks" number="9" />
+          <ItemTopHeader name="Tarefas" number="9" />
 
         </HStack>
         

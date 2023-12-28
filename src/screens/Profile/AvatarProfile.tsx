@@ -1,28 +1,43 @@
-import { HStack, Avatar, AvatarFallbackText, AvatarImage, VStack, Heading, Text, AvatarBadge, Button, ButtonText, Box } from "@gluestack-ui/themed";
+import { HStack, Avatar, AvatarFallbackText, AvatarImage, VStack, Heading, Text, AvatarBadge, Button, ButtonText, Box, Pressable } from "@gluestack-ui/themed";
 import { router } from "expo-router";
 import { useState } from "react";
 import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { extendedConfig } from "@/theme/config";
+import { useDataAgent } from "@/context/UserContext";
+import { baseURL } from "@/utils/params";
+
 
 export function AvatarProfile(){
   const [isFollower,setIsFollower] = useState(false)
-    return(
-        <VStack space="md"   alignItems="center">
+  const {dataAgent} = useDataAgent()
+  const imageProfile = `${baseURL}/Agent/${dataAgent.image_profile}`
 
-        <Avatar size="2xl" borderColor="$white" borderWidth={5}>
+    return(
+        <VStack space="xs"   alignItems="center">
+
+        <Avatar size="2xl" borderColor="$gray200" borderWidth={5} >
           <AvatarFallbackText>Leonardo Belilo</AvatarFallbackText>
           <AvatarImage 
             source={{
-              uri: "https://images.unsplash.com/profile-fb-1597267794-eb023d64bf1d.jpg?dpr=1&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
+              uri: imageProfile,
             }}
             
           />
-          <AvatarBadge
-            sx={{
-                _dark: {
-                borderColor: "$black",
-                },
-            }}
-            />
+
+                    <AvatarBadge alignItems="center" justifyContent="center"
+                    
+                    sx={{
+                      _dark: {
+                        borderColor: "$black",
+                      },
+                    }}
+                    >
+              <Pressable flex={1} alignItems="center" justifyContent="center" onPress={()=>router.push('/screens/editProfile')}>
+                        <FontAwesome name="pencil" color='white' size={18}/>
+              </Pressable>                    
+                        </AvatarBadge>
           
         </Avatar>
         <VStack>
@@ -41,10 +56,21 @@ export function AvatarProfile(){
             </Button>
           }
 
-            <Button action="secondary" variant="outline" size="sm" borderRadius={8} onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
-                <ButtonText >Assinar</ButtonText>
+            <Button action="secondary" variant="outline" borderColor="$green300" size="sm" borderRadius={8} onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
+                <ButtonText color="$green400" > $ Assinar</ButtonText>
             </Button>
         </HStack>
+        <VStack  position="absolute" right={5} space="sm">
+          <Box alignItems="center" justifyContent="center"  p={12} borderWidth={1}  borderRadius={'$full'} borderColor={extendedConfig.tokens.colors.green300}>
+             <FontAwesome name="send-o" size={16} color={extendedConfig.tokens.colors.green300} />
+          </Box>
+          <Box alignItems="center" justifyContent="center"  p={12} borderWidth={1}  borderRadius={'$full'} borderColor={extendedConfig.tokens.colors.green300}>
+             <FontAwesome name="share" size={16} color={extendedConfig.tokens.colors.green300} />
+          </Box>
+          <Box alignItems="center" justifyContent="center"  p={12} borderWidth={1}  borderRadius={'$full'} borderColor={extendedConfig.tokens.colors.green300}>
+             <FontAwesome name="link" size={16} color={extendedConfig.tokens.colors.green300} />
+          </Box>
+        </VStack>
       </VStack>
     )
 }

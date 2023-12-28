@@ -35,6 +35,7 @@ export default function Root(){
                 tabBarShowLabel:false,
                 tabBarHideOnKeyboard:true,
                 headerStatusBarHeight:-1
+                
                 } } >
                 <Tabs.Screen
                 name="index"
@@ -44,7 +45,22 @@ export default function Root(){
                     name="home" 
                     size={24} 
                     color={focused? colorSelected :"black"} />,
-                    headerRight:()=><Pressable  onPress={()=>{ handleLogout()}}><Feather name="power" style={{marginHorizontal:18}} size={24} color="black" /></Pressable>,
+                    headerRight:()=>
+                    <>
+                    <HStack style={{marginHorizontal:18}}>
+                    <Pressable  onPress={()=>{ handleLogout()}}>
+                    <Feather name="heart" style={{marginHorizontal:8}} size={24} color="black" />
+                    </Pressable>
+                    <Pressable   onPress={()=>{ handleLogout()}}>
+                    <Feather name="send" style={{marginHorizontal:8}} size={24} color="black" />
+                    </Pressable>
+                    <Pressable  onPress={()=>{ handleLogout()}}>
+                    <Feather name="settings" style={{marginHorizontal:8}} size={24} color="black" />
+                    </Pressable>
+                    </HStack>
+                    
+                    </>
+                    ,
                     title:'BaseOutside',
                 }}
                 />
@@ -112,15 +128,23 @@ export default function Root(){
             <Tabs.Screen
                 name="screens" 
                 options={{
-                    headerShown:false, 
+                    headerShown:true,
+                    headerStatusBarHeight:0,
+                    headerStyle:false,
+                    headerTitle:()=>null,
+                    header:()=>null,
                     tabBarButton:()=>null
                 }}
                 
             />
-                     <Tabs.Screen
+            <Tabs.Screen
                 name="screensMission"  
                 options={{
-                    headerShown:false, 
+                    headerShown:true,
+                    headerStatusBarHeight:0,
+                    headerStyle:false,
+                    headerTitle:()=>null,
+                    header:()=>null,
                     tabBarButton:()=>null
                 }}
                 

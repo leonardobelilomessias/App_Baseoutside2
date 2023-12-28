@@ -16,7 +16,7 @@ export  function ShareScreen() {
 
 <ScrollView >
 
-    <Box p={8} flex={1}>
+    <Box p={8} flex={1} bgColor='white'>
       {
         choice==='daily'&&
         

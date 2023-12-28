@@ -1,5 +1,5 @@
 import { BottonItemFeed } from "@/Componets/BottonItemFeed";
-import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, InfoIcon, Pressable, Text, VStack } from "@gluestack-ui/themed";
+import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Image, InfoIcon, Pressable, Text, VStack } from "@gluestack-ui/themed";
 import { FlatList, ImageBackground } from "react-native";
 import ImageVideo from '@/assets/develop.jpg'
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -7,13 +7,14 @@ import { extendedConfig } from "@/theme/config";
 import { useState } from "react";
 import { ExclusiveArea } from "./ExclusiveArea";
 import { FontAwesome } from '@expo/vector-icons';
+import ImageTeaser from '@/assets/develop.jpg'
 
 export function ContentProfile(){
     const [selectContent,setSelectContent] = useState('info')
 
     return(
         <>
-        <HStack  justifyContent="space-around" marginVertical={4} > 
+        <HStack  justifyContent="space-around" marginVertical={2} > 
         <Pressable onPress={()=>{setSelectContent('info')}} bg= {selectContent==='info'?"$green400":'$white'} flex={1} p={8} borderTopStartRadius={8} borderTopEndRadius={8} borderColor="$gray100" borderWidth={1}>
             <Text size="sm" textAlign="center" color={selectContent==='info'?"$white":'$gray400'} bold={selectContent==='info'} >
                 Info
@@ -38,7 +39,6 @@ function ContentInfo(){
     return(
         <>
          <VStack borderRadius={"$lg"} bgColor="$white" space="xl" p={8}>
-                <Teasers/>
                 <VStack>
                     <Text fontWeight="$bold">Sobre</Text>
                     <Text fontSize={'$sm'}>
@@ -49,7 +49,6 @@ function ContentInfo(){
                     </Text>
 
                 </VStack>
-                <Transparance/>
                 <Quote/>
                 <DailyPost/>
                 <VidePublication/>
@@ -62,19 +61,22 @@ function ContentInfo(){
     return(
         <>
         <Text fontWeight="$bold" marginVertical={8}>
-            Teasers
+            Campanhas
         </Text>
         <FlatList 
         showsHorizontalScrollIndicator={false}
         horizontal
         data={itens}
         renderItem={(itens)=>(
-            <Pressable key={itens.item} width={'$16'} borderRadius={'$full'} height={'$16'} bgColor="$green200" marginRight={8}>
-
+            <VStack alignContent="center" justifyContent="center" alignItems="center" width={100}marginRight={8}  >
+            <Pressable key={itens.item} width={100}  borderRadius={'$lg'} height={100} bgColor="$green200" >
+                <Image source={ImageTeaser} size="full" borderRadius={10}    />
             </Pressable>
+                <Text size="xs" lineHeight={'$2xs'} flexWrap="wrap" textAlign="center" >Criação de nova sede </Text>
+            </VStack>
         )}
         >
-
+        
         </FlatList>
         </>
     )
@@ -150,7 +152,7 @@ function Transparance(){
 }
 
 function Depoiments(){
-    const depoiments = [{id:'',name:'julia neds', content:'Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!'},
+    const depoiments = [{id:1,name:'julia neds', content:'Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!'},
     {id:2,name:'julia neds', content:'Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!'},
     {id:3,name:'julia neds', content:'Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!'},
     {id:4,name:'julia neds', content:'Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!'}
@@ -181,7 +183,7 @@ function Depoiments(){
 function Quote(){
  return(
     <>
-    <VStack space="xl">
+    <VStack space="xl" borderBottomColor={extendedConfig.tokens.colors.gray100} borderBottomWidth={1} paddingBottom={'$10'}>
     <HStack alignItems="center">
             <Box width={'$8'} borderRadius={'$full'} height={'$8'} bg="$green300" marginRight={8}></Box>
             <Text fontWeight="$medium">Mike JHerry</Text>
@@ -196,8 +198,8 @@ function Quote(){
 }
 function DailyPost(){
     return(
-        <VStack space="xl" marginVertical={8}>
-            <HStack bgColor="$green100" space="xl" p={8} alignContent="center" alignItems="center">
+        <VStack space="xl" paddingVertical={18}  borderBottomColor="$gray100" borderBottomWidth={1}>
+            <HStack  space="xl" p={8} alignContent="center" alignItems="center">
                 <VStack >
                     <Text color="$gray400" fontWeight="$bold" fontSize={'$lg'} >
                         25

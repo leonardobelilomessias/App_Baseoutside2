@@ -20,7 +20,7 @@ export function ContentProfile(){
                     <Text fontWeight="$bold">Sobre</Text>
                     <Text fontSize={'$sm'}>
                     Empreendedor social  a 5 anos na 
-                    área de desenvolvimento social. Com 2 
+                    área de desenvolvimento social. Com 20 
                     projetos em curso e mais de 2 mil jovens 
                     alcançados.
                     </Text>

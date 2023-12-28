@@ -1,5 +1,5 @@
 import { BottonItemFeed } from "@/Componets/BottonItemFeed";
-import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Pressable, Text, VStack } from "@gluestack-ui/themed";
+import { Avatar, AvatarFallbackText, Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Pressable, Text, VStack } from "@gluestack-ui/themed";
 import { Dimensions, FlatList, ImageBackground, useWindowDimensions } from "react-native";
 import ImageVideo from '@/assets/develop.jpg'
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -8,7 +8,37 @@ import { useEffect, useRef, useState } from "react";
 export function VideoPublication(){
 
     return(
-        <VStack space="md" p={8}>
+        <VStack space="md" p={8} softShadow="1" bg="white">
+            <HStack 
+                p={8}
+               
+                zIndex={1}
+                alignItems="center"
+                justifyContent="space-between"
+                space={'md'}>
+                    <HStack alignItems="center" space="md">
+
+                    <Avatar 
+                    bgColor="$green400"
+                    size="sm"
+                    borderRadius="$full">
+                        <AvatarFallbackText>
+                            Sandeep Srivastava
+                        </AvatarFallbackText>
+                    </Avatar>
+                    <Text>
+                        Mike Jery
+                    </Text>
+                </HStack>
+                    <Badge
+                    size="sm" 
+                    variant="solid" 
+                    borderRadius="$none" 
+                    action="success">
+                        <BadgeText>Daily Post</BadgeText>
+                    </Badge>
+                </HStack>
+            
         <ImageBackground source={ImageVideo}
         
         width={300}

@@ -1,13 +1,13 @@
 import { Avatar, AvatarImage, Box, HStack, Input, InputField, Pressable, Text, VStack } from "@gluestack-ui/themed";
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { extendedConfig } from "@/theme/config";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { Alert, Modal, StyleSheet, View } from "react-native";
 import ImageComment from '@/assets/develop.jpg'
 import { FlatList } from "react-native-gesture-handler";
 
 const fakecoments =[1,2,3,4,5,6]
-export function BottonItemFeed(){
+export function BottonItemFeed({children}:{children?:ReactElement}){
     const [like,setLike] = useState(false)
     const [mark,setMark] = useState(false)
     const [modalVisible, setModalVisible] = useState(false);
@@ -34,6 +34,7 @@ export function BottonItemFeed(){
                 </Pressable>
                 <App modalVisible={modalVisible} setModalVisible={setModalVisible}/>
             </HStack>
+            {children}
             <Pressable onPress={()=>setModalVisible(!modalVisible)}>
                 <Text size="sm" color="$green400" fontWeight="$normal"> Ver todos os 20.157 comentarios</Text>
             </Pressable>

@@ -1,14 +1,15 @@
 import { Image, KeyboardAvoidingView,  } from "react-native";
-import { Box, Button, ButtonText, HStack, Input, InputField, Pressable, Text, VStack } from "@gluestack-ui/themed";
+import { Box, Button, ButtonText, HStack, Input, InputField, Pressable, Text, Toast, ToastDescription, ToastTitle, VStack, useToast } from "@gluestack-ui/themed";
 import {Logo} from '@/assets/logoSingin.png';
 import { Link, router } from "expo-router";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { AxiosApi } from "@/api";
 import { useDataAgent } from "@/context/UserContext";
-import ImageLogo from '@/assets/BaseOutside.png'
+import ImageLogo from '@/assets/baselogo.png'
+import { AppError } from "@/utils/AppError";
 
 const schema = yup.object({
     email: yup.string().required("Digite um email valido").email("Digite um email valido"),
@@ -22,10 +23,11 @@ export function Singin(){
         <VStack flex={1} alignItems="center" bg="$white" justifyContent="space-between">
 
             <KeyboardAvoidingView behavior="position" contentContainerStyle={{ alignItems:'center',width:"100%"}}>
-                <Image source={ImageLogo} />
+                <Text bold size="2xl" marginVertical={20}>Login</Text>
+                <Image source={ImageLogo} style={{width:200,height:36}} />
                 <VStack width={"90%"} alignItems="center">
                     <Image 
-                            style={{width:250,height:220}}
+                            style={{width:230,height:200}}
                             source={require('@/assets/LoginImage.png')}
                     />
 
@@ -57,6 +59,7 @@ export function Singin(){
 }
 
 function FieldsSingIn(){
+    const toast = useToast()
     const {dataAgent,loading,handleSign}= useDataAgent()
     const { control, handleSubmit, formState: { errors } } = useForm({
     resolver:yupResolver(schema),
@@ -71,7 +74,32 @@ function FieldsSingIn(){
         await handleSign({email,password})
         
     }catch(e){
-        console.log(e)
+        if(e instanceof AppError){
+            const id = "test-toast"
+            const myerror = e.message ==='Error de Conexão'?{title:"Error de Conexão",message:"Houve um erro no servidor, tente novamente mais tarde!"}:{title:"Houve um erro",message:e.message}
+            if (!toast.isActive(id)){
+                console.log(id)
+                toast.show({
+                placement: "top",
+                id:id,
+                render: ({ id ,myerror:e}) => {
+                  return (
+                    <Toast nativeID={'toast'+id} variant="solid" action="success">
+                      <VStack space="xs">
+                        <ToastTitle>{myerror.title}</ToastTitle>
+                        <ToastDescription>
+                        {myerror.message}
+                        
+                        </ToastDescription>
+                      </VStack>
+                    </Toast>
+                  )
+                },
+              })
+            }
+            
+            console.log(e.message)
+        }
 
     }
   }

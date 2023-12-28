@@ -1,27 +1,39 @@
-import { Avatar, AvatarFallbackText, Box, Button, ButtonText, HStack, Text, VStack } from "@gluestack-ui/themed";
-import { Feather } from '@expo/vector-icons';
+import { Avatar, AvatarFallbackText, Box, Button, ButtonText, HStack, Pressable, Text, VStack } from "@gluestack-ui/themed";
+import { Feather,FontAwesome5, FontAwesome } from '@expo/vector-icons';
 import { extendedConfig } from "@/theme/config";
+
 
 
 export function ControlScreen(){
     return(
         <>
             <VStack p={8} space="md" bgColor="white">
+                <MenuControlPanel/>
                 <RequireColab/>
                 <NewSponsors/>
                 <Warnings/>
-                <Balance/>
+                
             </VStack>
         </>
     )
 }
 
+function MenuControlPanel(){
+    return(
+        <HStack alignContent="space-between" justifyContent="space-around" >
+            <FontAwesome5 name="history" size={20} color={extendedConfig.tokens.colors.green400} />
+            <FontAwesome5 name="wallet" size={20} color="gray" />
+            <FontAwesome name="group" size={20} color="gray" />
+            <Feather name="settings" size={20} color="gray" />
+        </HStack>
+    )
+}
 function RequireColab(){
     return(
         <VStack bg="$white" p={16} space="md" borderRadius={12} softShadow="1">
             <HStack justifyContent="space-between">
                 <Text fontWeight="$bold">
-                    Solicitaçoes de colab 
+                    Ultimas solicitaçoes de colab
                 </Text>
                 <Text fontWeight="$bold">
                     2
@@ -29,6 +41,9 @@ function RequireColab(){
             </HStack>
             <CardAgent/>
             <CardAgent/>
+            <Pressable>
+                <Text textAlign="center" color="$green400"> Vet todos colabs</Text>
+            </Pressable>
 
         </VStack>
     )
@@ -60,6 +75,9 @@ function NewSponsors(){
                 <Text fontSize={'$xs'}lineHeight={12} color="$gray400"> unica</Text>
                 </VStack>
             </HStack>
+            <Pressable>
+                <Text textAlign="center" color="$green400"> Ver todos Patriocinadores</Text>
+            </Pressable>
 
         </VStack>
         </>
@@ -73,7 +91,7 @@ function CardAgent(){
             space="md"
             >
             <Avatar 
-                    bgColor="$black"
+                    bgColor="$green700"
                     size="md"
                     borderRadius="$full">
                         <AvatarFallbackText>
@@ -141,27 +159,29 @@ function Warnings(){
                 <VStack bg="$white" p={16} space="md" borderRadius={12} softShadow="1">
             <HStack justifyContent="space-between">
                 <Text fontWeight="$bold">
-                    Avisos
+                    Ultimos Avisos
                 </Text>
                 <Text fontWeight="$bold">
                     5
                 </Text>
             </HStack>
             <VStack>
-                <Text color="$green400"  fontWeight="$bold" fontSize={18}>Comparecer a sa de reuniãos as 9hrs</Text>
+                <Text color="$green400"  fontWeight="$bold" fontSize={"$md"}>Comparecer a sa de reuniãos as 9hrs</Text>
                 <HStack justifyContent="space-between">
-                    <Text fontSize={'$sm'}>@baseoutside</Text>
-                    <Text fontSize={'$sm'}>Por:Lucas Vinicius</Text>
+                    <Text fontSize={'$xs'}>@baseoutside</Text>
+                    <Text fontSize={'$xs'}>Por:Lucas Vinicius</Text>
                 </HStack>
             </VStack>
             <VStack>
-                <Text color="$green400"  fontWeight="$bold" fontSize={18}>Comparecer a sa de reuniãos as 9hrs</Text>
+                <Text color="$green400"  fontWeight="$bold" fontSize={"$md"}>Comparecer a sa de reuniãos as 9hrs</Text>
                 <HStack justifyContent="space-between">
-                    <Text fontSize={'$sm'}>@baseoutside</Text>
-                    <Text fontSize={'$sm'}>Por:Lucas Vinicius</Text>
+                    <Text fontSize={'$xs'}>@baseoutside</Text>
+                    <Text fontSize={'$xs'}>Por:Lucas Vinicius</Text>
                 </HStack>
             </VStack>
-
+            <Pressable>
+                <Text textAlign="center" color="$green400" bold> Ver todos avisos</Text>
+            </Pressable>
         </VStack>
         </>
     )

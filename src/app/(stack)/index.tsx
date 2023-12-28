@@ -16,17 +16,8 @@ export default function Page() {
   const {dataAgent,loading,test,setTest}= useDataAgent()
 
 
-  return (
-
-    
-
-  
-  
+  return (  
       <Singin/>
-
-
-
-
   );
 }
 

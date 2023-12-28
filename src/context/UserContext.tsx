@@ -13,6 +13,7 @@ async function fetchAgentById({agent_id}:{agent_id:string}):Promise<FullAgentDTO
       const agent = result.data  as FullAgentDTO
       return agent
     }catch(e){
+      console.log(' fetch agentPRfile')
       throw e
     }
 }

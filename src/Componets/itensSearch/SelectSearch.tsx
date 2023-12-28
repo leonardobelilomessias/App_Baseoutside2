@@ -29,7 +29,7 @@ export function SelectSearch({itemSelected,setItemSelected}:{itemSelected:string
                             >
                                 {item==="Actions"&& "Ação"}
                                 {item==="Missions"&& "Missão"}
-                                {item==="Tasks"&& "Tasks"}
+                                {item==="Tasks"&& "Tarefas"}
                                 {item==="Agents"&& "Agentes"}
 
 

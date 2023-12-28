@@ -8,9 +8,9 @@ export default function Root() {
     // Setup the auth context and render our layout inside of it.
 
       <AgentDataProvider>
-    <WrapperScreens>
-      <Slot />
-    </WrapperScreens>
+        <WrapperScreens>
+          <Slot />
+        </WrapperScreens>
       </AgentDataProvider>
 
 
