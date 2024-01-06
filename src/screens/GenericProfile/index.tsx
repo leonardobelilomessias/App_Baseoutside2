@@ -3,9 +3,9 @@ import { TopHeaderProfile } from "./TopHeaderProfile";
 import { AvatarProfile } from "./AvatarProfile";
 import { ContentProfile } from "./ContentProfile";
 
-export function Profile(){
+export function GenericProfile(){
     return(
-        <VStack space="sm"  >
+        <VStack space="sm" >
         <TopHeaderProfile/>
         <AvatarProfile/>
         <ContentProfile/>

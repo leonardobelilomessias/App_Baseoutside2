@@ -1,54 +1,21 @@
-import { Avatar, AvatarFallbackText, Box, Button, ButtonText, HStack, Pressable, Text, VStack } from "@gluestack-ui/themed";
+
+import { extendedConfig } from "@/theme/config"
+import { VStack, HStack, Box, Avatar, AvatarFallbackText, ButtonText, Text,Pressable,Button } from "@gluestack-ui/themed"
+import React from "react"
+
 import { Feather,FontAwesome5, FontAwesome } from '@expo/vector-icons';
-import { extendedConfig } from "@/theme/config";
-import { useState } from "react";
-import { ContentControl } from "./ContentControl";
 
 
-
-export function ControlScreen(){
-    const [selectMenu,setSelectMenu] = useState('updates')
+export function UpdateItens(){
     return(
         <>
-            <VStack p={8} space="md" bgColor="white" flex={1}>
-                <MenuControlPanel selectMenu={selectMenu} setSelectMenu={setSelectMenu}/>
-                <ContentControl selectMenu={selectMenu} setSelectMenu={setSelectMenu}/>
-                
-            </VStack>
+                <RequireColab/>
+                <NewSponsors/>
+                <Warnings/>
         </>
     )
 }
 
-function MenuControlPanel({selectMenu,setSelectMenu}:{selectMenu:string,setSelectMenu:(iten:string)=>void}){
-    return(
-        <HStack alignContent="space-between" justifyContent="space-around" borderBottomColor="$gray100" borderBottomWidth={1} paddingBottom={8} >
-            <Pressable onPress={()=>{setSelectMenu('updates')}}  flex={1}>
-                <VStack alignItems="center">
-                    <FontAwesome5 name="history" size={20} color={selectMenu==='updates'?extendedConfig.tokens.colors.green400:extendedConfig.tokens.colors.gray400} />
-                    <Text color={selectMenu==='updates'?extendedConfig.tokens.colors.green400:extendedConfig.tokens.colors.gray400} size="2xs">Recentes</Text>
-                </VStack>
-            </Pressable>
-            <Pressable onPress={()=>{setSelectMenu('community')}}  flex={1}>
-                <VStack alignItems="center">
-                    <FontAwesome name="group" size={20} color={selectMenu==='community'?extendedConfig.tokens.colors.green400:extendedConfig.tokens.colors.gray400} />
-                    <Text color={selectMenu==='community'?extendedConfig.tokens.colors.green400:extendedConfig.tokens.colors.gray400}  size="2xs">Comunidade</Text>
-                </VStack>
-            </Pressable>
-            <Pressable onPress={()=>{setSelectMenu('wallet')}}  flex={1}>
-                 <VStack alignItems="center">
-                    <FontAwesome5  name="wallet" size={20} color={selectMenu==='wallet'?extendedConfig.tokens.colors.green400:extendedConfig.tokens.colors.gray400}  />
-                    <Text alignItems="center" color={selectMenu==='wallet'?extendedConfig.tokens.colors.green400:extendedConfig.tokens.colors.gray400}  size="2xs">Carteira</Text>
-                </VStack>
-            </Pressable>
-            <Pressable onPress={()=>{setSelectMenu('config')}}  flex={1}>
-                <VStack alignItems="center">
-                    <Feather name="settings" size={20} color={selectMenu==='config'?extendedConfig.tokens.colors.green400:extendedConfig.tokens.colors.gray400} />
-                    <Text color={selectMenu==='config'?extendedConfig.tokens.colors.green400:extendedConfig.tokens.colors.gray400}  size="2xs">Config</Text>
-                </VStack>
-            </Pressable>
-        </HStack>
-    )
-}
 function RequireColab(){
     return(
         <VStack bg="$white" p={16} space="md" borderRadius={12}   borderBottomColor="$gray200" borderBottomWidth={1}>

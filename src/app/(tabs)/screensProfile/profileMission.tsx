@@ -12,31 +12,31 @@ import imgDepoiment from '@/assets/vl.jpg'
 export default function ProfileMission(){
     const [isFollower,setIsFollower] = useState(false)
     return(
-        <ScrollView style={{backgroundColor:'white', paddingBottom:12}}>
+        <ScrollView style={{backgroundColor:'white', paddingBottom:12, paddingTop:12}}>
             <VStack flex={1} bg="$white" paddingBottom={24}>
                 <Box   bg="red" height={'$48'} mt={'$4'} position="absolute" >
                 </Box>
-                <HeaderProfileMission/>
+                
                 <Avatar alignSelf="center" size="xl" mt={'$1'}>
+                    <AvatarFallbackText>Base outside</AvatarFallbackText>
                 <AvatarImage source={imgDepoiment}></AvatarImage>
                     
-                    <AvatarFallbackText>Base outside</AvatarFallbackText>
                 </Avatar>
                 <Heading textAlign="center">Base outside</Heading>
                 <Text fontSize={'$sm'} color="$gray400" textAlign="center" lineHeight={'$sm'}>Empreendedor social</Text>
         <HStack space="md" alignSelf="center" marginVertical={8}>
           {
             isFollower?
-            <Button bg="$white" borderColor="$green400" borderWidth={1} borderRadius={'$full'} onPress={()=>{setIsFollower(false)}}>
+            <Button bg="$white" borderColor="$green400" size="sm" borderWidth={1} borderRadius={'$md'} onPress={()=>{setIsFollower(false)}}>
               <ButtonText color="$green400">+ Seguindo</ButtonText>
             </Button>:
-            <Button bg="$green400" borderRadius={'$full'} onPress={()=>{setIsFollower(true)}}>
+            <Button bg="$green400" borderRadius={'$md'}size="sm" onPress={()=>{setIsFollower(true)}}>
               <ButtonText color="$white" >+ Seguir</ButtonText>
             </Button>
           }
 
-            <Button action="secondary" variant="outline" borderRadius={'$full'} onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
-                <ButtonText >$ Sponsor</ButtonText>
+            <Button action="secondary" size="sm" borderWidth={1} variant="outline" borderRadius={'$md'} borderColor="$green400" onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
+                <ButtonText color="$green400">$ Financiar</ButtonText>
             </Button>
         </HStack>
                 <ButtonsMission/>
@@ -71,22 +71,22 @@ function ItemTopHeader({number,name}:{number:string,name:string}){
 function ButtonsMission(){
     return(
         <>
-        <HStack bg="$green400" p={12} mt={4} justifyContent="space-between">
+        <HStack bg="$green500" paddingHorizontal={12} paddingVertical={8} mt={4} justifyContent="space-between"  >
             <Pressable p={4} onPress={()=>{router.push('/screensMission/actionsMission')}} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}  borderColor="$green400" >
-            <SimpleLineIcons name="energy" size={24} color={extendedConfig.tokens.colors.green400} />
-            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Actions</Text>
+            <Text color="white" size="xl" bold>25</Text>
+            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Actions</Text>
             </Pressable>
             <Pressable onPress={()=>{router.push('/screensMission/areasMission')}} p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}   borderColor="$green400" >
-            <SimpleLineIcons name="energy" size={24} color={extendedConfig.tokens.colors.green400} />
-            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Areas</Text>
+            <Text color="white" size="xl" bold>12</Text>
+            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Areas</Text>
             </Pressable>
             <Pressable onPress={()=>{router.push('/screensMission/tasksMission')}} p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}   borderColor="$green400" >
-            <FontAwesome5 name="tasks" size={24} color={extendedConfig.tokens.colors.green400} />
-            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Tarefas</Text>
+            <Text color="white" size="xl" bold>7</Text>
+            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Tarefas</Text>
             </Pressable>
             <Pressable p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}   borderColor="$green400" >
-            <AntDesign name="warning" size={24}  color={extendedConfig.tokens.colors.green400}/>
-            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Avisos</Text>
+            <Text color="white" size="xl" bold>37</Text>
+            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Avisos</Text>
             </Pressable>
 
         </HStack>

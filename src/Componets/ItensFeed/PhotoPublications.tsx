@@ -48,15 +48,15 @@ function CardPublication({publication}:{publication:ContentDTO}){
         <>
         <Box borderBottomColor="$gray300" borderBottomWidth={0}>
             <VStack bg="$white"  p={12}  width={'100%'}  borderColor="$gray200" borderTopWidth={0.35}  borderBottomWidth={0.45} softShadow="1">
-                <Pressable onPress={()=>{router.push('/screens/agentProfile')}}>
+                <Pressable onPress={()=>{router.push('/(tabs)/otherProfile')}}>
 
                 <HStack p={8}  zIndex={1} alignItems="center" space={'md'} justifyContent="space-between">
-                    <HStack alignItems="center" space="md">
+                    <HStack alignItems="center" space="sm">
                     <Avatar bgColor="$green400" size="sm" borderRadius="$full" >
                         <AvatarImage source={{uri:`http://192.168.15.169:3333/Agent/${publication.image_profile?publication.image_profile:'images.jpeg'}`}}/>
                         <AvatarFallbackText>{publication.name}</AvatarFallbackText>
                     </Avatar>
-                    <Text>{publication.name}</Text>
+                    <Text bold size="sm"> {publication.name}</Text>
                     </HStack>
                     <Badge  size="sm" variant="solid" borderRadius="$none" action="success">
                         <BadgeText>New feature</BadgeText>

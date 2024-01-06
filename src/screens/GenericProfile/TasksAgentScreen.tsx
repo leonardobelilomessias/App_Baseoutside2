@@ -1,17 +1,15 @@
-import { Avatar, AvatarFallbackText, Box, HStack, Text, VStack } from "@gluestack-ui/themed";
-import {  SearchCardUser } from "./SearchCard";
-import { FullAgentDTO } from "@/context/context.dtos/Authenticate.dto";
-import { FlatList } from "react-native";
+import { VStack, Box, HStack, Text } from "@gluestack-ui/themed"
+import React from "react"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { FlatList } from "react-native"
 
-type TypeSelectCardRender = {
-    selecCardRender:string
-    content:FullAgentDTO[]
-}
 
-export function TaksContentSearch({selecCardRender,content}:TypeSelectCardRender){
+
+
+export function TaskAgentScreen(){
+    const numbers = [1,2,5,4,8,9,6,10]
     return(
 
         <VStack flex={1} backgroundColor="$white" paddingHorizontal={16} borderRadius={16}  >
@@ -19,9 +17,9 @@ export function TaksContentSearch({selecCardRender,content}:TypeSelectCardRender
         <FlatList
             
             scrollEnabled={true}
-            data={content}
+            data={numbers}
             showsVerticalScrollIndicator={false}
-            keyExtractor={(resultApi)=>resultApi.id
+            keyExtractor={(resultApi)=>resultApi.toString()
             }
             renderItem={({item})=>(
                 <TaskCardSearch name=""/>
@@ -35,7 +33,7 @@ export function TaksContentSearch({selecCardRender,content}:TypeSelectCardRender
 function TaskCardSearch({name}:{name:string}){
     return(
         <>
-        <Box marginBottom={16} flexWrap="wrap">
+        <Box marginBottom={16} flexWrap="wrap" borderBottomWidth={1} borderBottomColor="$gray200" paddingBottom={12}>
             <HStack alignItems="center"
             flexWrap="wrap"
             space="lg" 

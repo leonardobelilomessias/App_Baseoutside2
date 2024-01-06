@@ -27,6 +27,9 @@ export const unstable_settings = {
 const colorSelected = extendedConfig.tokens.colors.green400
 export default function Root(){
     const {setTest,setTokenAgent,handleLogout} = useDataAgent()
+    function verify(){
+        console.log('verifing')
+    }
     return(
 
 
@@ -47,11 +50,11 @@ export default function Root(){
                     color={focused? colorSelected :"black"} />,
                     headerRight:()=>
                     <>
-                    <HStack style={{marginHorizontal:18}}>
+                    <HStack style={{marginHorizontal:18}} space='sm'>
                     <Pressable  onPress={()=>{ handleLogout()}}>
                     <Feather name="heart" style={{marginHorizontal:8}} size={24} color="black" />
                     </Pressable>
-                    <Pressable   onPress={()=>{ handleLogout()}}>
+                    <Pressable   onPress={()=>{ router.push('/(tabs)/screensProfile/chatsAgent')}}>
                     <Feather name="send" style={{marginHorizontal:8}} size={24} color="black" />
                     </Pressable>
                     <Pressable  onPress={()=>{ handleLogout()}}>
@@ -99,13 +102,8 @@ export default function Root(){
             <Tabs.Screen
                 name="profile"
                 options={{
-                    tabBarIcon:({focused,color})=>
-                    <FontAwesome 
-                    name="user-circle-o" 
-                    size={24} 
-                    color={focused? colorSelected :"black"} />,
-                    title:"Perfil",
-                    headerShown:false
+                    tabBarIcon:()=>null,
+                    tabBarButton:()=>null
                 }}
             />
             <Tabs.Screen
@@ -126,14 +124,21 @@ export default function Root(){
             />
  
             <Tabs.Screen
-                name="screens" 
+                name="screensProfile" 
                 options={{
+                    tabBarIcon:({focused,color})=>
+                    <Pressable   width={'$full'} justifyContent='center' alignItems='center' height={'$full'} onPress={()=> router.push('/(tabs)/screensProfile/profile')}>
+                    <FontAwesome 
+                    name="user-circle-o" 
+                    size={24} 
+                    color={focused? colorSelected :"black"} />
+                    </Pressable>
+                    ,
+                    title:"Perfil",
                     headerShown:true,
+                    header:()=>null,
                     headerStatusBarHeight:0,
                     headerStyle:false,
-                    headerTitle:()=>null,
-                    header:()=>null,
-                    tabBarButton:()=>null
                 }}
                 
             />

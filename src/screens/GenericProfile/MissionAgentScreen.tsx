@@ -1,30 +1,44 @@
+
 import { Avatar, AvatarFallbackText, Box, HStack, Text, VStack } from "@gluestack-ui/themed";
-import {  SearchCardUser } from "./SearchCard";
+
 import { FullAgentDTO } from "@/context/context.dtos/Authenticate.dto";
-import { FlatList } from "react-native";
+import { FlatList, Pressable } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Link } from "expo-router";
+import { useEffect, useState } from "react";
+import { AxiosApi } from "@/api";
 
 type TypeSelectCardRender = {
     selecCardRender:string
     content:FullAgentDTO[]
 }
 
-export function TaksContentSearch({selecCardRender,content}:TypeSelectCardRender){
+export function MissionAgentScreen(){
+    const numbers = [1,2,5,4,8,9,6,10]
+    const [content,setContent] = useState({}as FullAgentDTO[])
+    function fetchMissions(){
+        
+    }
+    useEffect(()=>{
+        
+    },[])
     return(
 
         <VStack flex={1} backgroundColor="$white" paddingHorizontal={16} borderRadius={16}  >
 
         <FlatList
-            
+            contentContainerStyle={{paddingVertical:18}}
             scrollEnabled={true}
-            data={content}
+            data={numbers}
             showsVerticalScrollIndicator={false}
-            keyExtractor={(resultApi)=>resultApi.id
+            keyExtractor={(resultApi)=>resultApi.toString()
             }
             renderItem={({item})=>(
-                <TaskCardSearch name=""/>
+                <Link href={'/screensProfile/profileMission'}>
+                <MissionCardSearch name=""/>
+                </Link>
             )}
             />
             </VStack>
@@ -32,29 +46,34 @@ export function TaksContentSearch({selecCardRender,content}:TypeSelectCardRender
     )
 }
 
-function TaskCardSearch({name}:{name:string}){
+function MissionCardSearch({name}:{name:string}){
     return(
         <>
-        <Box marginBottom={16} flexWrap="wrap">
+                <Box marginBottom={16} >
             <HStack alignItems="center"
-            flexWrap="wrap"
-            space="lg" 
+            space="lg"
+            mb={16} 
             >
+            <Avatar 
+                    bgColor="$black"
+                    size="lg"
+                    borderRadius="$full">
+                        <AvatarFallbackText >
+                           missão nova
+                        </AvatarFallbackText>
+                    </Avatar>
                     <VStack >
                         <Text  fontWeight="$bold">
-                           Nova Atividade
+                           Misssão nova
                         </Text>
                         <Text   lineHeight={16} flex={0}    fontSize={'$sm'} color="$gray300">
-                            @Baseoutside
+                            Tecnologia
                         </Text>
                         <Text   lineHeight={16} flex={0}    fontSize={'$sm'} color="$gray300">
-                            Habilidades:Escrita,Portugues
-                        </Text>
-                        <Text   lineHeight={16} flex={0}    fontSize={'$sm'} color="$gray300">
-                            Departamento:Midias Sociais
+                            Belo Horizonte - savassi
                         </Text>
 
-                        <FooterTaskCard/>
+                        <FooterMissionCard/>
                     </VStack>
             </HStack>
         </Box>
@@ -62,26 +81,26 @@ function TaskCardSearch({name}:{name:string}){
     )
 }
 
-function FooterTaskCard(){
+function FooterMissionCard(){
     return(
         <HStack alignContent="center"  flexWrap="wrap">
             <HStack alignContent="center" alignItems="center" justifyContent="center" mr={12}>
                 
             <MaterialCommunityIcons name="lightning-bolt" size={14} color="black" />
             <Text  lineHeight={16}    fontSize={'$xs'} color="$gray500">
-                Criando em 27/08/23 
+                17 Açoes 
             </Text>
             </HStack>
-            <HStack space="xs" alignItems="center" mr={12} flexWrap="wrap" >
+            <HStack space="xs" alignItems="center" mr={12} >
             <FontAwesome name="group" size={12} color="black" />
             <Text  lineHeight={16}    fontSize={'$xs'} color="$gray500">
-                 6 pessoas 
+                 78 Colabs 
             </Text>
             </HStack>
-            <HStack space="xs" alignItems="center" flexWrap="wrap">
+            <HStack space="xs" alignItems="center">
             <FontAwesome5  name="tasks" size={12} color="black" />
             <Text   lineHeight={16}    fontSize={'$xs'} color="$gray500">
-                 Prazo 3 dias
+                33Taks
             </Text>
             </HStack>
 

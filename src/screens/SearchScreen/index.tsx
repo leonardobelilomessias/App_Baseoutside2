@@ -13,6 +13,7 @@ import { Stack } from "expo-router";
 import { MissionContentSearch } from "@/Componets/itensSearch/MissonContentSearch";
 import { ActionContentSearch } from "@/Componets/itensSearch/ActionContentSearch";
 import { TaksContentSearch } from "@/Componets/itensSearch/TaskContentSearch";
+import { InitialSearch } from "@/Componets/itensSearch/InitialSearch";
 
 
 export function SearchScreen(){
@@ -59,12 +60,7 @@ export function SearchScreen(){
         <TaksContentSearch content={resultApi} selecCardRender=""/>
         }
         {!textSearch&&
-        <Box alignItems="center" flex={1} backgroundColor="$white" p={16} borderRadius={16}>
-            <Image  width={100} mt={'$24'} height={110} source={Empty}></Image>
-            <Text size="sm" m={8} mt={18} textAlign="center" color={'$green400'}>
-                Digite no campo de busca para encontrarmos algo 
-                relacionado a sua pesquisa </Text>
-        </Box>
+        <InitialSearch/>
         }
         
         </VStack>

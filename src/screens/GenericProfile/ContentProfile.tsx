@@ -15,12 +15,12 @@ export function ContentProfile(){
     return(
         <>
         <HStack  justifyContent="space-around" marginVertical={2} > 
-        <Pressable onPress={()=>{setSelectContent('info')}} bg= {selectContent==='info'?"$green400":'$white'} flex={1} p={8} borderTopStartRadius={4} borderTopEndRadius={4} borderColor="$gray100" borderWidth={1}>
+        <Pressable onPress={()=>{setSelectContent('info')}} bg= {selectContent==='info'?"$green400":'$white'} flex={1} p={8} borderTopStartRadius={8} borderTopEndRadius={8} borderColor="$gray100" borderWidth={1}>
             <Text size="sm" textAlign="center" color={selectContent==='info'?"$white":'$gray400'} bold={selectContent==='info'} >
                 Geral
             </Text>
         </Pressable>
-        <Pressable onPress={()=>{setSelectContent('exclusive')}} bg={selectContent==='exclusive'?"$green400":'$white'} borderWidth={1} borderColor="$gray100" flex={1} p={8} borderTopStartRadius={4} borderTopEndRadius={4}>
+        <Pressable onPress={()=>{setSelectContent('exclusive')}} bg={selectContent==='exclusive'?"$green400":'$white'} borderWidth={1} borderColor="$gray100" flex={1} p={8} borderTopStartRadius={8} borderTopEndRadius={8}>
             <Text size="sm"  textAlign="center" color={selectContent==='exclusive'?"$white":'$gray400'} bold={selectContent==='exclusive'} >
                 Area exclusiva
             </Text>

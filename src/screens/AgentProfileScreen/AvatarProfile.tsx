@@ -38,7 +38,7 @@ export function AvatarProfile(){
             </Button>
           }
 
-            <Button action="secondary" variant="outline" borderRadius={'$full'} onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
+            <Button action="secondary" variant="outline" borderRadius={'$full'} onPress={()=>{router.push('/(tabs)/screensProfile/sponsorAgent')}}>
                 <ButtonText >$ Sponsor</ButtonText>
             </Button>
         </HStack>

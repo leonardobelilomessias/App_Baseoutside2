@@ -7,13 +7,14 @@ import { extendedConfig } from "@/theme/config";
 import { useDataAgent } from "@/context/UserContext";
 import { AxiosApi } from "@/api";
 import { storageUserSave } from "@/storage/storageUser";
+import { BackHandler } from "react-native";
 
 
 export default function editProfile(){
     const [image, setImage] = useState(null);
     const {tokenAgent, dataAgent} = useDataAgent()
     const [imageProfile,setImageProfile] = useState(`http://192.168.15.169:3333/Agent/${dataAgent.image_profile}`)
-    
+
     const pickImage = async () => {
         // No permissions request is necessary for launching the image library
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -57,9 +58,9 @@ export default function editProfile(){
        
     }
     return(
-        <ScrollView>
+        <ScrollView >
 
-        <VStack alignItems="center" padding={12} space="md">
+        <VStack alignItems="center" padding={12} space="md" bg="white">
         <Avatar size="2xl">
             <AvatarImage 
                         source={{
