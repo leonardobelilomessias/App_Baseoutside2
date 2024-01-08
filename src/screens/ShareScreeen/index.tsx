@@ -5,6 +5,7 @@ import { ScrollView, TextInput } from 'react-native';
 import { extendedConfig } from '@/theme/config';
 import { useState } from 'react';
 import { DailyPost } from '@/Componets/itensShare/DailyPost';
+import { PhotoPublicationScreen } from '../SearchScreen/PhotoPublicationScreen';
 
 
 export  function ShareScreen() {
@@ -14,9 +15,9 @@ export  function ShareScreen() {
 
   return (
 
-<ScrollView >
 
-    <Box p={8} flex={1} bgColor='white'>
+    <VStack p={8} flex={1} bgColor='$white'>
+      <ScrollView contentContainerStyle={{flex:1}} >
       {
         choice==='daily'&&
         
@@ -27,8 +28,12 @@ export  function ShareScreen() {
         choice==='quote'&&
         <Quote/>
       }
-    </Box>
-</ScrollView>
+            {
+        choice==='photo'&&
+        <PhotoPublicationScreen/>
+      }
+      </ScrollView>
+    </VStack>
 
   );
 }

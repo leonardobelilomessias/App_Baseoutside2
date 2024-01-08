@@ -7,23 +7,29 @@ import { extendedConfig } from "@/theme/config";
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ScrollView } from "react-native-gesture-handler";
-import { FlatList } from "react-native";
+import { FlatList, ImageBackground } from "react-native";
 import imgDepoiment from '@/assets/vl.jpg'
 export default function ProfileMission(){
     const [isFollower,setIsFollower] = useState(false)
     return(
-        <ScrollView style={{backgroundColor:'white', paddingBottom:12, paddingTop:12}}>
+        <ScrollView style={{backgroundColor:'white', paddingBottom:12, paddingTop:0}}>
+
             <VStack flex={1} bg="$white" paddingBottom={24}>
-                <Box   bg="red" height={'$48'} mt={'$4'} position="absolute" >
-                </Box>
+   
                 
-                <Avatar alignSelf="center" size="xl" mt={'$1'}>
+           <Box>
+            
+           </Box>
+                <Image source={cover} size="full" flex={1} resizeMode="cover" justifyContent="flex-start" alignItems="flex-start" height={100} position="absolute"/>
+           
+                <Avatar borderWidth={2} borderColor="white"   alignSelf="center" size="xl" mt={'$5'}>
                     <AvatarFallbackText>Base outside</AvatarFallbackText>
                 <AvatarImage source={imgDepoiment}></AvatarImage>
                     
                 </Avatar>
-                <Heading textAlign="center">Base outside</Heading>
-                <Text fontSize={'$sm'} color="$gray400" textAlign="center" lineHeight={'$sm'}>Empreendedor social</Text>
+
+                <Heading textAlign="center" bg="white" >Base outside2</Heading>
+                <Text fontSize={'$sm'} bg="white" color="$gray400" textAlign="center" lineHeight={'$sm'}>Empreendedor social</Text>
         <HStack space="md" alignSelf="center" marginVertical={8}>
           {
             isFollower?

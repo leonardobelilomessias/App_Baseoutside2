@@ -154,6 +154,18 @@ export default function Root(){
                 }}
                 
             />
+            <Tabs.Screen
+                name="photoPublication"  
+                options={{
+                    headerShown:true,
+                    headerStatusBarHeight:0,
+                    headerStyle:false,
+                    headerTitle:()=>null,
+                    header:()=>null,
+                    tabBarButton:()=>null
+                }}
+                
+            />
             
             </Tabs>
             

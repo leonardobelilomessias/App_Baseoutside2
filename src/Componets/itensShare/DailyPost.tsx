@@ -9,6 +9,7 @@ import CreatedPostPng from '@/assets/confirm1.png'
 
 
 
+
 export 
 function DailyPost(){
     const [loadPublisher,setLoadPublisher] = useState(false)
@@ -107,12 +108,12 @@ function StartCreateDailyPost({publisher}:{publisher:()=>void}){
         <Heading color='$green400' marginVertical={32}>Daily Post Criado</Heading>
         <Image source={CreatedPostPng} width={215} height={145} />
         <Text textAlign='center' marginVertical={32} color='$green400' fontSize={'$sm'}>Sua publicação já está disponivel</Text>
-        <Pressable bg="$green400" width={'$1/2'} p={8} borderRadius={'$full'}>
+        <Pressable bg="$green400" width={'$full'} p={8} borderRadius={'$md'}>
             <Text textAlign="center" color="$white" onPress={()=>{handlerFinishedPublication('/dailyPublication')}}>
              Ver Publicação
             </Text>
         </Pressable>
-        <Pressable borderWidth={1} borderColor="$green400" width={'$1/2'} p={8} borderRadius={'$full'} onPress={()=>{handlerFinishedPublication('/')}}>
+        <Pressable borderWidth={1} borderColor="$green400" width={'$full'} p={8} borderRadius={'$md'} onPress={()=>{handlerFinishedPublication('/')}}>
             <Text textAlign="center" color="$green400">
              Voltar para o inicio
             </Text>

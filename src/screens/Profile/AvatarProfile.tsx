@@ -16,7 +16,7 @@ export function AvatarProfile(){
   const imageProfile = `${baseURL}/Agent/${dataAgent.image_profile}`
 
     return(
-        <VStack space="xs"   alignItems="center">
+        <VStack space="xs" bgColor="#F7FDF7"  alignItems="center">
 
         <Avatar size="2xl" borderColor="$gray200" borderWidth={5} >
           <AvatarFallbackText>Leonardo Belilo</AvatarFallbackText>

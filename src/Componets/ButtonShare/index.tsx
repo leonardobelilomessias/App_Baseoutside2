@@ -55,7 +55,7 @@ export function ButtonShare({focused}:{focused:boolean}){
               <ActionsheetItemText>Citação</ActionsheetItemText>
               </HStack>
             </ActionsheetItem>
-            <ActionsheetItem onPress={handleClose}>
+            <ActionsheetItem onPress={()=>{handleShare('/share','photo')}}>
               <HStack alignItems='center'>
               <FontAwesome name="photo" size={16} color="black" />
               <ActionsheetItemText>Foto</ActionsheetItemText>
