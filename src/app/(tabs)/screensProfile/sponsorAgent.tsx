@@ -14,7 +14,7 @@ export default function SponsorAgent(){
 
     return(
         <>
-        <VStack>
+        <VStack flex={1}>
 
         <SponsorScreen/>
 

@@ -10,11 +10,11 @@ export default function profile(){
     return(
             
  
+                <VStack p={8} bgColor="$white" flex={1}>
                 <ScrollView>
-                <VStack p={8} bgColor="$white">
                     <Profile/>
-                </VStack>
                 </ScrollView>
+                </VStack>
               
 
       

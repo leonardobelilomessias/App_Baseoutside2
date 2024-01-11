@@ -1,4 +1,4 @@
-import { HStack, Avatar, AvatarFallbackText, AvatarImage, VStack, Heading, Text, AvatarBadge, Button, ButtonText, Box, Pressable } from "@gluestack-ui/themed";
+import { HStack, Avatar, AvatarFallbackText, AvatarImage, VStack, Heading, Text, AvatarBadge, Button, ButtonText, Box, Pressable, AvatarGroup } from "@gluestack-ui/themed";
 import { router } from "expo-router";
 import { useState } from "react";
 import { FontAwesome } from '@expo/vector-icons';
@@ -16,7 +16,7 @@ export function AvatarProfile(){
   const imageProfile = `${baseURL}/Agent/${dataAgent.image_profile}`
 
     return(
-        <VStack space="xs" bgColor="#F7FDF7"  alignItems="center">
+        <VStack space="xs"  alignItems="center">
 
         <Avatar size="2xl" borderColor="$gray200" borderWidth={5} >
           <AvatarFallbackText>Leonardo Belilo</AvatarFallbackText>
@@ -41,16 +41,16 @@ export function AvatarProfile(){
                         </AvatarBadge>
           
         </Avatar>
-        <VStack>
-          <Heading size="sm" textAlign="center">Leonardo Belilo</Heading>
-          <Text size="sm" textAlign="center" color="$gray500">Empreendedor Social</Text>
-
+        <VStack mb={4}>
+          <Heading size="xl" color="$gray600" lineHeight={'$xl'} textAlign="center">Leonardo Belilo</Heading>
+          <Text size="sm" textAlign="center" fontWeight="$light" lineHeight={'$sm'} color="$gray400">Empreendedor Social</Text>
+             
      
         </VStack>
-        <HStack space="md" marginHorizontal={'$10'}>
+        <HStack space="md" marginHorizontal={'$1'}>
           {
             isFollower?
-            <Button bg="$white" borderColor="$green400" borderWidth={1} borderRadius={8} size="sm" onPress={()=>{setIsFollower(false)}}>
+            <Button bgColor="#F7FDF7"  borderColor="$green400" borderWidth={1} borderRadius={8} size="sm" onPress={()=>{setIsFollower(false)}}>
               <ButtonText color="$green400"> Seguindo</ButtonText>
             </Button>:
             <Button bg="$green400" size="sm" borderRadius={8} onPress={()=>{setIsFollower(true)}}>
@@ -58,8 +58,8 @@ export function AvatarProfile(){
             </Button>
           }
 
-            <Button flex={1} action="secondary" variant="outline" borderColor="$green300" size="sm" borderRadius={8} onPress={()=>{router.push('/(tabs)/screensProfile/sponsorAgent')}}>
-                <ButtonText color="$green400" > $50 Assinar </ButtonText>
+            <Button flex={4} action="secondary" variant="outline" borderColor="$green300" size="sm" borderRadius={8} onPress={()=>{router.push('/(tabs)/screensProfile/sponsorAgent')}}>
+                <ButtonText color="$green400" >  Patriocinar Mensalmente </ButtonText>
             </Button>
 
         </HStack>
@@ -74,9 +74,59 @@ export function AvatarProfile(){
           <Box alignItems="center" justifyContent="center"  p={12} borderWidth={1}  borderRadius={'$full'} borderColor={extendedConfig.tokens.colors.green300}>
              <FontAwesome name="link" size={16} color={extendedConfig.tokens.colors.green300} />
           </Box>
+          
         </VStack>
         
+
       </VStack>
       
     )
+}
+
+
+function GropsPeople(){
+  const avatars = [
+      { src: 'https://example.com.jpg', alt: 'Sandeep Srivastva' , color:'$emerald600' },
+      { src: 'https://example.com.jpg', alt: 'Arjun Kapoor', color:'$cyan600' },
+      { src: 'https://example.com.jpg', alt: 'Ritik Sharma ', color:'$indigo600' },
+      { src: 'https://example.com.jpg', alt: 'Akhil Sharma', color:'$gray600' },
+      { src: 'https://example.com.jpg', alt: 'Rahul Sharma ', color:'$red400' },
+  ];
+  const extraAvatars = avatars.slice(3);
+  const remainingCount = extraAvatars.length;
+  return (
+    <AvatarGroup>
+      <RenderAvatar/>
+
+      <Avatar size="xs" borderColor="$white" borderWidth="$2" bg="$gray600" 
+      $dark-borderColor="$black">
+          <AvatarFallbackText >{"+ " + remainingCount + ""}</AvatarFallbackText>
+      </Avatar>
+      <Text size="sm">Pessoas estão Acompanhando</Text>
+    </AvatarGroup>
+  );
+}
+
+function RenderAvatar(){
+  const avatars = [
+    { src: 'https://example.com.jpg', alt: 'Sandeep Srivastva' , color:'$emerald600' },
+    { src: 'https://example.com.jpg', alt: 'Arjun Kapoor', color:'$cyan600' },
+    { src: 'https://example.com.jpg', alt: 'Ritik Sharma ', color:'$indigo600' },
+    { src: 'https://example.com.jpg', alt: 'Akhil Sharma', color:'$gray600' },
+    { src: 'https://example.com.jpg', alt: 'Rahul Sharma ', color:'$red400' },
+];
+const extraAvatars = avatars.slice(3);
+const remainingCount = extraAvatars.length;
+  return(
+      <>
+        {
+        avatars.slice(0, 3).map((avatar, index)=>(
+          <Avatar   size="xs" borderColor="$white" borderWidth="$2" key={index} bgColor={avatar.color} $dark-borderColor="$black">
+          <AvatarFallbackText>{avatar.alt}</AvatarFallbackText>
+          <AvatarImage  source={{uri:avatar.src}}/>
+        </Avatar>
+        ))
+      }
+      </>
+  )
 }

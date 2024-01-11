@@ -1,4 +1,4 @@
-import { Box, Button, ButtonText, Heading, Image, Input,  InputField,  Text, VStack } from "@gluestack-ui/themed";
+import { Box, Button, ButtonText, Center, Heading, Image, Input,  InputField,  Spinner,  Text, VStack } from "@gluestack-ui/themed";
 import { MaterialIcons } from '@expo/vector-icons';
 import { extendedConfig } from "@/theme/config";
 import { router, useFocusEffect } from "expo-router";
@@ -59,7 +59,6 @@ export function PhotoPublicationScreen(){
         formPhoto.append('description',description)
         formPhoto.append('type',"photo")
         formPhoto.append('id_agent',dataAgent.id)
-        console.log(dataImage)
 
         let config = {
             headers: {
@@ -71,7 +70,7 @@ export function PhotoPublicationScreen(){
 
             setLoad(true)
             const responseEditimage = await  AxiosApi.post(`/agent/photoPublication`,formPhoto,config)
-            console.log(responseEditimage)
+
             setDataPublication(responseEditimage.data)
             setStatePublication('created')
          //    const userUpdate = dataAgent
@@ -83,7 +82,7 @@ export function PhotoPublicationScreen(){
         } finally{
             setLoad(false)
         }
-     console.log(dataImage)
+     
     }
     function handleShare(publication_id:string){
         router.push({ pathname: '/(tabs)/photoPublication', params: { publication_id:publication_id } })
@@ -91,6 +90,8 @@ export function PhotoPublicationScreen(){
       }
     return(
         <VStack  alignItems="center" height={'$full'} space="md"  flex={1}>
+            {
+            !!load? <CreatingPublication/>:
             <ScrollView>
 
             {
@@ -142,18 +143,16 @@ export function PhotoPublicationScreen(){
                 </KeyboardAvoidingView>
              </>  }
             </ScrollView>
+            }
         </VStack>
     )
 }
 
-function PublicationCreated(){
+function CreatingPublication(){
     return(
-        <>
-        <Button>
-            <ButtonText>
-                Ver Publicação
-            </ButtonText>
-        </Button>
-        </>
+        <Center flex={1}>
+            <Spinner size={'large'} color={'$green300'}/>
+            <Text bold> Criando Publicação</Text>
+        </Center>
     )
 }

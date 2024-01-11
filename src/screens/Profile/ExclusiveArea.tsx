@@ -6,7 +6,7 @@ import { extendedConfig } from "@/theme/config";
 export function ExclusiveArea(){
     return(
         <VStack space="md">
-            <ExclusicePhotos/>
+           
             <ExclusiveGroups/>
         
         </VStack>
@@ -45,31 +45,7 @@ function ExclusiveGroups(){
     )
 }
 
-function ExclusicePhotos(){
-    return(
-        <VStack marginVertical={2} space="sm" borderBottomWidth={1} borderBottomColor="$gray200" paddingBottom={10}>
-            <HStack space="xs" alignItems="center">
 
-                <Text fontWeight="$medium">Fotos e Videos</Text>
-            </HStack>
-            <HStack space="xs" alignItems="center" justifyContent="center">
-                <Image   source={ImagePhoto} size="lg"/>
-                <Image   source={ImagePhoto} size="lg"/>
-                <Image   source={ImagePhoto} size="lg"/>
-            </HStack>
-            <HStack space="xs" alignItems="center" justifyContent="center">
-                <Image   source={ImagePhoto} size="lg"/>
-                <Image   source={ImagePhoto} size="lg"/>
-                <ImageBackground  style={{alignContent:'center', justifyContent:'center',alignItems:'center'}}  source={ImagePhoto} >
-                <Image   source={ImagePhoto} size="lg"/>
-                <Box bg="white" opacity={0.78} flex={1} width={110} height={100} zIndex={99} position="absolute"></Box>
-                    <Text size="sm" padding={8}  position="absolute" zIndex={100} textAlign="center" color="$green500" bold>Ver todas fotos</Text>
-                </ImageBackground>
-                
-            </HStack>
-        </VStack>
-    )
-}
 
 function ExclusiveVideos(){
     return(

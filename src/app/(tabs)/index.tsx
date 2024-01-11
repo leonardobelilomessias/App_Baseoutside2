@@ -12,6 +12,7 @@ export default function Home() {
   return (
 
     <VStack p={8} bgColor='$white'>
+      <Button title='go to' onPress={()=>{router.push('/(tabs)/photoPublication')}}></Button>
       <Feed/>
     </VStack>
 

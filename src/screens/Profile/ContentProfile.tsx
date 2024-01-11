@@ -1,5 +1,5 @@
 import { BottonItemFeed } from "@/Componets/BottonItemFeed";
-import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Image, InfoIcon, Pressable, Text, VStack } from "@gluestack-ui/themed";
+import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Image, InfoIcon, Pressable, Progress, ProgressFilledTrack, Text, VStack } from "@gluestack-ui/themed";
 import { FlatList, ImageBackground } from "react-native";
 import ImageVideo from '@/assets/develop.jpg'
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -8,21 +8,30 @@ import { useState } from "react";
 import { ExclusiveArea } from "./ExclusiveArea";
 import { FontAwesome } from '@expo/vector-icons';
 import ImageTeaser from '@/assets/develop.jpg'
+import { MediaContainer } from "@/Componets/MediaContainer";
 
 export function ContentProfile(){
     const [selectContent,setSelectContent] = useState('info')
 
     return(
         <>
+
         <HStack  justifyContent="space-around" marginVertical={2} > 
         <Pressable onPress={()=>{setSelectContent('info')}} bg= {selectContent==='info'?"$green400":'$white'} flex={1} p={8} borderTopStartRadius={4} borderTopEndRadius={4} borderColor="$gray100" borderWidth={1}>
+            
             <Text size="sm" textAlign="center" color={selectContent==='info'?"$white":'$gray400'} bold={selectContent==='info'} >
                 Geral
             </Text>
         </Pressable>
+        <Pressable onPress={()=>{setSelectContent('media')}} bg={selectContent==='media'?"$green400":'$white'} borderWidth={1} borderColor="$gray100" flex={1} p={8} borderTopStartRadius={4} borderTopEndRadius={4}>
+            
+            <Text size="sm"  textAlign="center" color={selectContent==='media'?"$white":'$gray400'} bold={selectContent==='midia'} >
+                Midias
+            </Text>
+        </Pressable>
         <Pressable onPress={()=>{setSelectContent('exclusive')}} bg={selectContent==='exclusive'?"$green400":'$white'} borderWidth={1} borderColor="$gray100" flex={1} p={8} borderTopStartRadius={4} borderTopEndRadius={4}>
             <Text size="sm"  textAlign="center" color={selectContent==='exclusive'?"$white":'$gray400'} bold={selectContent==='exclusive'} >
-                Area exclusiva
+                Grupos
             </Text>
         </Pressable>
         </HStack>
@@ -31,6 +40,9 @@ export function ContentProfile(){
         }
         {
             selectContent==='exclusive'&&<ExclusiveArea/>
+        }
+                {
+            selectContent==='media'&&<MediaContainer/>
         }
         </>
     )
@@ -47,9 +59,16 @@ function ContentInfo(){
                     projetos em curso e mais de 2 mil jovens 
                     alcançados.
                     </Text>
-
+                <Pressable borderWidth={1} p={4} marginVertical={4} borderColor="$green400" alignItems="center" borderRadius={'$md'}>
+                    <Text fontWeight="$medium" size="sm" color="$green400"> Ver Apresentação</Text>
+                </Pressable>
                     
                 </VStack>
+                <Teasers/>
+                <Skills/>
+                <Interests/>
+                <Depoiments/>
+                <Transparance/>
                 <Quote/>
                 <DailyPost/>
                 <VidePublication/>
@@ -60,8 +79,8 @@ function ContentInfo(){
  function Teasers(){
     const itens = ['item1','item2', 'item3', 'item4', 'item5']
     return(
-        <>
-        <Text fontWeight="$bold" marginVertical={8}>
+        <VStack space="md" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32} >
+        <Text fontWeight="$bold" >
             Campanhas
         </Text>
         <FlatList 
@@ -69,23 +88,29 @@ function ContentInfo(){
         horizontal
         data={itens}
         renderItem={(itens)=>(
-            <VStack alignContent="center" justifyContent="center" alignItems="center" width={100}marginRight={8}  >
-            <Pressable key={itens.item} width={100}  borderRadius={'$lg'} height={100} bgColor="$green200" >
+            <VStack alignContent="center" justifyContent="center" alignItems="center" width={130}marginRight={8}  >
+            <Pressable key={itens.item} width={130}  borderRadius={'$lg'} height={130} bgColor="$green200" >
                 <Image source={ImageTeaser} size="full" borderRadius={10}    />
             </Pressable>
-                <Text size="xs" lineHeight={'$2xs'} flexWrap="wrap" textAlign="center" >Criação de nova sede </Text>
+                <Text size="xs" lineHeight={'$2xs'} flexWrap="wrap" textAlign="center"  fontWeight="$medium">Criação de nova sede </Text>
+                <VStack space="xs">
+
+                <Progress value={55} w={120} h="$1">
+                    <ProgressFilledTrack h="$1" bgColor="$green500" />
+                </Progress>
+                </VStack>
             </VStack>
         )}
         >
         
         </FlatList>
-        </>
+        </VStack>
     )
  }
 function Skills(){
     return(
         <>
-                 <VStack space="md" >
+                 <VStack space="md" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32} >
                     <Text fontWeight="$bold">Interesses</Text>
                     <Box>
                         <HStack flexWrap="wrap">
@@ -107,7 +132,7 @@ function Skills(){
 function Interests(){
     return(
         <>
-                 <VStack space="md" >
+                 <VStack space="md" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32} >
                     <Text fontWeight="$bold">Habilidades</Text>
                     <Box>
                         <HStack flexWrap="wrap">
@@ -129,7 +154,7 @@ function Interests(){
 function Transparance(){
     return(
         <>
-            <VStack>
+            <VStack borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32}>
                 <Text marginVertical={12} fontWeight="$bold">Transparencia</Text>
                 <HStack justifyContent="space-between">
                     <Text fontSize={'$sm'} color="$gray400">Subexistenica</Text>
@@ -160,7 +185,7 @@ function Depoiments(){
 
 ]
     return(
-        <>
+        <VStack borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32}>
         <Text marginBottom={12} fontWeight="$bold">Depoimentos</Text>
         <FlatList 
         showsHorizontalScrollIndicator={false}
@@ -178,7 +203,7 @@ function Depoiments(){
             </VStack>
         )}
         />
-        </>
+        </VStack>
     )
 }
 function Quote(){
