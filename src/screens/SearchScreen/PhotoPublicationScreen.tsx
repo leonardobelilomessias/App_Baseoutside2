@@ -110,7 +110,7 @@ export function PhotoPublicationScreen(){
                 :
                 <>
             <Heading>Publicar Foto</Heading>
-            <Box alignContent="center"  justifyContent="center" alignItems="center" borderWidth={!!image?0:3} borderStyle="dashed" borderColor="$gray300" width={'$80'} height={'$80'} >
+            <Box alignContent="center"  justifyContent="center" alignItems="center" borderWidth={!!image?0:0} borderStyle="dashed" bg="$gray100" borderColor="$gray300" width={'$80'} height={'$80'} >
                 {
                     !!image?
                     <Image source={{uri:image}}size="full" />

@@ -7,12 +7,15 @@ import { Profile } from '@/screens/Profile';
 import { AgentDataProvider, useDataAgent } from '@/context/UserContext';
 import { ScrollView } from 'react-native-gesture-handler';
 import Page from './(stack)';
+import Home from './(tabs)';
+import { router, useNavigation } from 'expo-router';
 
 export default function Index() {
+
  const {setTest} = useDataAgent()
   return (
 <WrapperScreens >
-    <Page/>    
+   <></>
 </WrapperScreens>
 
   );

@@ -74,8 +74,8 @@ const App = ({modalVisible,setModalVisible}:{modalVisible:boolean,setModalVisibl
             </VStack>
             </Pressable>
 
-            <VStack width={'100%'}  borderTopStartRadius={50} borderTopEndRadius={50} borderWidth={1} borderColor="$green100" hardShadow="1"  height={'80%'} position="absolute" bottom={0}  bg="$white" padding={20}>
-                <Text textAlign="center" fontWeight="$bold" color="$green400" p={16}>Comentários</Text>
+            <VStack width={'100%'}  borderTopStartRadius={16} borderTopEndRadius={16} borderWidth={1} borderColor="$green100" hardShadow="1"  height={'80%'} position="absolute" bottom={0}  bg="$white" padding={20}>
+                <Text textAlign="center" fontWeight="$medium" size="sm" color="$green400" p={8}>Comentários</Text>
 
                 <FlatList contentContainerStyle={{paddingBottom:46}} showsVerticalScrollIndicator={false} data={fakecoments} renderItem={(fakecoments)=>(
                     <Commentary key={fakecoments.item}/>

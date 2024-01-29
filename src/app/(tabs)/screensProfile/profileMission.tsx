@@ -86,7 +86,7 @@ function ButtonsMission(){
             <Text color="white" size="xl" bold>12</Text>
             <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Areas</Text>
             </Pressable>
-            <Pressable onPress={()=>{router.push('/screensMission/tasksMission')}} p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}   borderColor="$green400" >
+            <Pressable onPress={()=>{router.push('/screensProfile/tasksMission')}} p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}   borderColor="$green400" >
             <Text color="white" size="xl" bold>7</Text>
             <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Tarefas</Text>
             </Pressable>

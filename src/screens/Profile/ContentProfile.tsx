@@ -1,5 +1,5 @@
 import { BottonItemFeed } from "@/Componets/BottonItemFeed";
-import { Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Image, InfoIcon, Pressable, Progress, ProgressFilledTrack, Text, VStack } from "@gluestack-ui/themed";
+import { Avatar, AvatarFallbackText, AvatarGroup, AvatarImage, Badge, BadgeIcon, BadgeText, Box, Button, ButtonText, GlobeIcon, HStack, Image, InfoIcon, Pressable, Progress, ProgressFilledTrack, Text, VStack } from "@gluestack-ui/themed";
 import { FlatList, ImageBackground } from "react-native";
 import ImageVideo from '@/assets/develop.jpg'
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -9,6 +9,7 @@ import { ExclusiveArea } from "./ExclusiveArea";
 import { FontAwesome } from '@expo/vector-icons';
 import ImageTeaser from '@/assets/develop.jpg'
 import { MediaContainer } from "@/Componets/MediaContainer";
+import { router } from "expo-router";
 
 export function ContentProfile(){
     const [selectContent,setSelectContent] = useState('info')
@@ -51,29 +52,34 @@ function ContentInfo(){
     return(
         <>
          <VStack borderRadius={"$lg"} bgColor="$white" space="xl" p={8}>
-                <VStack  padding={10} borderRadius={'$md'}  borderBottomColor="$gray200" borderBottomWidth={1}>
+                <VStack  padding={0} borderRadius={'$md'}  borderBottomColor="$gray200" borderBottomWidth={1}>
                     <Text fontWeight="$bold">Sobre</Text>
                     <Text fontSize={'$sm'}>
-                    Empreendedor social  a 5 anos na 
-                    área de desenvolvimento social. Com 2 
-                    projetos em curso e mais de 2 mil jovens 
-                    alcançados.
+                    Empreendedor na área de desenvolvimento de tecnologias de apoio de agentes de transformações sociais missionarios e evagelistas. Com 2 
+                    projetos em curso.
                     </Text>
+            <GroupsPeople description="+300 Pessoas estão Patriocinado" name="leonardo" />
                 <Pressable borderWidth={1} p={4} marginVertical={4} borderColor="$green400" alignItems="center" borderRadius={'$md'}>
                     <Text fontWeight="$medium" size="sm" color="$green400"> Ver Apresentação</Text>
                 </Pressable>
-                    
                 </VStack>
                 <Teasers/>
                 <Skills/>
                 <Interests/>
                 <Depoiments/>
-                <Transparance/>
+                <Publications/>
+            </VStack>
+        </>
+    )
+}
+function Publications(){
+    return(
+        <VStack space="md">
+            <Text bold marginBottom={24}>Timeline</Text>
                 <Quote/>
                 <DailyPost/>
                 <VidePublication/>
-            </VStack>
-        </>
+        </VStack>
     )
 }
  function Teasers(){
@@ -81,7 +87,7 @@ function ContentInfo(){
     return(
         <VStack space="md" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32} >
         <Text fontWeight="$bold" >
-            Campanhas
+            Objetivos
         </Text>
         <FlatList 
         showsHorizontalScrollIndicator={false}
@@ -110,15 +116,15 @@ function ContentInfo(){
 function Skills(){
     return(
         <>
-                 <VStack space="md" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32} >
+                 <VStack space="xs" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={24} >
                     <Text fontWeight="$bold">Interesses</Text>
                     <Box>
                         <HStack flexWrap="wrap">
 
                     {
                         skillsProfile.map((skill)=>(
-                            <Badge sx={{borderRadius:8}} m={4} size="sm" variant="solid" key={skill} borderRadius="$none" action="success">
-                            <BadgeText>{skill}</BadgeText>
+                            <Badge sx={{borderRadius:8}} m={2} size="sm" variant="solid" key={skill} borderRadius="$none" action="success">
+                            <BadgeText >{skill}</BadgeText>
                             </Badge>
                         ))
                     }
@@ -132,7 +138,7 @@ function Skills(){
 function Interests(){
     return(
         <>
-                 <VStack space="md" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32} >
+                 <VStack space="xs" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={24} >
                     <Text fontWeight="$bold">Habilidades</Text>
                     <Box>
                         <HStack flexWrap="wrap">
@@ -192,12 +198,17 @@ function Depoiments(){
         horizontal
         data={depoiments}
         renderItem={(depoiment)=>(
-            <VStack borderColor="$gray200" borderRadius={8} width={260} borderWidth={1} key={depoiment.item.id} marginRight={8} p={12}>
+            <VStack borderColor="$gray200" borderRadius={8} height={150} width={260} borderWidth={1} key={depoiment.item.id} marginRight={8} p={12}>
             <HStack alignItems="center">
-                <Box width={'$8'} borderRadius={'$full'} height={'$8'} bg="$green300" marginRight={8}></Box>
+                
+                <Avatar size="sm" bgColor="$green400" marginRight={8}>
+                    <AvatarFallbackText >name user</AvatarFallbackText>
+                    <AvatarImage source={ImageVideo}></AvatarImage>
+
+                </Avatar>
                 <Text fontWeight="$bold">{depoiment.item.name}</Text>
             </HStack>
-            <Text size="sm">
+            <Text size="sm" fontWeight="$light">
                 {depoiment.item.content}
             </Text>
             </VStack>
@@ -224,7 +235,7 @@ function Quote(){
 }
 function DailyPost(){
     return(
-        <VStack space="xl" paddingVertical={18}  borderBottomColor="$gray100" borderBottomWidth={1}>
+        <VStack space="xl" paddingBottom={32}  borderBottomColor="$gray200" borderBottomWidth={1} >
             <HStack  space="xl" p={8} alignContent="center" alignItems="center">
                 <VStack >
                     <Text color="$gray400" fontWeight="$bold" fontSize={'$lg'} >
@@ -232,15 +243,15 @@ function DailyPost(){
                     </Text>
                     <Text color="$gray400" fontWeight="$bold" size="xs" lineHeight={12} >out</Text>
                 </VStack>
-            <Text  fontWeight="$bold" color="$green400" textAlign="center" >Dias de lutas dias de gloria</Text>
+            <Text  fontWeight="$bold" color="$green400" textAlign="center" size="xl" >Dias de lutas dias de gloria</Text>
             </HStack>
             <Text>
             Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens...
             </Text>
-            <Pressable>
-                <Text textAlign="center" fontWeight="bold" color="$green400">Ver Completo</Text>
-            </Pressable>
             <BottonItemFeed/>
+            <Pressable onPress={()=>{router.push('/(tabs)/screensProfile/dailyPublication')}}>
+                <Text textAlign="center" fontWeight="bold" color="$green400" borderWidth={1} borderColor="$green400" padding={4} borderRadius={'$md'}>Ver Completo</Text>
+            </Pressable>
         </VStack>
     )
 }
@@ -262,3 +273,52 @@ function VidePublication(){
 }
 
 const skillsProfile = ['tecnologia','liderança','gestão','desenvolvimento de projetos']
+
+
+function GroupsPeople({name,description}:{name:string,description:string}){
+  
+    const avatars = [
+        { src: 'https://example.com.jpg', alt: 'Sandeep Srivastva' , color:'$emerald600' },
+        { src: 'https://example.com.jpg', alt: 'Arjun Kapoor', color:'$cyan600' },
+        { src: 'https://example.com.jpg', alt: 'Ritik Sharma ', color:'$indigo600' },
+        { src: 'https://example.com.jpg', alt: 'Akhil Sharma', color:'$gray600' },
+        { src: 'https://example.com.jpg', alt: 'Rahul Sharma ', color:'$red400' },
+    ];
+    const extraAvatars = avatars.slice(3);
+    const remainingCount = extraAvatars.length;
+    return (
+      <AvatarGroup alignItems="center"  paddingHorizontal={12}  justifyContent="flex-end" >
+        <RenderAvatar/>
+  
+        <Avatar size="xs" borderColor="$white" borderWidth="$2" bg="$gray600" 
+        $dark-borderColor="$black">
+            <AvatarFallbackText >{"+ " + remainingCount + ""}</AvatarFallbackText>
+        </Avatar>
+        <Text size="2xs" color="$gray400" >{description} {name}</Text>
+      </AvatarGroup>
+    );
+  }
+  
+  function RenderAvatar(){
+    const avatars = [
+      { src: 'https://example.com.jpg', alt: 'Sandeep Srivastva' , color:'$emerald600' },
+      { src: 'https://example.com.jpg', alt: 'Arjun Kapoor', color:'$cyan600' },
+      { src: 'https://example.com.jpg', alt: 'Ritik Sharma ', color:'$indigo600' },
+      { src: 'https://example.com.jpg', alt: 'Akhil Sharma', color:'$gray600' },
+      { src: 'https://example.com.jpg', alt: 'Rahul Sharma ', color:'$red400' },
+  ];
+  const extraAvatars = avatars.slice(3);
+  const remainingCount = extraAvatars.length;
+    return(
+        <>
+          {
+          avatars.slice(0, 3).map((avatar, index)=>(
+            <Avatar   size="xs" borderColor="$white" borderWidth="$2" key={index} bgColor={avatar.color} $dark-borderColor="$black">
+            <AvatarFallbackText>{avatar.alt}</AvatarFallbackText>
+            <AvatarImage  source={{uri:avatar.src}}/>
+          </Avatar>
+          ))
+        }
+        </>
+    )
+  }

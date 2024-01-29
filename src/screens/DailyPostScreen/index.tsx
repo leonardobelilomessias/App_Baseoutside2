@@ -11,11 +11,15 @@ export function DailyPostScreen(){
             <Text fontWeight="$extrabold" color="$gray400" textAlign="center" >
                 24
             </Text>
-            <Text fontWeight="$medium" textAlign="center" color="$gray400" marginBottom={12}>Novembro</Text>
-        <Heading color="$green400"  marginBottom={12} textAlign="center">
+            <Text borderBottomWidth={1} borderColor="$gray200" fontWeight="$medium" textAlign="center" color="$gray400" marginBottom={12}>
+                Novembro
+                {'\n'}
+                <Text size="2xs" color="$gray400"> segunda feira 09:30</Text>
+            </Text>
+        <Heading color="$green400" size="xl" marginBottom={12} textAlign="center">
               Dia de Desafios, dia de Vitorias
         </Heading>
-        <Text marginBottom={24}>
+        <Text marginBottom={24} fontWeight="$light">
             {textDaily}
         </Text>
         <Text marginBottom={20} size="sm" color="$green400" fontWeight="$bold" italic>@leonardobelilo</Text>

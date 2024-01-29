@@ -7,42 +7,51 @@ import { extendedConfig } from "@/theme/config";
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ScrollView } from "react-native-gesture-handler";
-import { FlatList } from "react-native";
+import { FlatList, ImageBackground } from "react-native";
 import imgDepoiment from '@/assets/vl.jpg'
 export default function ProfileMission(){
     const [isFollower,setIsFollower] = useState(false)
     return(
-        <ScrollView style={{backgroundColor:'white', paddingBottom:12}}>
+        <ScrollView style={{backgroundColor:'white', paddingBottom:12, paddingTop:0}}>
+   
+                <Button bgColor="$green500" onPress={()=>{ router.push('/(tabs)/screensMission/areasMission')}}>
+                    <ButtonText> ir  para areas</ButtonText>
+                </Button>
+
             <VStack flex={1} bg="$white" paddingBottom={24}>
-                <Box   bg="red" height={'$48'} mt={'$4'} position="absolute" >
-                </Box>
-                <HeaderProfileMission/>
-                <Avatar alignSelf="center" size="xl" mt={'$1'}>
+           <Box>
+            
+           </Box>
+                <Image source={cover} size="full" flex={1} resizeMode="cover" justifyContent="flex-start" alignItems="flex-start" height={100} position="absolute"/>
+           
+                <Avatar borderWidth={2} borderColor="white"   alignSelf="center" size="xl" mt={'$5'}>
+                    <AvatarFallbackText>Base outside</AvatarFallbackText>
                 <AvatarImage source={imgDepoiment}></AvatarImage>
                     
-                    <AvatarFallbackText>Base outside</AvatarFallbackText>
                 </Avatar>
-                <Heading textAlign="center">Base outside</Heading>
-                <Text fontSize={'$sm'} color="$gray400" textAlign="center" lineHeight={'$sm'}>Empreendedor social</Text>
+
+                <Heading textAlign="center" bg="white" >Base outside1</Heading>
+                <Text fontSize={'$sm'} bg="white" color="$gray400" textAlign="center" lineHeight={'$sm'}>
+                    Infraestrutura e desenvolvimento
+                </Text>
         <HStack space="md" alignSelf="center" marginVertical={8}>
           {
             isFollower?
-            <Button bg="$white" borderColor="$green400" borderWidth={1} borderRadius={'$full'} onPress={()=>{setIsFollower(false)}}>
+            <Button bg="$white" borderColor="$green400" size="sm" borderWidth={1} borderRadius={'$md'} onPress={()=>{setIsFollower(false)}}>
               <ButtonText color="$green400">+ Seguindo</ButtonText>
             </Button>:
-            <Button bg="$green400" borderRadius={'$full'} onPress={()=>{setIsFollower(true)}}>
+            <Button bg="$green400" borderRadius={'$md'}size="sm" onPress={()=>{setIsFollower(true)}}>
               <ButtonText color="$white" >+ Seguir</ButtonText>
             </Button>
           }
 
-            <Button action="secondary" variant="outline" borderRadius={'$full'} onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
-                <ButtonText >$ Sponsor</ButtonText>
+            <Button action="secondary" size="sm" borderWidth={1} variant="outline" borderRadius={'$md'} borderColor="$green400" onPress={()=>{router.push('/(tabs)/screens/sponsorAgent')}}>
+                <ButtonText color="$green400">$ Financiar</ButtonText>
             </Button>
         </HStack>
                 <ButtonsMission/>
                 <InfoMission/>
                 <Depoments/>
-                <ActivitInfo/>
             </VStack>
         </ScrollView>
     )
@@ -71,22 +80,22 @@ function ItemTopHeader({number,name}:{number:string,name:string}){
 function ButtonsMission(){
     return(
         <>
-        <HStack bg="$green400" p={12} mt={4} justifyContent="space-between">
+        <HStack bg="$green500" paddingHorizontal={12} paddingVertical={8} mt={4} justifyContent="space-between"  >
             <Pressable p={4} onPress={()=>{router.push('/screensMission/actionsMission')}} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}  borderColor="$green400" >
-            <SimpleLineIcons name="energy" size={24} color={extendedConfig.tokens.colors.green400} />
-            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Actions</Text>
+            <Text color="white" size="xl" bold>25</Text>
+            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Actions</Text>
             </Pressable>
             <Pressable onPress={()=>{router.push('/screensMission/areasMission')}} p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}   borderColor="$green400" >
-            <SimpleLineIcons name="energy" size={24} color={extendedConfig.tokens.colors.green400} />
-            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Areas</Text>
+            <Text color="white" size="xl" bold>12</Text>
+            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Areas</Text>
             </Pressable>
-            <Pressable onPress={()=>{router.push('/screensMission/tasksMission')}} p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}   borderColor="$green400" >
-            <FontAwesome5 name="tasks" size={24} color={extendedConfig.tokens.colors.green400} />
-            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Tarefas</Text>
+            <Pressable onPress={()=>{router.push('/screensProfile/tasksMission')}} p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}   borderColor="$green400" >
+            <Text color="white" size="xl" bold>7</Text>
+            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Tarefas</Text>
             </Pressable>
             <Pressable p={4} alignContent="center" alignItems="center" width={60} height={60} borderRadius={8}   borderColor="$green400" >
-            <AntDesign name="warning" size={24}  color={extendedConfig.tokens.colors.green400}/>
-            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.green400}>Avisos</Text>
+            <Text color="white" size="xl" bold>37</Text>
+            <Text  fontSize={'$xs'} fontWeight="$bold" color={extendedConfig.tokens.colors.white}>Avisos</Text>
             </Pressable>
 
         </HStack>
@@ -96,11 +105,11 @@ function ButtonsMission(){
 function InfoMission(){
     const fields = ['politica', 'educação','empreendedorismo','negocios']
     return(
-        <VStack p={12} space="md">
+        <VStack p={8}  space="md">
             <Text fontWeight="$bold">
                 Sobre
             </Text>
-            <Text>
+            <Text size="sm">
                 Empreendedor social  a 5 anos na área de desenvolvimento social. 
                 Com 2 projetos em curso e mais de 2 mil jovens alcançados.
             </Text>
@@ -118,7 +127,7 @@ function InfoMission(){
                     ))
                 }
             </Text>
-            <Pressable borderRadius={8} borderWidth={1} padding={12} borderColor="$green400">
+            <Pressable borderRadius={8} borderWidth={1} padding={8} borderColor="$green400">
                 <Text fontWeight="$bold" color="$green400" textAlign="center">
                     Ver card de apresentação
                 </Text>
@@ -158,43 +167,3 @@ function Depoments(){
     )
 }
 
-
-function ActivitInfo(){
-    return(
-        <>
-        <VStack alignItems="center" p={16} space="lg">
-            <VStack alignItems="center">
-                <Text textAlign="center" fontSize={'$md'} fontWeight="$semibold">Atividade</Text>
-                <HStack  space="sm" alignItems="center" justifyContent="center">
-                    <Box rounded={'$full'} width={10} height={10} bg='$blue400'></Box>
-                    <Text sx={{fontSize:25}} fontWeight="$bold" lineHeight={30}>25</Text>
-                </HStack>
-                <Text fontSize={'$sm'} textAlign="center">
-                    Mantendo a mesma quantidade da semana passada.
-                </Text>
-            </VStack>
-
-            <VStack alignItems="center">
-                <Text textAlign="center" fontSize={'$md'} fontWeight="$semibold">Engajamento</Text>
-                <HStack  space="sm" alignItems="center" justifyContent="center">
-                    <Box rounded={'$full'} width={10} height={10} bg='$red400'></Box>
-                    <Text sx={{fontSize:25}} fontWeight="$bold" lineHeight={30}>25</Text>
-                </HStack>
-                <Text fontSize={'$sm'} textAlign="center">
-                4 a menos que semana passada.
-                </Text>
-            </VStack>
-            <VStack alignItems="center">
-                <Text textAlign="center" fontSize={'$md'} fontWeight="$semibold">Transparência</Text>
-                <HStack  space="sm" alignItems="center" justifyContent="center">
-                    <Box rounded={'$full'} width={10} height={10} bg='$green400'></Box>
-                    <Text sx={{fontSize:25}} fontWeight="$bold" lineHeight={30}>100%</Text>
-                </HStack>
-                <Text fontSize={'$sm'} textAlign="center">
-                De suas atividade financeiras foram declaradas.
-                </Text>
-            </VStack>
-        </VStack>
-        </>
-    )
-}

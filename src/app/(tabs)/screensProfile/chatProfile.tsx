@@ -7,7 +7,7 @@ export default function ChatProfile(){
     const navigation = useNavigation();
     const params = useLocalSearchParams();
   React.useEffect(() => {
-    navigation.setOptions({title:'LEo' });
+    navigation.setOptions({title:'Léo' });
   }, [navigation]);
     return(
         <VStack flex={1} bg="white">

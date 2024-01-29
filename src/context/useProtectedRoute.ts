@@ -9,6 +9,7 @@ function useProtectedRoute({token,agent_id}:AgentAutenticated) {
     React.useEffect(() => {
       const inAuthGroup = segments[0] === '(auth)';
       if (!rootNavigation?.isReady()) {
+
         return;
       }
       

@@ -9,7 +9,7 @@ export default function Root() {
 
       <AgentDataProvider>
         <WrapperScreens>
-          <Slot />
+          <Slot  />
         </WrapperScreens>
       </AgentDataProvider>
 

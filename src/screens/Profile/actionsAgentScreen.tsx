@@ -12,17 +12,17 @@ export default function ActionsAgentScreen(){
         <VStack bg="$white" flex={1}>
             <HStack  justifyContent="space-around">
                 <Pressable onPress={()=>{setSelectedMenu('Em andamento')}} p={8} borderBottomColor={menuSelected==='Em andamento'? "$green400":'$white'} borderBottomWidth={1}> 
-                    <Text textAlign="center" color={menuSelected==='Em andamento'? "$green400":'$gray400'}>
+                    <Text textAlign="center" size="sm" color={menuSelected==='Em andamento'? "$green400":'$gray400'}>
                         Em andamento
                     </Text>
                 </Pressable> 
                 <Pressable onPress={()=>{setSelectedMenu('Concluidas')}}  p={8} borderBottomColor={menuSelected==='Concluidas'? "$green400":'$white'}  borderBottomWidth={1}> 
-                    <Text textAlign="center" color={menuSelected==='Concluidas'? "$green400":'$gray400'}>
+                    <Text  size="sm" textAlign="center" color={menuSelected==='Concluidas'? "$green400":'$gray400'}>
                         Concluidas
                     </Text>
                 </Pressable>           
                 <Pressable onPress={()=>{setSelectedMenu('Proximas')}}  p={8} borderBottomColor={menuSelected==='Proximas'? "$green400":'$white'}  borderBottomWidth={1}> 
-                    <Text textAlign="center" color={menuSelected==='Proximas'? "$green400":'$gray400'}>
+                    <Text size="sm" textAlign="center" color={menuSelected==='Proximas'? "$green400":'$gray400'}>
                         Proximas
                     </Text>
                 </Pressable>                          
@@ -44,23 +44,23 @@ function CardActions({name}:{name:string}){
     return(
         <>
          <HStack borderBottomWidth={1} borderColor="$gray300" marginHorizontal={8} space="md" paddingVertical={12}>
-                <Image borderRadius={12} source={ImageArea} size='lg'></Image>
+                <Image borderRadius={12} source={ImageArea} size='lg' borderWidth={3} borderColor="$gray200" ></Image>
                 <VStack display="flex" flex={1} justifyContent="space-between">
-                    <Text fontWeight="$bold">{name}</Text>
+                    <Text fontWeight="$medium">{name}</Text>
                     <Box >
-                        <Text flexWrap="wrap" >
+                        <Text flexWrap="wrap" size="sm" color="$gray500">
                         Realização de  tarefas 
                         para o desenvolvimento da ação
                         </Text>
                     </Box>
-                    <HStack justifyContent="space-between">
-                        <Text color="$green400" fontSize={'$sm'} fontWeight="$bold">
+                    <HStack space="md">
+                        <Text color="$green400" fontSize={'$xs'} fontWeight="$bold">
                             5 vagas
                         </Text>
-                        <Text color="$green400" fontSize={'$sm'} fontWeight="$bold">
+                        <Text color="$green400" fontSize={'$xs'} fontWeight="$bold">
                             11 Tasks
                         </Text>
-                        <Text color="$green400" fontSize={'$sm'} fontWeight="$bold">
+                        <Text color="$green400" fontSize={'$xs'} fontWeight="$bold">
                             25 participantes
                         </Text>
                     </HStack>

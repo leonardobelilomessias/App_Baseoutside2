@@ -1,27 +1,37 @@
-import { Box, Button, ButtonText, HStack, Heading, Pressable, Text, VStack } from "@gluestack-ui/themed";
-import { Link } from "expo-router";
+import { Avatar, AvatarFallbackText, AvatarImage, Box, Button, ButtonText, Center, HStack, Heading, Pressable, Text, VStack } from "@gluestack-ui/themed";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { extendedConfig } from "@/theme/config";
+import { useDataAgent } from "@/context/UserContext";
+import { baseURL } from "@/utils/params";
 export function SponsorScreen(){
     const firstValues = [5,10,15,20]
     const secondValues = [25,30,35,50]
     const [selectedValue,setSelectedValue] = useState({type:'diamond', value:100})
+    const {dataAgent} = useDataAgent()
 
     return(
         <>
         <VStack alignItems="center" space="lg" flex={1} bgColor="white">
             <ScrollView style={{ flex:1}}  >
-
+            <VStack alignItems="center" alignContent="center" space="md">
             <Heading textAlign="center"> Pratiocine Jerry</Heading>
-            <Text> Ao patriocinar Mike Jerry você terá acesso a area esclusiva 
-                e terá os seguindes beneficios adicionais.
+            <Avatar size="lg">
+                <AvatarFallbackText>
+                    Simond teste
+                </AvatarFallbackText>
+                <AvatarImage source={{uri:`${baseURL}/Agent/${dataAgent.image_profile}`}}/>
+            </Avatar>
+            <Text size="sm"> Ao patriocinar Mike Jerry você terá acesso a area esclusiva 
+                e terá os seguindes beneficios adicionais:
             </Text>
+            </VStack>
             <VStack alignItems="center" space="md" >
                 <HStack alignItems="center" space="sm">
                     <Box width={'$1'} height={'$1'} bg="$green400" borderRadius={'$full'}/>
-                    <Text>
+                    <Text size="sm">
                     Acesso ao Dayly post diario
                     </Text>
                 </HStack>
@@ -44,11 +54,11 @@ export function SponsorScreen(){
                 </Button>
             </VStack>
   
-            <Link href={'/screens/transactionCredCardAgent' } asChild>
-                    <Pressable borderRadius={'$md'} mt={'$20'} p={8} width={'$full'} bg="$green400">
-                        <Text textAlign="center" color="$white"> Patriocinar</Text>
+
+                    <Pressable borderRadius={'$md'} mt={'$20'} p={8} width={'$full'} onPress={()=>{router.push('/(tabs)/screensProfile/transactionCredCardAgent')}} bg="$green400">
+                        <Text textAlign="center" bold color="$white"> Patriocinar</Text>
                     </Pressable>
-            </Link>
+
         </ScrollView>
         </VStack>
         </>

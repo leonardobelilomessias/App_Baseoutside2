@@ -47,6 +47,7 @@ export function AvatarProfile(){
              
      
         </VStack>
+
         <HStack space="md" marginHorizontal={'$1'}>
           {
             isFollower?
@@ -84,7 +85,8 @@ export function AvatarProfile(){
 }
 
 
-function GropsPeople(){
+function GroupsPeople({name}:{name:string}){
+  
   const avatars = [
       { src: 'https://example.com.jpg', alt: 'Sandeep Srivastva' , color:'$emerald600' },
       { src: 'https://example.com.jpg', alt: 'Arjun Kapoor', color:'$cyan600' },
@@ -95,14 +97,14 @@ function GropsPeople(){
   const extraAvatars = avatars.slice(3);
   const remainingCount = extraAvatars.length;
   return (
-    <AvatarGroup>
+    <AvatarGroup alignItems="center">
       <RenderAvatar/>
 
       <Avatar size="xs" borderColor="$white" borderWidth="$2" bg="$gray600" 
       $dark-borderColor="$black">
           <AvatarFallbackText >{"+ " + remainingCount + ""}</AvatarFallbackText>
       </Avatar>
-      <Text size="sm">Pessoas estão Acompanhando</Text>
+      <Text size="2xs" color="$gray400" >+300 Pessoas estão Patriocinado {name}</Text>
     </AvatarGroup>
   );
 }

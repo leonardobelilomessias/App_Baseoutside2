@@ -38,9 +38,8 @@ export function Feed(){
     },[])
     return(
         <VStack space={'md'} >
-            {/*<Button onPress={()=>router.push('/screens/editProfile')}><ButtonText>Go to editscreen</ButtonText></Button>*/}
-        
-  
+            <Button onPress={()=>router.push('/(tabs)/screensProfile/teamsAgent')}><ButtonText>Go to Teams</ButtonText></Button>
+
         <FlatList data={content}  renderItem={(content)=>
         <>
         {

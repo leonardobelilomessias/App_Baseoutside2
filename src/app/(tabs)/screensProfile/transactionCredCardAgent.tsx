@@ -4,7 +4,7 @@ import { Link } from "expo-router";
 export default function TransactionCredCardSponsorAgent(){
     return(
         <>
-        <VStack p={12} space="lg">
+        <VStack p={12} space="lg" bgColor="white" flex={1}>
             <Text fontWeight="$bold" fontSize={20}  lineHeight={20} textAlign="center">
                 Patriocinio Para Mike Jerry
             </Text >
@@ -31,10 +31,10 @@ export default function TransactionCredCardSponsorAgent(){
                 </Input>
             </VStack>
 
-            <Link href={'/screens/successSponsorAgent'} asChild>
+            <Link href={'/screensProfile/successSponsorAgent'} asChild>
            
-                    <Pressable  alignSelf='center'  borderRadius={'$full'} mt={'$12'} p={8} width={'$1/2'} bg="$green400">
-                            <Text textAlign="center" color="$white"> Patriocinar</Text>
+                    <Pressable  alignSelf='center'  borderRadius={'$md'} mt={'$12'} p={12} width={'$full'} bg="$green400">
+                            <Text textAlign="center" color="$white" bold> Patriocinar</Text>
                     </Pressable>
  
             </Link>
