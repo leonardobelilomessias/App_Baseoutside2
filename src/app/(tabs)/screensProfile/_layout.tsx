@@ -21,17 +21,6 @@ export default function LayoutScreens(){
             <Stack.Screen name="profileAgent" options={{title:'Perfil',}}/>
             <Stack.Screen name="colabsAgent" options={{title:'Collabs',}}/>
             <Stack.Screen name="tasksAgent" options={{title:'Tasks',}}/>
-
-
-
-
-
-
-
-
-
-
-            
         </Stack>
     )
 }

@@ -33,7 +33,7 @@ function Tasks(){
             <Text bold>
                 Avisos 
             </Text>
-            <VStack bg="$red100" alignItems="center"width={240} height={120} borderRadius={'$md'} borderColor="$gray200" p={8} borderWidth={1}>
+            <VStack   bg="$red100" alignItems="center"width={240} height={120} borderRadius={'$md'} borderColor="$gray200" p={8} borderWidth={1}>
                 <Text fontWeight="$medium"> Tempo prazo de inscrição </Text>
                 <Text size="sm" color="$gray400">{description.slice(0,80)}</Text>
                 <HStack  borderTopColor="$gray300" borderTopWidth={0.7} justifyContent="space-between" width={'$full'} p={4}>
@@ -143,9 +143,9 @@ export  function TasksMission(){
 function CarTask({name}:{name:string}){
     return(
         <>
-         <HStack borderBottomWidth={1} borderColor="$gray100" marginHorizontal={8} space="md" paddingVertical={12}>
+         <HStack  borderBottomWidth={1} borderColor="$gray100" marginHorizontal={8} space="md" paddingVertical={12}>
                 
-                <VStack display="flex" flex={1} justifyContent="space-between" p={4}>
+                <VStack display="flex" flex={1} justifyContent="space-between" p={4}  >
                     <Text fontWeight="$bold">{name}</Text>
                     <Box >
                         <Text size="sm" flexWrap="wrap" >

@@ -9,14 +9,17 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Page from './(stack)';
 import Home from './(tabs)';
 import { router, useNavigation } from 'expo-router';
+import SignIn from './(auth)/sign-in';
 
 export default function Index() {
 
- const {setTest} = useDataAgent()
+ const {setTest,dataAgent} = useDataAgent()
   return (
-<WrapperScreens >
-   <></>
-</WrapperScreens>
+<AgentDataProvider>
+  <WrapperScreens >
+    <SignIn/>
+  </WrapperScreens>
+</AgentDataProvider>
 
   );
 }
