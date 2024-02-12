@@ -30,7 +30,6 @@ export function ColabsAgentScreen(){
             )}
             />
             </VStack>
-
     )
 }
 export function ColabCard({name, vocation, id}:IColabs){
