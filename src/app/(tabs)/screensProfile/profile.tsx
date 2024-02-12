@@ -1,6 +1,6 @@
-import { WrapperScreens } from "@/Componets/WrapperScreens";
+
 import { ProfileScreen } from "@/screens/ProfileScreen";
-import { extendedConfig } from "@/theme/config";
+
 
 import { GluestackUIProvider, VStack } from "@gluestack-ui/themed";
 import { Link } from "expo-router";
