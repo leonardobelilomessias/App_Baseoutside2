@@ -1,4 +1,4 @@
-import { TaskAgentScreen } from "@/screens/Profile/TasksAgentScreen";
+import { TaskAgentScreen } from "@/screens/ProfileScreen/TasksAgentScreen";
 
 export default function TaskAgent(){
     return (

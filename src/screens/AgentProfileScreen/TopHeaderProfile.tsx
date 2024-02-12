@@ -1,11 +1,12 @@
 import { Box, HStack, Text, VStack } from "@gluestack-ui/themed";
 
 export function TopHeaderProfile(){
+    const itens = ["Ações", "Missioes",]
     return(
         
         <HStack hardShadow="4"  borderRadius={'$lg'} bgColor="$white" justifyContent="space-between" p={8} paddingHorizontal={16} softShadow="3">
           <ItemTopHeader  name="Açoes" number="0" />
-          <ItemTopHeader name="Missoes" number="0" />
+          <ItemTopHeader name="Missoesss" number="0" />
           <ItemTopHeader name="Colabs" number="0" />
           <ItemTopHeader name="Tasks" number="0" />
 

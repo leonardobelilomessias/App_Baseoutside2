@@ -1,9 +1,7 @@
-import ActionsAgentScreen from "@/screens/Profile/actionsAgentScreen";
+import ActionsAgentScreen from "@/screens/ProfileScreen/actionsAgentScreen";
 
 export default function ActionsAgent(){
     return(
-
             <ActionsAgentScreen/>
-
     )
 }

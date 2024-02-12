@@ -1,4 +1,4 @@
-import { ColabsAgentScreen } from "@/screens/Profile/ColabsAgentScreen";
+import { ColabsAgentScreen } from "@/screens/ProfileScreen/ColabsAgentScreen";
 
 export default function ColabsAgent(){
     return(
