@@ -5,15 +5,21 @@ import { ImageBackground } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
 import ImageVideo from '@/assets/develop.jpg'
 import { router } from "expo-router";
+import { DailyPostCard } from "@/Componets/Cards/DailyPostCard";
+import { dailyPublicationMocks } from "@/mocks/itensShared/dailyPublicationMocks";
 
 
 
 export function PublicationsProfileAgent(){
+    
     return(
         <VStack space="md">
             <Text bold marginBottom={24}>Timeline</Text>
                 <Quote/>
-                <DailyPost/>
+                <DailyPostCard  amountComents={dailyPublicationMocks.amountComents} date={dailyPublicationMocks.date} 
+                id={dailyPublicationMocks.id} isLike={dailyPublicationMocks.isLike} isSaved={dailyPublicationMocks.isSaved} userAvatar={dailyPublicationMocks.userAvatar}
+                text={dailyPublicationMocks.text} title={dailyPublicationMocks.title} userName={dailyPublicationMocks.userName}
+                />
                 <VidePublication/>
         </VStack>
     )
@@ -30,7 +36,7 @@ function Quote(){
            <Text textAlign="center" fontSize={'$xl'} fontWeight="$normal">
            Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens!
            </Text>
-           <BottonItemFeed/>
+           <BottonItemFeed amountComments={dailyPublicationMocks.amountComents}/>
        </VStack>
    </>
     )
@@ -48,30 +54,8 @@ function Quote(){
             <FontAwesome5 name="play-circle" size={94} color={extendedConfig.tokens.colors.green400} />
             </Box>
         </ImageBackground>
-        <BottonItemFeed/>
+        <BottonItemFeed amountComments={dailyPublicationMocks.amountComents}/>
         </VStack>
     )
 }
 
-function DailyPost(){
-    return(
-        <VStack space="xl" paddingBottom={32}  borderBottomColor="$gray200" borderBottomWidth={1} >
-            <HStack  space="xl" p={8} alignContent="center" alignItems="center">
-                <VStack >
-                    <Text color="$gray400" fontWeight="$bold" fontSize={'$lg'} >
-                        25
-                    </Text>
-                    <Text color="$gray400" fontWeight="$bold" size="xs" lineHeight={12} >out</Text>
-                </VStack>
-            <Text  fontWeight="$bold" color="$green400" textAlign="center" size="xl" >Dias de lutas dias de gloria</Text>
-            </HStack>
-            <Text>
-            Muito bom colaborar com pessoas que tem um visão ampla de uma missão.Parabens...
-            </Text>
-            <BottonItemFeed/>
-            <Pressable onPress={()=>{router.push('/(tabs)/screensProfile/dailyPublication')}}>
-                <Text textAlign="center" fontWeight="bold" color="$green400" borderWidth={1} borderColor="$green400" padding={4} borderRadius={'$md'}>Ver Completo</Text>
-            </Pressable>
-        </VStack>
-    )
-}

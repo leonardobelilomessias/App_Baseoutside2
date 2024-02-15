@@ -1,8 +1,5 @@
-import { ColabsAgentScreen } from "@/screens/ProfileScreen/ColabsAgentScreen";
+import { ListCollabScreen } from "@/screens/ListCollabScreen";
 
 export default function ColabsAgent(){
-    return(
-            <ColabsAgentScreen />
-
-    )
+    return(<ListCollabScreen />)
 }

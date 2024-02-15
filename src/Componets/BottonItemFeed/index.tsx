@@ -7,7 +7,7 @@ import ImageComment from '@/assets/develop.jpg'
 import { FlatList } from "react-native-gesture-handler";
 
 const fakecoments =[1,2,3,4,5,6]
-export function BottonItemFeed({children}:{children?:ReactElement}){
+export function BottonItemFeed({children,amountComments}:{children?:ReactElement,amountComments:number}){
     const [like,setLike] = useState(false)
     const [mark,setMark] = useState(false)
     const [modalVisible, setModalVisible] = useState(false);
@@ -36,7 +36,7 @@ export function BottonItemFeed({children}:{children?:ReactElement}){
             </HStack>
             {children}
             <Pressable onPress={()=>setModalVisible(!modalVisible)}>
-                <Text size="sm" color="$green400" fontWeight="$normal"> Ver todos os 20.157 comentarios</Text>
+                <Text size="sm" color="$green400" fontWeight="$normal"> Ver todos os {Number(amountComments).toLocaleString()} comentarios</Text>
             </Pressable>
         </>
     )

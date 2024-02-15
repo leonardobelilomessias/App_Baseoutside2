@@ -1,10 +1,11 @@
-import { Image, Pressable, Progress, ProgressFilledTrack, Text, VStack } from "@gluestack-ui/themed"
+import { Box, Image, Pressable, Progress, ProgressFilledTrack, Text, VStack } from "@gluestack-ui/themed"
 import { FlatList } from "react-native"
-import ImageTeaser from '@/assets/develop.jpg'
+import { linkNotFoundImageCoverMidia } from "@/utils/aplicationRouterLinks"
+import { goalsMocks } from "@/mocks/agents/dataProfileMocks"
 
 
 export function GoalsProfileAgent(){
-    const itens = ['item1','item2', 'item3', 'item4', 'item5']
+    const image = linkNotFoundImageCoverMidia
     return(
         <VStack space="md" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32} >
         <Text fontWeight="$bold" >
@@ -13,20 +14,19 @@ export function GoalsProfileAgent(){
         <FlatList 
         showsHorizontalScrollIndicator={false}
         horizontal
-        data={itens}
-        renderItem={(itens)=>(
-            <VStack alignContent="center" justifyContent="center" alignItems="center" width={130}marginRight={8}  >
-            <Pressable key={itens.item} width={130}  borderRadius={'$lg'} height={130} bgColor="$green200" >
-                <Image source={ImageTeaser} size="full" borderRadius={10}    />
-            </Pressable>
-                <Text size="xs" lineHeight={'$2xs'} flexWrap="wrap" textAlign="center"  fontWeight="$medium">Criação de nova sede </Text>
+        data={goalsMocks}
+        renderItem={({item})=>(
+            <Pressable alignContent="center" justifyContent="center" alignItems="center"  width={130}marginRight={8}  >
                 <VStack space="xs">
-
-                <Progress value={55} w={120} h="$1">
-                    <ProgressFilledTrack h="$1" bgColor="$green500" />
+            <Box key={item.id} width={130}  borderRadius={'$lg'} height={130} bgColor="$green200" >
+                <Image source={{uri:image}} size="full" borderRadius={10}    />
+            </Box>
+                <Progress value={item.Progress} w={130} h="$2">
+                    <ProgressFilledTrack h="$2" bgColor="$green500" />
                 </Progress>
+                <Text size="xs" lineHeight={'$2xs'} flexWrap="wrap" textAlign="center" minHeight={36} fontWeight="$medium">{item.title} </Text>
                 </VStack>
-            </VStack>
+            </Pressable>
         )}
         >
         

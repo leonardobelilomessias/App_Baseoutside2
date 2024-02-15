@@ -16,4 +16,20 @@ type DepoimentCardProps ={
     text:string
 }
 
-export{CardActionProps,DepoimentCardProps}
+
+type DailyPostCardProps={
+    id:string
+    userName:string
+    userAvatar:string
+    title:string
+    text:string
+    date:{
+        day:number, 
+        month:string
+    }
+    amountComents:number
+    isLike:boolean
+    isSaved:boolean
+
+}
+export{CardActionProps,DepoimentCardProps,DailyPostCardProps}

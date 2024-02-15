@@ -1,27 +1,14 @@
+import { Tags } from "@/Componets/Tags";
+import { interestsProfileMocks, skillsProfileMocks } from "@/mocks/agents/dataProfileMocks";
 import { Badge, BadgeText, Box, HStack, Text, VStack } from "@gluestack-ui/themed";
 
 export function InterestsProfileAgent(){
     return(
-        <>
-                 <VStack space="xs" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={24} >
-                    <Text fontWeight="$bold">Habilidades</Text>
-                    <Box>
-                        <HStack flexWrap="wrap">
+        <Tags elements={interestsProfileMocks} title="Interesses"/>
 
-                    {
-                        skillsProfile.map((skill)=>(
-                            <Badge sx={{borderRadius:8}} m={4} size="sm" variant="solid" key={skill} borderRadius="$none" action="success">
-                            <BadgeText>{skill}</BadgeText>
-                            </Badge>
-                        ))
-                    }
-                    </HStack>
-                    </Box>
-                </VStack>
-        </>
     )
 }
 
 
-const skillsProfile = ['tecnologia','liderança','gestão','desenvolvimento de projetos']
+
 
