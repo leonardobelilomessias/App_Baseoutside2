@@ -1,5 +1,6 @@
 import { baseURL } from "./params"
 
+
 const linkMissionAgent = "/(tabs)/screensProfile/missionsAgent"
 const linkActionsAgent = "/(tabs)/screensProfile/actionsAgent"
 const linkColabsAgent = "/(tabs)/screensProfile/colabsAgent"

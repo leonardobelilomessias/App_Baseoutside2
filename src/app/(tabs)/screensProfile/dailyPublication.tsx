@@ -1,14 +1,9 @@
+import { dailyPostExampleMock } from "@/mocks/agents/postsMocks";
 import { DailyPostScreen } from "@/screens/DailyPostScreen";
-import { Heading, VStack } from "@gluestack-ui/themed";
-import { ScrollView } from "react-native";
 
 export default function DailyPublication(){
+    const {id,date,id_agent, isLiked,isSaved,text,title,user,amountComments} = dailyPostExampleMock
     return(
-        <ScrollView>
-            <VStack p={8}>
-
-            <DailyPostScreen/>
-            </VStack>
-        </ScrollView>
+            <DailyPostScreen id={'id'}  date={date} amountComments={amountComments}user={user} isLiked={isLiked} isSaved={isSaved}text={text} title={title} />
     )
 }
