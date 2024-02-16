@@ -30,6 +30,15 @@ type DailyPostCardProps={
     amountComents:number
     isLike:boolean
     isSaved:boolean
-
 }
-export{CardActionProps,DepoimentCardProps,DailyPostCardProps}
+type MissionCardProps={
+    id:string
+    name:string
+    field:string
+    image:string
+    local:string
+    numberActions:number | string
+    numberColabs:number | string
+    numberTasks : number | string
+}
+export{CardActionProps,DepoimentCardProps,DailyPostCardProps, MissionCardProps}

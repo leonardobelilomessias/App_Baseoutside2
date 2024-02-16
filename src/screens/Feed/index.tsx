@@ -3,7 +3,7 @@ import { PhotoPublications } from "@/Componets/ItensFeed/PhotoPublications";
 import { VideoPublication } from "@/Componets/ItensFeed/VideoPulication";
 import { AxiosApi } from "@/api";
 import { useDataAgent } from "@/context/UserContext";
-import { goToSelectScreen } from "@/utils/linkGoToScree";
+import { goToSelectScreen } from "@/utils/linkGoToScreen";
 import { Button, ButtonText, Text, VStack } from "@gluestack-ui/themed";
 import { Stack, router } from "expo-router";
 import { useEffect, useState } from "react";
