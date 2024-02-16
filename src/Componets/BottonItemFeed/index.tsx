@@ -12,7 +12,7 @@ export function BottonItemFeed({children,amountComments}:{children?:ReactElement
     const [mark,setMark] = useState(false)
     const [modalVisible, setModalVisible] = useState(false);
     return(
-        <>
+        <VStack flex={1}>
             <HStack space='xl' p={4} >
                 <Pressable  onPress={()=>setLike(!like)}>
                     {
@@ -38,7 +38,7 @@ export function BottonItemFeed({children,amountComments}:{children?:ReactElement
             <Pressable onPress={()=>setModalVisible(!modalVisible)}>
                 <Text size="sm" color="$green400" fontWeight="$normal"> Ver todos os {Number(amountComments).toLocaleString()} comentarios</Text>
             </Pressable>
-        </>
+        </VStack>
     )
 
 }

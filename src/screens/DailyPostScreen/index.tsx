@@ -3,22 +3,18 @@ import { DailyPublicationScreenProsp } from "@/types/ScreenTypes/DailyScreenType
 import { Heading, Text, VStack } from "@gluestack-ui/themed";
 import { format, } from "date-fns";
 import {ptBR} from "date-fns/locale"
+import { ScrollView } from "react-native";
 
 export function DailyPostScreen( {id, user, date, title, text, amountComments, isLiked, isSaved}:DailyPublicationScreenProsp){
- console.log(date)
-    const dateFormated =  format(date,"dd MMMM yyyy EEEE k m" ,{locale:ptBR}).split(" ")
-    console.log(dateFormated)
-    const monthCapitalized = dateFormated[1].replace(dateFormated[1][0],dateFormated[1][0].toUpperCase())
+    const dateFormated =  formatDataExtensive(date)
     return(
-        <VStack bg="$white" p={12}  paddingBottom={'$24'}>
-
-            <Text fontWeight="$extrabold" color="$gray400" textAlign="center" >
-                {dateFormated[0]}
-            </Text>
+        <ScrollView contentContainerStyle={{padding:8}} showsVerticalScrollIndicator={false} >
+        <VStack bg="$white" p={14}  paddingBottom={'$12'}>
+            <Text fontWeight="$extrabold" color="$gray400" textAlign="center">{dateFormated.day}</Text>
             <Text borderBottomWidth={1} borderColor="$gray200" fontWeight="$medium" textAlign="center" color="$gray400" marginBottom={12}>
-                {monthCapitalized}
+                {dateFormated.month}
                 {'\n'}
-                <Text size="2xs" color="$gray400"> {dateFormated[3]} as {dateFormated[4]}:{dateFormated[5]}</Text>
+                <Text size="2xs" color="$gray400"> {dateFormated.weekDay} as {dateFormated.hours}:{dateFormated.minutes} de {dateFormated.year}</Text>
             </Text>
         <Heading color="$green400" size="xl" marginBottom={12} textAlign="center">
               {title}
@@ -26,9 +22,23 @@ export function DailyPostScreen( {id, user, date, title, text, amountComments, i
         <Text marginBottom={24} fontWeight="$light">
             {text}
         </Text>
-        <Text marginBottom={20} size="sm" color="$green400" fontWeight="$bold" italic>@leonardobelilo</Text>
+        <Text marginBottom={20} size="sm" color="$green400" fontWeight="$bold" italic>@{user}</Text>
         <BottonItemFeed amountComments={Number(amountComments)} />
         </VStack>
+    </ScrollView>
     )
+}
+function formatDataExtensive(date:Date){
+    const arrayDateFormated =  format(date,"dd MMMM yyyy EEEE k mm" ,{locale:ptBR}).split(" ")
+    const dateFormated ={
+        day:arrayDateFormated[0],
+        month:arrayDateFormated[1].replace(arrayDateFormated[1][0],arrayDateFormated[1][0].toUpperCase()),
+        year:arrayDateFormated[2],
+        weekDay:arrayDateFormated[3].replace(arrayDateFormated[3][0],arrayDateFormated[3][0].toUpperCase()),
+        hours:arrayDateFormated[4],
+        minutes:arrayDateFormated[5]
+    }
+    return dateFormated
+
 }
 
