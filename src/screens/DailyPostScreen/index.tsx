@@ -1,8 +1,7 @@
 import { BottonItemFeed } from "@/Componets/BottonItemFeed";
 import { DailyPublicationScreenProsp } from "@/types/ScreenTypes/DailyScreenTypes";
+import { formatDataExtensive } from "@/utils/functions/functionTimes";
 import { Heading, Text, VStack } from "@gluestack-ui/themed";
-import { format, } from "date-fns";
-import {ptBR} from "date-fns/locale"
 import { ScrollView } from "react-native";
 
 export function DailyPostScreen( {id, user, date, title, text, amountComments, isLiked, isSaved}:DailyPublicationScreenProsp){
@@ -28,17 +27,6 @@ export function DailyPostScreen( {id, user, date, title, text, amountComments, i
     </ScrollView>
     )
 }
-function formatDataExtensive(date:Date){
-    const arrayDateFormated =  format(date,"dd MMMM yyyy EEEE k mm" ,{locale:ptBR}).split(" ")
-    const dateFormated ={
-        day:arrayDateFormated[0],
-        month:arrayDateFormated[1].replace(arrayDateFormated[1][0],arrayDateFormated[1][0].toUpperCase()),
-        year:arrayDateFormated[2],
-        weekDay:arrayDateFormated[3].replace(arrayDateFormated[3][0],arrayDateFormated[3][0].toUpperCase()),
-        hours:arrayDateFormated[4],
-        minutes:arrayDateFormated[5]
-    }
-    return dateFormated
 
-}
+
 

@@ -5,10 +5,7 @@ const dailyPublicationMocks={
     userAvatar:faker.internet.avatar(),
     title:faker.lorem.words({min:4,max:7}),
     text:faker.lorem.text(),
-    date:{
-        day:faker.date.anytime().getDate(), 
-        month:faker.date.month({abbreviated:true})
-    },
+    date:faker.date.recent(),
     amountComents:faker.number.int({min:50,max:100000}), 
     isLike:faker.datatype.boolean(),
     isSaved:faker.datatype.boolean()

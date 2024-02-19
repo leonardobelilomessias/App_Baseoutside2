@@ -7,8 +7,8 @@ import { ItemTopHeader } from "./ItemTopHeader";
 
 export function TopHeaderProfile(){
     return(
-        
-        <HStack hardShadow="4"  borderRadius={'$lg'} bgColor="$white" justifyContent="space-between" p={8} paddingHorizontal={16} softShadow="3">
+
+        <HStack hardShadow="4"  padding={218} borderRadius={'$lg'} bgColor="$white" justifyContent="space-between" p={8} paddingHorizontal={16} softShadow="3">
           {
             itens.map((item)=>(
             <Pressable key={item.name} onPress={()=>{router.push(item.link)}}>
@@ -16,9 +16,7 @@ export function TopHeaderProfile(){
             </Pressable>
             ))
           }
-
-        </HStack>
-        
+        </HStack>   
     )
 }
 

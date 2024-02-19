@@ -4,17 +4,17 @@ import React from "react";
 
 export function AboutAgent(){
     return(
-        <VStack  padding={0} borderRadius={'$md'}  borderBottomColor="$gray200" borderBottomWidth={1}>
-        <Text fontWeight="$bold">Sobre</Text>
-        <Text fontSize={'$sm'}>
-        Empreendedor na área de desenvolvimento de tecnologias de apoio de agentes de transformações sociais missionarios e evagelistas. Com 2 
-        projetos em curso.
-        </Text>
-<GroupsPeople description="+300 Pessoas estão Patriocinado" name="leonardo" />
-    <Pressable borderWidth={1} p={4} marginVertical={4} borderColor="$green400" alignItems="center" borderRadius={'$md'}>
-        <Text fontWeight="$medium" size="sm" color="$green400"> Ver Apresentação</Text>
-    </Pressable>
-    </VStack>
+        <VStack  padding={8} borderRadius={'$md'}  borderBottomColor="$gray200" borderBottomWidth={1} >
+            <Text fontWeight="$bold">Sobre</Text>
+            <Text fontSize={'$sm'}>
+              Empreendedor na área de desenvolvimento de tecnologias de apoio de agentes de transformações sociais missionarios e evagelistas. Com 2 
+              projetos em curso.
+            </Text>
+            <GroupsPeople description="+300 Pessoas estão Patriocinado" name="leonardo" />
+            <Pressable borderWidth={1} p={4} marginVertical={4} borderColor="$green400" alignItems="center" borderRadius={'$md'}>
+                <Text fontWeight="$medium" size="sm" color="$green400"> Ver Apresentação</Text>
+            </Pressable>
+        </VStack>
     )
 }
 

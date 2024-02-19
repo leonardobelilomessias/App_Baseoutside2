@@ -13,6 +13,8 @@ const linkNotFoundImageCoverMidia =  baseURL+"/NotFound/not_found_image_midia.jp
 const linkNotFoundImageCoverGroup =  baseURL+"/NotFound/not_found_user_avatar.png"
 const linkToProfileAgent = '/(tabs)/screensProfile/profileAgent'
 const linkToProfileMission = '/screensProfile/profileMission'
+const linkToDailyPublication = "/(tabs)/screensProfile/dailyPublication"
+const linkToPhotoPublication = "/(tabs)/screensProfile/photoPublication"
 
 export{
     linkActionsAgent,
@@ -26,5 +28,7 @@ export{
     linkNotFoundImageCoverGroup,
     linkNotFoundImageCoverMidia, 
     linkToProfileAgent,
-    linkToProfileMission
+    linkToProfileMission,
+    linkToDailyPublication,
+    linkToPhotoPublication
 }

@@ -1,4 +1,4 @@
-import { VStack, HStack, Avatar, AvatarFallbackText, AvatarImage, Text } from "@gluestack-ui/themed"
+import { VStack, Text } from "@gluestack-ui/themed"
 import { FlatList } from "react-native"
 import { DepoimentCard } from "@/Componets/Cards/DepoimentCard"
 import { depoimentsAgentMock } from "@/mocks/actions/depoimentsMock"
@@ -11,9 +11,7 @@ export function DepoimentsProfileAgent(){
         showsHorizontalScrollIndicator={false}
         horizontal
         data={depoimentsAgentMock}
-        renderItem={({item})=>(
-            <DepoimentCard  id={item.id} imageCover={item.imageCover} text={item.text} userName={item.userName}/>
-        )}
+        renderItem={({item})=>(<DepoimentCard  id={item.id} imageCover={item.imageCover} text={item.text} userName={item.userName}/>)}
         />
         </VStack>
     )

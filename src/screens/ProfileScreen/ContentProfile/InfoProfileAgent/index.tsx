@@ -8,7 +8,7 @@ import { PublicationsProfileAgent } from "./PublicationsProfileAgent";
 
 export function InfoProfileAgent(){
     return(
-        <VStack borderRadius={"$lg"} bgColor="$white" space="xl" p={8}>
+        <VStack borderRadius={"$lg"} bgColor="$white" space="xl" >
             <AboutAgent/>
             <GoalsProfileAgent/>
             <SkillsProfileAgent/>

@@ -9,9 +9,12 @@ type MenuTypeUndelineProps = ViewProps &{
 
 
 type MenuTypeBoxProps={
-  itensMenu:string[]
+  optionsMenu:{
+    name:string    
+    }[]
   selectContent : string
   setSelectContent:(item:string)=> void
+  
 }
 
 export{MenuTypeUndelineProps, MenuTypeBoxProps}

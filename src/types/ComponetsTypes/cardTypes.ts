@@ -23,10 +23,7 @@ type DailyPostCardProps={
     userAvatar:string
     title:string
     text:string
-    date:{
-        day:number, 
-        month:string
-    }
+    date:Date
     amountComents:number
     isLike:boolean
     isSaved:boolean

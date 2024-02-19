@@ -3,24 +3,29 @@ import { MediaContainer } from "@/Componets/MediaContainer";
 import { MenuTypeBox } from "@/Componets/Menus/MenuTypeBox";
 import { ExclusiveArea } from "./ExclusiveArea";
 import { InfoProfileAgent } from "./InfoProfileAgent";
+import { Groups } from "@/Componets/Groups";
 
+type ContentProfileProps ={
+    selectContent:string
+    setSelectContent:(selected:string)=>void
+    optionsMenu:{
+    name:string    
+    }[]
+}
 
-export function ContentProfile(){
-    const [selectContent,setSelectContent] = useState('Geral')
-    const optionsMenu = ["Geral","Midias", "Groups" ]
+export function ContentProfile({selectContent,setSelectContent,optionsMenu}:ContentProfileProps){
 
     return(
         <>
 
-            <MenuTypeBox itensMenu={optionsMenu} selectContent={selectContent} setSelectContent={setSelectContent}/>
         {
-            selectContent==='Geral'&&<InfoProfileAgent/>        
+            selectContent===optionsMenu[0].name &&<InfoProfileAgent/>        
         }
         {
-            selectContent==='Groups'&&<ExclusiveArea/>
+            selectContent===optionsMenu[1].name &&<MediaContainer/>
         }
         {
-            selectContent==='Midias'&&<MediaContainer/>
+            selectContent===optionsMenu[2].name&&<Groups/>
         }
         </>
     )
