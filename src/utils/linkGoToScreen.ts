@@ -1,6 +1,6 @@
 const goToSelectScreen = {
-    name:"task agent",
-    link:'/(tabs)/screensProfile/tasksAgent',
+    name:"teams agent",
+    link:'/(tabs)/screensProfile/teamsAgent',
     params:[]
 }
 export{goToSelectScreen}

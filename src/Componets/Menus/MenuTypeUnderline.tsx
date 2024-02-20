@@ -11,7 +11,7 @@ export function MenuTypeUnderline({itensMenu, itemSelected,setItenSelected, ...r
                 {
                     itensMenu.map((item)=>(
                     <Pressable key={item} onPress={()=>{setItenSelected(item)}} p={8} borderBottomColor={itemSelected===item? "$green400":'$white'} borderBottomWidth={1}> 
-                        <Text textAlign="center" size="sm" color={itemSelected===item? "$green400":'$gray400'}>
+                        <Text textAlign="center" size="sm" color={itemSelected===item? "$green400":'$gray400'} fontWeight={itemSelected===item? "$bold":'$normal'}>
                             {item}
                         </Text>
                     </Pressable>  

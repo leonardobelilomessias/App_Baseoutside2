@@ -1,28 +1,12 @@
 import { VerticalPaddingContainer } from "@/Componets/VerticalPaddingContainer";
+import { TeamScreen } from "@/screens/TeamScreen";
 import { Avatar, AvatarFallbackText, AvatarGroup, AvatarImage, Box, HStack, Pressable, Text, VStack, styled } from "@gluestack-ui/themed";
 import { useState } from "react";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 
 export default function  teamsAgent(){
     return(
-        <ScrollView>
-
-        <VStack bg="white" flex={1}>
-
-                <VerticalPaddingContainer  >
-                    <VStack alignItems="center">
-                        <Text bold textAlign="center" size="2xl" alignItems="center" paddingVertical={8}> Organização </Text>
-                        <GroupsPeople  description=" 35 usarios ativos"/>
-                        <Text color="$gray400" size="xs">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolores, magni eligendi placeat blanditiis delectus officia veritatis pariatur veniam! 
-                        </Text>
-                    </VStack>
-                    <Tasks/>
-                    <Advices/>
-                </VerticalPaddingContainer>
-            
-        </VStack>
-        </ScrollView>
+        <TeamScreen/>
     )
 }
 
@@ -33,7 +17,7 @@ function Tasks(){
             <Text bold>
                 Avisos 
             </Text>
-            <VStack   bg="$red100" alignItems="center"width={240} height={120} borderRadius={'$md'} borderColor="$gray200" p={8} borderWidth={1}>
+            <VStack   bg="$red00" alignItems="center"width={240} height={120} borderRadius={'$md'} borderColor="$gray200" p={8} borderWidth={1}>
                 <Text fontWeight="$medium"> Tempo prazo de inscrição </Text>
                 <Text size="sm" color="$gray400">{description.slice(0,80)}</Text>
                 <HStack  borderTopColor="$gray300" borderTopWidth={0.7} justifyContent="space-between" width={'$full'} p={4}>

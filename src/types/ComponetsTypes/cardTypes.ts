@@ -53,4 +53,12 @@ type FooterTaskCartProps={
     wage:string
     deadlineTime:string
 }
-export{CardActionProps,DepoimentCardProps,DailyPostCardProps, MissionCardProps,TaskCartProps,FooterTaskCartProps}
+type AdviceCardProps= {
+    id:string
+    title:string
+    text:string
+    date:Date
+    creator:string
+    priority:"low" | "medium"| "high"
+}
+export{CardActionProps,DepoimentCardProps,DailyPostCardProps, MissionCardProps,TaskCartProps,FooterTaskCartProps,AdviceCardProps}
