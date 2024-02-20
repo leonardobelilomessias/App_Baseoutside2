@@ -106,22 +106,6 @@ export default function Root(){
                     tabBarButton:()=>null
                 }}
             />
-            <Tabs.Screen
-                name="otherProfile" 
-                options={{
-                    title:"Profile", 
-                    tabBarButton:()=>null
-                }}
-                
-            />
-                        <Tabs.Screen
-                name="dailyPublication" 
-                options={{
-                    title:"Daily", 
-                    tabBarButton:()=>null
-                }}
-                
-            />
  
             <Tabs.Screen
                 name="screensProfile" 
@@ -153,20 +137,7 @@ export default function Root(){
                     tabBarButton:()=>null
                 }}
                 
-            />
-            <Tabs.Screen
-                name="photoPublication"  
-                options={{
-                    headerShown:true,
-                    headerStatusBarHeight:0,
-                    headerStyle:false,
-                    headerTitle:()=>null,
-                    header:()=>null,
-                    tabBarButton:()=>null
-                }}
-                
-            />
-            
+            />            
             </Tabs>
             
 

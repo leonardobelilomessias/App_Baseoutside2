@@ -61,4 +61,13 @@ type AdviceCardProps= {
     creator:string
     priority:"low" | "medium"| "high"
 }
-export{CardActionProps,DepoimentCardProps,DailyPostCardProps, MissionCardProps,TaskCartProps,FooterTaskCartProps,AdviceCardProps}
+type PhotoPublicationCardProps={
+    name: string,
+    id_colab: string
+    image_profile:string
+    description: string
+    publication_id: string
+    url: string
+    type:string
+}
+export{CardActionProps,DepoimentCardProps,DailyPostCardProps, MissionCardProps,TaskCartProps,FooterTaskCartProps,AdviceCardProps,PhotoPublicationCardProps}
