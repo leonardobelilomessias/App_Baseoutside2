@@ -17,9 +17,9 @@ export function TaskCard({ title,userName,requiredSkills,area,date,wage,deadline
             >
                     <VStack space="xs">
                         <Text  fontWeight="$extrabold" color="$green400">{title}</Text>
-                        <Text   lineHeight={16} flex={0}  fontWeight="$medium"  fontSize={'$sm'} color="$gray300">@{userName} </Text>
-                        <Text   lineHeight={16} flex={0}    fontSize={'$xs'} color="$gray300"> {requiredSkills.map((item)=> item+" ")} </Text>
-                        <Text   lineHeight={16} flex={0}    fontSize={'$xs'} color="$gray300">
+                        <Text   lineHeight={16} flex={0}  fontWeight="$medium"  fontSize={'$sm'} color="$gray400">@{userName} </Text>
+                        <Text   lineHeight={16} flex={0}    fontSize={'$xs'} color="$gray400"> {requiredSkills.map((item)=> item+" ")} </Text>
+                        <Text   lineHeight={16} flex={0}    fontSize={'$xs'} color="$gray400">
                             Departamento:{ area}
                         </Text>
 
@@ -38,19 +38,19 @@ function FooterTaskCard({date,deadlineTime,wage}:FooterTaskCartProps){
             <HStack alignContent="center" alignItems="center" justifyContent="center" mr={12}>
                 
             <MaterialCommunityIcons name="lightning-bolt" size={14} color={extendedConfig.tokens.colors.gray500} />
-            <Text  lineHeight={16}    fontSize={'$xs'} color="$gray400">
+            <Text  lineHeight={16}    fontSize={'$xs'} color="$gray500">
                 Criando em {formateDate}
             </Text>
             </HStack>
             <HStack space="xs" alignItems="center" mr={12} flexWrap="wrap" >
             <FontAwesome name="group" size={12} color={extendedConfig.tokens.colors.gray500} />
-            <Text  lineHeight={16}    fontSize={'$xs'} color="$gray400">
+            <Text  lineHeight={16}    fontSize={'$xs'} color="$gray500">
                  {wage} pessoas 
             </Text>
             </HStack>
             <HStack space="xs" alignItems="center" flexWrap="wrap">
             <FontAwesome5  name="tasks" size={12} color={extendedConfig.tokens.colors.gray500} />
-            <Text   lineHeight={16}    fontSize={'$xs'} color="$gray400">
+            <Text   lineHeight={16}    fontSize={'$xs'} color="$gray500">
                  Prazo {deadlineTime} dias
             </Text>
             </HStack>

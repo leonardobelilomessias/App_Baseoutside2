@@ -6,16 +6,24 @@ import { HeaderTeams } from "./HeaderTeams";
 import { AdvicesHorizontalContainer } from "@/Componets/Advices/AdvicesHorizontalContainer";
 import { listAdvicesmock } from "@/mocks/advices/advicesMocks";
 import { MenuTypeUnderline } from "@/Componets/Menus/MenuTypeUnderline";
+import { TasksList } from "@/Componets/TasksList";
+import { tasksAgentMock } from "@/mocks/tasksMocks";
+import { ScrollView } from "react-native-gesture-handler";
 
 export function TeamScreen(){
     const itensMenu = ["Em andamento","Proximas", "Concluidas"]
     const [itemSelected,setItemSelected]= useState(itensMenu[0])
     const advices = listAdvicesmock
+    const listTaks = tasksAgentMock
     return(
         <VStack bg="white" flex={1} >
-               <HeaderTeams/>
+          <HeaderTeams/>
+          <ScrollView showsVerticalScrollIndicator={false}>
                <AdvicesHorizontalContainer listAdvices={advices}/>
+               <Text bold padding={8} paddingBottom={1}>Tasks</Text>
                <MenuTypeUnderline itemSelected={itemSelected} itensMenu={ itensMenu}setItenSelected={setItemSelected}/>
+               <TasksList listTasks={listTaks} />
+          </ScrollView>
         </VStack>
     )
 }

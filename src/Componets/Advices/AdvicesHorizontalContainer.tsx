@@ -7,7 +7,7 @@ import { Text, VStack } from "@gluestack-ui/themed";
 export function AdvicesHorizontalContainer({listAdvices}:AdvicesContainerProps){
     return(
         <VStack space="sm">
-            <Text bold>Avisos</Text>
+            <Text bold paddingHorizontal={8}>Avisos</Text>
             <FlatList data={listAdvices}
             horizontal
             showsHorizontalScrollIndicator={false}

@@ -25,6 +25,14 @@ const  listAdvicesmock :AdviceCardProps[]= [
     creator:'john',
     priority:"medium" 
 },
+{
+    id:'03',
+    title:'Ultimo dia para inscriçãp',
+    text:'Esse final de semana sera o ultimo dia para inscrição inscreva-se logo',
+    date:new Date(),
+    creator:'john',
+    priority:"high" 
+},
 
 
 ]

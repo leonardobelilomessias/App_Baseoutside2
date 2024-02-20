@@ -6,7 +6,7 @@ import React from "react";
 export function HeaderTeams(){
     return(
         <VStack bg="white"   p={extendedConfig.defaulPaddingToCompanents} borderBottomWidth={1} borderBottomColor="$gray200">
-                <HStack>
+                <HStack alignContent="center" justifyContent="center">
                     <Avatar mr={'$2'} size="lg">
                         <AvatarFallbackText>
                             My name
@@ -18,7 +18,7 @@ export function HeaderTeams(){
                     </VStack>
                 </HStack>
                 <Box>
-                    <Text color="$gray400" size="xs" >
+                    <Text textAlign="center" color="$gray400" size="xs" >
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolores, magni eligendi 
                     </Text>
                 </Box>
@@ -39,8 +39,8 @@ function GroupsPeople({name,description}:{name?:string,description:string}){
     const remainingCount = extraAvatars.length;
     return (
       <AvatarGroup alignItems="center"   >
-        <RenderAvatar/>
   
+        <RenderAvatar/>
         <Avatar size={'xs'} borderColor="$white" borderWidth="$2" bg="$gray600" 
         $dark-borderColor="$black">
             <AvatarFallbackText >{"+ " + remainingCount + ""}</AvatarFallbackText>
