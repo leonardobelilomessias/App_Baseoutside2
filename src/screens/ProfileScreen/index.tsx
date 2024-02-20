@@ -11,7 +11,7 @@ export function ProfileScreen(){
     const optionsMenu = [{name:"Geral"},{name:"Midias"},{name:"Groups" }]
     return(
         <VStack space="sm" flex={1} bgColor="white">
-            <ScrollView>
+            <ScrollView  showsVerticalScrollIndicator={false}>
             <TopHeaderProfile/>
             <AvatarProfile/>
             <MenuTypeBox optionsMenu={optionsMenu} selectContent={selectContent} setSelectContent={setSelectContent}/>

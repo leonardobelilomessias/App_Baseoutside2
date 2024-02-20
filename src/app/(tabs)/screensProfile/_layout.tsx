@@ -17,7 +17,6 @@ export default function LayoutScreens(){
             <Stack.Screen name="photoPublication" options={{title:'Publicação',}}/>
             <Stack.Screen name="dailyPublication" options={{title:'Daily',}}/>
             <Stack.Screen name="missionsAgent" options={{title:'Missões',}}/>
-            <Stack.Screen name="profileAgent" options={{title:'Perfil',}}/>
             <Stack.Screen name="colabsAgent" options={{title:'Collabs',}}/>
             <Stack.Screen name="tasksAgent" options={{title:'Tasks',}}/>
         </Stack>

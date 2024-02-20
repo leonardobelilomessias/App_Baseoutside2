@@ -1,10 +1,11 @@
+import { extendedConfig } from "@/theme/config";
 import { VStack, AvatarGroup, Avatar, AvatarFallbackText, Text,Pressable, AvatarImage } from "@gluestack-ui/themed";
 import React from "react";
 
 
 export function AboutAgent(){
     return(
-        <VStack  padding={8} borderRadius={'$md'}  borderBottomColor="$gray200" borderBottomWidth={1} >
+        <VStack  padding={extendedConfig.defaulPaddingToCompanents} borderRadius={'$md'}  borderBottomColor="$gray200" borderBottomWidth={1} >
             <Text fontWeight="$bold">Sobre</Text>
             <Text fontSize={'$sm'}>
               Empreendedor na área de desenvolvimento de tecnologias de apoio de agentes de transformações sociais missionarios e evagelistas. Com 2 

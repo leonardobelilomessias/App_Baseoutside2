@@ -38,4 +38,19 @@ type MissionCardProps={
     numberColabs:number | string
     numberTasks : number | string
 }
-export{CardActionProps,DepoimentCardProps,DailyPostCardProps, MissionCardProps}
+type TaskCartProps = {
+    id:string
+    title:string
+    userName:string
+    requiredSkills:string[]
+    area:string
+    date:Date
+    wage:string
+    deadlineTime:string
+}
+type FooterTaskCartProps={
+    date:Date
+    wage:string
+    deadlineTime:string
+}
+export{CardActionProps,DepoimentCardProps,DailyPostCardProps, MissionCardProps,TaskCartProps,FooterTaskCartProps}

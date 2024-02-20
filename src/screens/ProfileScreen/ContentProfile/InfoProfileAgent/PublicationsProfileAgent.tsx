@@ -13,8 +13,8 @@ import { VidePublicationCard } from "@/Componets/Cards/VideoPublicationCard";
 export function PublicationsProfileAgent(){
     
     return(
-        <VStack space="md">
-            <Text bold marginBottom={24}>Timeline</Text>
+        <VStack space="md" padding={extendedConfig.defaulPaddingToCompanents}>
+            <   Text bold marginBottom={24}>Timeline</Text>
                 <QuoteCard/>
                 <DailyPostCard  amountComents={dailyPublicationMocks.amountComents} date={dailyPublicationMocks.date} 
                 id={dailyPublicationMocks.id} isLike={dailyPublicationMocks.isLike} isSaved={dailyPublicationMocks.isSaved} userAvatar={dailyPublicationMocks.userAvatar}

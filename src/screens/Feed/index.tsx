@@ -38,7 +38,9 @@ export function Feed(){
     },[])
     return(
         <VStack space={'md'} >
-            <Button onPress={()=>{router.push({ pathname: '/(tabs)/screensProfile/photoPublication', params: { publication_id:photosPublicationsMock[0].publication.id,urlPhoto:photosPublicationsMock[0].photos[0],description:photosPublicationsMock[0].publication.description } })}}><ButtonText>Go to  photo publication</ButtonText></Button>
+            <Button onPress={()=>{router.push(goToSelectScreen.link)}}>
+                <ButtonText>Go to   {goToSelectScreen.name}</ButtonText>
+            </Button>
 
         <FlatList data={content}  renderItem={(content)=>
         <>

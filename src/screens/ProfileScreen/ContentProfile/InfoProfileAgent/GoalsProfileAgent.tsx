@@ -2,15 +2,17 @@ import { Box, Image, Pressable, Progress, ProgressFilledTrack, Text, VStack } fr
 import { FlatList } from "react-native"
 import { linkNotFoundImageCoverMidia } from "@/utils/aplicationRouterLinks"
 import { goalsMocks } from "@/mocks/agents/dataProfileMocks"
+import { extendedConfig } from "@/theme/config"
 
 export function GoalsProfileAgent(){
     const image = linkNotFoundImageCoverMidia
     return(
         <VStack space="md" borderBottomColor="$gray200" borderBottomWidth={1} paddingBottom={32} >
-        <Text fontWeight="$bold" >
+        <Text paddingHorizontal={extendedConfig.defaulPaddingToCompanents} fontWeight="$bold" >
             Objetivos
         </Text>
         <FlatList 
+        contentContainerStyle={{padding:extendedConfig.defaulPaddingToCompanents}}
         showsHorizontalScrollIndicator={false}
         horizontal
         data={goalsMocks}
@@ -26,8 +28,7 @@ export function GoalsProfileAgent(){
                     <Text size="xs" lineHeight={'$2xs'} flexWrap="wrap" textAlign="center" minHeight={36} fontWeight="$medium">{item.title} </Text>
                 </VStack>
             </Pressable>
-        )}
-        >
+        )}>
         </FlatList>
         </VStack>
     )
