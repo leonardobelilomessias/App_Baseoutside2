@@ -1,4 +1,4 @@
-import { ShareScreen } from '@/screens/ShareScreeen';
+import { ShareScreen } from "@/screens/TabMenuScreens/ShareScreeen";
 
 export default function Share() {
     return(<ShareScreen/>)

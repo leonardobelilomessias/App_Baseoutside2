@@ -1,5 +1,5 @@
-import { ProfileScreen } from "@/screens/ProfileScreen";
+import { ProfileAgentScreen } from "@/screens/AgentScreens/ProfileAgentScreen";
 
 export default function profile(){
-    return( <ProfileScreen/> )
+    return( <ProfileAgentScreen/> )
 }

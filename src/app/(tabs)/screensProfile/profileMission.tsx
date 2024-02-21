@@ -1,4 +1,4 @@
-import { ProfileMissionScreen } from "@/screens/Mission/ProfileMissionScreen";
+import { ProfileMissionScreen } from "@/screens/MissionScreens/ProfileMissionScreen";
 
 export default function ProfileMission(){
 

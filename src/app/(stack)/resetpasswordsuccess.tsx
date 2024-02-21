@@ -1,4 +1,4 @@
-import { ResetPasswordSuccess } from "@/screens/ResetPasswordSuccess";
+import { ResetPasswordSuccess } from "@/screens/AccessScreens/ResetPasswordSuccess";
 
 export default function resetpasswordsuccess(){
     return(

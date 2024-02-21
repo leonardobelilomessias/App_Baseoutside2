@@ -19,6 +19,7 @@ export default function LayoutScreens(){
             <Stack.Screen name="missionsAgent" options={{title:'Missões',}}/>
             <Stack.Screen name="colabsAgent" options={{title:'Collabs',}}/>
             <Stack.Screen name="tasksAgent" options={{title:'Tasks',}}/>
+            <Stack.Screen name="agentProfile" options={{title:"",}}/>
         </Stack>
     )
 }

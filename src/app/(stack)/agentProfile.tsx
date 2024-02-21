@@ -1,10 +1,5 @@
-import { AgentProfileScreen } from "@/screens/AgentProfileScreen";
-import { Text } from "@gluestack-ui/themed";
+import { ProfileAgentScreen } from "@/screens/AgentScreens/ProfileAgentScreen";
 
 export default function AgentProfile(){
-    return(
-        <>
-            <AgentProfileScreen/>
-        </>
-    )
+    return(<ProfileAgentScreen/>)
 }

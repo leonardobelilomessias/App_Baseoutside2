@@ -9,7 +9,7 @@ export function PhotoPublicationCard({ description,id_colab,image_profile,name,p
         <>
         <Box borderBottomColor="$gray300" borderBottomWidth={0}>
             <VStack bg="$white"  p={12}  width={'100%'}  borderColor="$gray200" borderTopWidth={0.35}  borderBottomWidth={0.45} softShadow="1">
-                <Pressable onPress={()=>{router.push(linkToProfileAgent)}}>
+                <Pressable onPress={()=>{router.push({pathname:linkToProfileAgent, params:{name:name}})}}>
 
                 <HStack p={8}  zIndex={1} alignItems="center" space={'md'} justifyContent="space-between">
                     <HStack alignItems="center" space="sm">

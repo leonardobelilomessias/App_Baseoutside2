@@ -1,5 +1,5 @@
-import { MissionAgentScreen } from "@/screens/ProfileScreen/MissionAgentScreen";
+import { ListMissionsAgentScreen } from "@/screens/AgentScreens/ListMissionsAgentScreen";
 
 export default function MissionAgent(){
-    return( <MissionAgentScreen/>)
+    return( <ListMissionsAgentScreen/>)
 }

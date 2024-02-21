@@ -1,4 +1,4 @@
-import ActionsAgentScreen from "@/screens/ProfileScreen/actionsAgentScreen";
+import ActionsAgentScreen from "@/screens/AgentScreens/ProfileAgentScreen/actionsAgentScreen";
 
 export default function ActionsAgent(){
     return(

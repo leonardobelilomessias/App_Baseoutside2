@@ -2,8 +2,8 @@ import { useLocalSearchParams } from "expo-router";
 import { AxiosApi } from "@/api";
 import { useEffect, useState } from "react";
 import { useDataAgent } from "@/context/UserContext";
-import PhotoPublicationScreen from "@/screens/PhotoPublicationScreen";
-import { ErrorToLoadScreen } from "@/screens/ErrorToLoad";
+import { ErrorToLoadScreen } from "@/screens/ErrorsScreens/ErrorToLoadScreen";
+import PhotoPublicationAgentScreen from "@/screens/AgentScreens/PublicationsAgentScreens/Show/PhotoPublicationAgentScreen";
 
 export default function photoPublication(){
     const {dataAgent}  = useDataAgent()
@@ -22,7 +22,7 @@ export default function photoPublication(){
     if(!publication_id || !urlPhoto || !description )return( <ErrorToLoadScreen/>)
 
     return(
-        <PhotoPublicationScreen description={description as string} idPublication={"01"} urlPhoto={urlPhoto as string } userAvatar={dataAgent.image_profile as string} userName={dataAgent.name} />
+        <PhotoPublicationAgentScreen description={description as string} idPublication={"01"} urlPhoto={urlPhoto as string } userAvatar={dataAgent.image_profile as string} userName={dataAgent.name} />
     )
 }
 

@@ -1,8 +1,8 @@
-import { SponsorScreen } from "@/screens/SponsorScreen";
+import { SponsorAgentScreen } from "@/screens/AgentScreens/SponsorAgentScreen";
 
 export default function SponsorAgent(){
 
     return(
-        <SponsorScreen/>
+        <SponsorAgentScreen/>
     )
 }

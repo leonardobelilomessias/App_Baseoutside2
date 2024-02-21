@@ -23,7 +23,6 @@ export default function Layout() {
       <Stack.Screen name="singup" options={{ headerShown:false, headerStyle:{backgroundColor:'yellow'}}}  />
       <Stack.Screen name="recouvery" options={{}}  />
       <Stack.Screen name="coderecouvery" options={{}}  />
-      <Stack.Screen name="dailyPublication" options={{}}  />
     </Stack>
   );
 }

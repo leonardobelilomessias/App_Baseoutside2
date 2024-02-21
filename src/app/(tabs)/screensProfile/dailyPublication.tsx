@@ -1,9 +1,9 @@
 import { dailyPostExampleMock } from "@/mocks/agents/postsMocks";
-import { DailyPostScreen } from "@/screens/DailyPostScreen";
+import { DailyPostAgentScreen } from "@/screens/AgentScreens/PublicationsAgentScreens/Show/DailyPostAgentScreen";
 
 export default function DailyPublication(){
     const {id,date,id_agent, isLiked,isSaved,text,title,user,amountComments} = dailyPostExampleMock
     return(
-            <DailyPostScreen id={'id'}  date={date} amountComments={amountComments}user={user} isLiked={isLiked} isSaved={isSaved}text={text} title={title} />
+            <DailyPostAgentScreen id={'id'}  date={date} amountComments={amountComments}user={user} isLiked={isLiked} isSaved={isSaved}text={text} title={title} />
     )
 }

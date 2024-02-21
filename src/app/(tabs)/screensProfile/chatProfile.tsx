@@ -1,4 +1,4 @@
-import { ChatScreenProfile } from "@/screens/ChatScreenProfile";
+import { ChatAgentScreen } from "@/screens/AgentScreens/ChatAgentScreen";
 import { Avatar, AvatarFallbackText, Box, HStack, Input, InputField, Text, VStack } from "@gluestack-ui/themed";
 import { router, useLocalSearchParams, useNavigation } from "expo-router";
 import React from "react";
@@ -11,6 +11,6 @@ export default function ChatProfile(){
     navigation.setOptions({title:'Léo' });
   }, [navigation]);
     return(
-       <ChatScreenProfile/>
+       <ChatAgentScreen/>
     )
 }
