@@ -1,6 +1,8 @@
-import { CardActionProps } from "@/types/ComponetsTypes/cardTypes"
+import { ActionCardProps } from "@/types/ComponetsTypes/cardTypes"
 
-const actionsMock:CardActionProps[] = [{
+
+const actionsMock:ActionCardProps[] = [{
+    id:'051',
     title:"Visita ao hospital",
     description:"Ação de visita ao hospital social da cidade",
     participants:5,
@@ -10,6 +12,7 @@ const actionsMock:CardActionProps[] = [{
     status:"comming"
 },
 {
+    id:'0158',
     title:"Desenvolvimento Social",
     description:"Realização de tarefas sociais para o bem da comunidade",
     participants:5,
@@ -20,6 +23,7 @@ const actionsMock:CardActionProps[] = [{
 
 },
 {
+    id:'0515',
     title:"Desenvolvimento Social",
     description:"Realização de tarefas sociais para o bem da comunidade",
     participants:5,
@@ -30,6 +34,7 @@ const actionsMock:CardActionProps[] = [{
 
 },
 {
+    id:'06',
     title:"Dia De Rua de lazer",
     description:"Rua de lazer com impacto social levando atendimento para a pupulação",
     participants:5,
@@ -40,6 +45,7 @@ const actionsMock:CardActionProps[] = [{
 
 },
 {
+    id:'0253',
     title:"Cafe com amor",
     description:"Reunião de cafe da manha com moradores de rua",
     participants:5,

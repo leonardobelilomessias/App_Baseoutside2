@@ -5,13 +5,14 @@ import { FlatList, Pressable } from "react-native";import { MaterialCommunityIco
 import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Link } from "expo-router";
+import { CardUserPressableSimpleProps, MissionCardProps } from "@/types/ComponetsTypes/cardTypes";
+import { MissionCard } from "../Cards/MissionCard";
 
 type TypeSelectCardRender = {
-    selecCardRender:string
-    content:FullAgentDTO[]
+    content:MissionCardProps[]
 }
 
-export function MissionContentSearch({selecCardRender,content}:TypeSelectCardRender){
+export function ListMissionSearch({content}:TypeSelectCardRender){
     return(
 
         <VStack flex={1} backgroundColor="$white" paddingHorizontal={16} borderRadius={16}  >
@@ -24,8 +25,8 @@ export function MissionContentSearch({selecCardRender,content}:TypeSelectCardRen
             keyExtractor={(resultApi)=>resultApi.id
             }
             renderItem={({item})=>(
-                <Link href={'/screensMission/profileMission'}>
-                <MissionCardSearch name=""/>
+                <Link href={'/screensMission/profileMission'} key={item.id}>
+                <MissionCard field={item.field} id={item.id} image={item.image}local={item.local} name={item.name} numberActions={item.numberActions} numberColabs={item.numberColabs} numberTasks={item.numberTasks}/>
                 </Link>
             )}
             />

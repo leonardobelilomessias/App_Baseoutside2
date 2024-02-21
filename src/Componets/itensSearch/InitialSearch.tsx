@@ -1,5 +1,4 @@
-import { Avatar, AvatarFallbackText, Box, HStack, Image, Text, VStack } from "@gluestack-ui/themed";
-import { ImageBackground } from "react-native";
+import {  Box, HStack, Image, Text, VStack } from "@gluestack-ui/themed";
 import { ScrollView } from "react-native-gesture-handler";
 import Imageselect from '@/assets/images.jpeg'
 import RandoImage from '@/assets/develop.jpg'
@@ -14,22 +13,7 @@ export function InitialSearch(){
     )
 }
 
-function TopAgents(){
-    return(
-        <VStack >
-            <Text bold>Top Agentes</Text>
-            <HStack space="md"marginVertical={8} >
-                <VStack alignItems="center" borderWidth={1} borderColor="$green200" borderRadius={8} width={'$1/3'} p={4} >
-                    <Avatar bgColor="$green200" size="sm">
-                        <AvatarFallbackText>Agent Top</AvatarFallbackText>
-                    </Avatar>
-                    <Text marginTop={8} textAlign="center" bold size="sm"> Agent lorentwo</Text>
-                </VStack>
-            </HStack>
-            <LastUpdates/>
-        </VStack>
-    )
-}
+
 
 function LastUpdates(){
     return(

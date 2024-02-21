@@ -1,9 +1,9 @@
 import { HStack, VStack, Box,Image,Text } from "@gluestack-ui/themed";
 import ImageArea from '@/assets/vl.jpg'
 import { baseURL } from "@/utils/params";
-import { CardActionProps } from "@/types/ComponetsTypes/cardTypes";
+import { ActionCardProps } from "@/types/ComponetsTypes/cardTypes";
 
-export function CardAction({title, description,participants,tasks,vacancies,image}:CardActionProps){
+export function ActionCard({title, description,participants,tasks,vacancies,image}:ActionCardProps){
     const imageCover = image === null || image ==="" ? baseURL+"/NotFound/undefined_group.png":image
     return(
         <HStack  marginHorizontal={8} space="md" paddingVertical={12}>

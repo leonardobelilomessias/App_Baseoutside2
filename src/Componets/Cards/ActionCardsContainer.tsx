@@ -1,10 +1,10 @@
 import { Box } from "@gluestack-ui/themed";
 import { FlatList } from "react-native";
-import { CardAction } from "./ActionCard";
+import { ActionCard } from "./ActionCard";
 import { useEffect, useState } from "react";
-import { CardActionProps } from "@/types/ComponetsTypes/cardTypes";
+import { ActionCardProps } from "@/types/ComponetsTypes/cardTypes";
 
-export function ActionCardsContainer({menuSelected, ArrayToRender}:{menuSelected:string, ArrayToRender:CardActionProps[]}){
+export function ActionCardsContainer({menuSelected, ArrayToRender}:{menuSelected:string, ArrayToRender:ActionCardProps[]}){
     const [actionsFiltered, setActionsFiltered] = useState(()=>(ArrayToRender))
     function filterActionsByStatus(){
         const acc = filterActions(menuSelected, ArrayToRender)
@@ -23,14 +23,14 @@ export function ActionCardsContainer({menuSelected, ArrayToRender}:{menuSelected
                 <Box width={"$full"} height={1} bgColor="$gray100"></Box>
             )}
             renderItem={({item})=>(
-                <CardAction title={item.title} description={item.description} participants={item.participants} tasks={item.tasks} image={item.image} vacancies={item.vacancies} />
+                <ActionCard id={item.id} title={item.title} description={item.description} participants={item.participants} tasks={item.tasks} image={item.image} vacancies={item.vacancies} />
             )}
             />
     )
 }
 
-function filterActions(menuSelected:string,arrayElement:CardActionProps[]):CardActionProps[]{
-    let actions :CardActionProps[] =[]
+function filterActions(menuSelected:string,arrayElement:ActionCardProps[]):ActionCardProps[]{
+    let actions :ActionCardProps[] =[]
     switch (menuSelected) {
         case "Em andamento":
                 actions = arrayElement.filter((actions)=>( actions.status==="in_progress"))

@@ -1,5 +1,6 @@
 
-type CardActionProps = {
+type ActionCardProps = {
+    id:string
     title:string
     description:string
     participants: number
@@ -70,4 +71,11 @@ type PhotoPublicationCardProps={
     url: string
     type:string
 }
-export{CardActionProps,DepoimentCardProps,DailyPostCardProps, MissionCardProps,TaskCartProps,FooterTaskCartProps,AdviceCardProps,PhotoPublicationCardProps}
+type CardUserPressableSimpleProps={
+    name:string
+    link:string
+    label:string
+    id:string
+    image:string |null
+}
+export{ActionCardProps,DepoimentCardProps,DailyPostCardProps, MissionCardProps,TaskCartProps,FooterTaskCartProps,AdviceCardProps,PhotoPublicationCardProps,CardUserPressableSimpleProps}
