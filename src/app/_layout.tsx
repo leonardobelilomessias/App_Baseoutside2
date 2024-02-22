@@ -1,5 +1,4 @@
 import { Slot } from 'expo-router';
-
 import { WrapperScreens } from '@/Componets/WrapperScreens';
 import { AgentDataProvider } from '@/context/UserContext';
 

@@ -29,18 +29,18 @@ export function Feed(){
             <Button onPress={()=>{router.push(goToSelectScreen.link)}}>
                 <ButtonText>Go to   {goToSelectScreen.name}</ButtonText>
             </Button>
-
-        <FlatList 
-        data={content}  
-        renderItem={(content)=>
-                <>
-                {
-                content.item.type==='photo'&&
-                <PhotoPublicationCard type={content.item.type}  description={content.item.description} image_profile={content.item.image_profile}id_colab={content.item.id_colab}
-                name={content.item.name} publication_id={content.item.publication_id} url={content.item.url}/>
-                }
-                </>
-        }/>
+            <FlatList 
+            showsVerticalScrollIndicator={false}
+            data={content}  
+            renderItem={(content)=>
+                    <>
+                        {
+                        content.item.type==='photo'&&
+                        <PhotoPublicationCard type={content.item.type}  description={content.item.description} image_profile={content.item.image_profile}id_colab={content.item.id_colab}
+                        name={content.item.name} publication_id={content.item.publication_id} url={content.item.url}/>
+                        }
+                    </>
+            }/>
         </VStack>
     )
 }

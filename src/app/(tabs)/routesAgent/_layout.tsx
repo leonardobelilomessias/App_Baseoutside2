@@ -1,11 +1,8 @@
 import { Stack, useLocalSearchParams } from "expo-router";
 
 export default function LayoutScreens(){
-    const params = useLocalSearchParams();
     return(
-        <Stack screenOptions={{
-            headerShown:true
-        }}>
+        <Stack screenOptions={{headerShown:true }}>
             <Stack.Screen name="profile" options={{headerShown:false,title:"perfiles"}}/>
             <Stack.Screen name="sponsorAgent" options={{title:'Patriocinar',}}/>
             <Stack.Screen name="transactionCredCardAgent" options={{title:'Transação',}}/>

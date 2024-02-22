@@ -1,12 +1,9 @@
 import { ChatAgentScreen } from "@/screens/AgentScreens/ChatAgentScreen";
-import { Avatar, AvatarFallbackText, Box, HStack, Input, InputField, Text, VStack } from "@gluestack-ui/themed";
-import { router, useLocalSearchParams, useNavigation } from "expo-router";
+import { useLocalSearchParams, useNavigation } from "expo-router";
 import React from "react";
-import { FlatList } from "react-native";
 
 export default function ChatProfile(){
     const navigation = useNavigation();
-    const params = useLocalSearchParams();
   React.useEffect(() => {
     navigation.setOptions({title:'Léo' });
   }, [navigation]);

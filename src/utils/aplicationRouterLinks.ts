@@ -1,20 +1,20 @@
 import { baseURL } from "./params"
 
 
-const linkMissionAgent = "/(tabs)/screensProfile/missionsAgent"
-const linkActionsAgent = "/(tabs)/screensProfile/actionsAgent"
-const linkColabsAgent = "/(tabs)/screensProfile/colabsAgent"
-const linkTasksAgent = "/(tabs)/screensProfile/tasksAgent"
-const linkToNewSponsorAgent = "/(tabs)/screensProfile/sponsorAgent"
-const linkEditProfile = "/screensProfile/editProfile"
-const linkChatProfile = '/(tabs)/screensProfile/chatProfile'
+const linkMissionAgent = "/(tabs)/routesAgent/missionsAgent"
+const linkActionsAgent = "/(tabs)/routesAgent/actionsAgent"
+const linkColabsAgent = "/(tabs)/routesAgent/colabsAgent"
+const linkTasksAgent = "/(tabs)/routesAgent/tasksAgent"
+const linkToNewSponsorAgent = "/(tabs)/routesAgent/sponsorAgent"
+const linkEditProfile = "/routesAgent/editProfile"
+const linkChatProfile = '/(tabs)/routesAgent/chatProfile'
 const linkNotFoundImageAvatar =  baseURL+"/NotFound/not_found_user_avatar.png"
 const linkNotFoundImageCoverMidia =  baseURL+"/NotFound/not_found_image_midia.jpg"
 const linkNotFoundImageCoverGroup =  baseURL+"/NotFound/not_found_user_avatar.png"
-const linkToProfileAgent = '/(tabs)/screensProfile/agentProfile'
-const linkToProfileMission = '/screensProfile/profileMission'
-const linkToDailyPublication = "/(tabs)/screensProfile/dailyPublication"
-const linkToPhotoPublication = "/(tabs)/screensProfile/photoPublication"
+const linkToProfileAgent = '/(tabs)/routesAgent/agentProfile'
+const linkToProfileMission = '/routesAgent/profileMission'
+const linkToDailyPublication = "/(tabs)/routesAgent/dailyPublication"
+const linkToPhotoPublication = "/(tabs)/routesAgent/photoPublication"
 
 export{
     linkActionsAgent,
