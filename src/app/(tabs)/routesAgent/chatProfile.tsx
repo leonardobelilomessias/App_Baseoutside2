@@ -1,11 +1,12 @@
 import { ChatAgentScreen } from "@/screens/AgentScreens/ChatAgentScreen";
 import { useLocalSearchParams, useNavigation } from "expo-router";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 
 export default function ChatProfile(){
     const navigation = useNavigation();
-  React.useEffect(() => {
-    navigation.setOptions({title:'Léo' });
+    const {name }= useLocalSearchParams()
+  useLayoutEffect(() => {
+    navigation.setOptions({title:name});
   }, [navigation]);
     return(
        <ChatAgentScreen/>

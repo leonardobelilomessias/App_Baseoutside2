@@ -1,12 +1,14 @@
 import { CardChatType } from "@/types/ComponetsTypes/chatTypes"
+import { linkToChatAgent } from "@/utils/aplicationRouterLinks"
 import { HStack, Avatar, AvatarFallbackText, VStack, Pressable, Text } from "@gluestack-ui/themed"
+import { format } from "date-fns"
 import { router } from "expo-router"
 
 export function ChatCard({dataCard}:{dataCard:CardChatType}){
     const formatedText = formatText(dataCard.lastMessage.text) 
     const formatedTime = formatTime(dataCard.lastMessage.time)
     return(
-        <Pressable onPress={()=>{router.push('/(tabs)/screensProfile/chatProfile')}}>
+        <Pressable onPress={()=>{router.push({pathname:linkToChatAgent, params:{name:dataCard.userName}})}}>
             <HStack space="lg" paddingVertical={16} borderBottomWidth={1} borderColor="$gray200"  flex={1}>
                 <Avatar>
                     <AvatarFallbackText>{dataCard.userName}</AvatarFallbackText>
@@ -29,5 +31,6 @@ function formatText(text:string){
 }
 
 function formatTime(time:Date){
-    return time.toLocaleTimeString().slice(0,5)
+
+    return format(time,"hh:mm")
 }

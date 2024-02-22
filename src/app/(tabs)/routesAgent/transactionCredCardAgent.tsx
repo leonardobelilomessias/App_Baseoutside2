@@ -31,7 +31,7 @@ export default function TransactionCredCardSponsorAgent(){
                 </Input>
             </VStack>
 
-            <Link href={'/screensProfile/successSponsorAgent'} asChild>
+            <Link href={'/routesAgent/successSponsorAgent'} asChild>
            
                     <Pressable  alignSelf='center'  borderRadius={'$md'} mt={'$12'} p={12} width={'$full'} bg="$green400">
                             <Text textAlign="center" color="$white" bold> Patriocinar</Text>

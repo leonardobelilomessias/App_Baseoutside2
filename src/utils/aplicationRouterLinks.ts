@@ -15,6 +15,7 @@ const linkToProfileAgent = '/(tabs)/routesAgent/agentProfile'
 const linkToProfileMission = '/routesAgent/profileMission'
 const linkToDailyPublication = "/(tabs)/routesAgent/dailyPublication"
 const linkToPhotoPublication = "/(tabs)/routesAgent/photoPublication"
+const linkToChatAgent = "/(tabs)/routesAgent/chatProfile"
 
 export{
     linkActionsAgent,
@@ -30,5 +31,6 @@ export{
     linkToProfileAgent,
     linkToProfileMission,
     linkToDailyPublication,
-    linkToPhotoPublication
+    linkToPhotoPublication, 
+    linkToChatAgent
 }

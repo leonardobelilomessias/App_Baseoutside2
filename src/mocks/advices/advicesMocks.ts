@@ -1,4 +1,4 @@
-import { AdviceCardProps, CardActionProps } from "@/types/ComponetsTypes/cardTypes"
+import { AdviceCardProps } from "@/types/ComponetsTypes/cardTypes"
 
 const  Advicemock= {
     id:'01',
