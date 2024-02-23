@@ -10,7 +10,7 @@ interface FullAgentDTO{
     balance: string,
     is_active: boolean,
     level: number,
-    image_profile?:string,
+    image_profile:string | null ,
     vocation: string,
     created_at: string,
     state:number

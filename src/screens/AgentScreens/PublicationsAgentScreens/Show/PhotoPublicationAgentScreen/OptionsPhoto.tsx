@@ -9,7 +9,6 @@ import { FontAwesome } from '@expo/vector-icons';
 export function OptionsPhoto({publicationId}:{publicationId:string}){
     async function deletePublication(id:string) {
         try{
-            console.log(id)
             await AxiosApi.delete('/agent/deletePublication',{params:{id_publication:id}})
             router.back()
         }catch(e){

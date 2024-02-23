@@ -8,11 +8,9 @@ import { linkToListChatsAgent } from "@/utils/aplicationRouterLinks"
 export function ButtonsHeaderHome(){
     const [amountMessage,setAmountMessage]= useState(0)
     const [amountUpdate, setAmountUpdate] = useState(0)
-    console.log('aqui')
     useEffect(()=>{
 
         setTimeout(()=>{
-            console.log(amountMessage)
             setAmountMessage((amount)=>(amount+1))
         },3000)
         setTimeout(()=>{

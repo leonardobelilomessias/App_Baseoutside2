@@ -29,7 +29,6 @@ export function SearchScreen(){
             
             if(textSearch){
                 const result = await AxiosApi.get('/agent/searchAgentsByName',{params:{name:textSearch}})
-                console.log('resultado',result.data)
                 setResultApi(result.data)
             }
             if(!textSearch){
