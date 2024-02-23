@@ -9,7 +9,9 @@ function formatDataExtensive(date:Date){
         year:arrayDateFormated[2],
         weekDay:arrayDateFormated[3].replace(arrayDateFormated[3][0],arrayDateFormated[3][0].toUpperCase()),
         hours:arrayDateFormated[4],
-        minutes:arrayDateFormated[5]
+        minutes:arrayDateFormated[5],
+        extensive:format(date,"dd MMMM yyyy" ,{locale:ptBR}).split(" ").join(" de ")
+        
     }
     return dateFormated
 }

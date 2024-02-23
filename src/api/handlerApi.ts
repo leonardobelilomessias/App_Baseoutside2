@@ -16,3 +16,4 @@ function fetchDataApi({path,funcLoad,funcSetArray,funcToOrder}:{path:string, fun
     })
 }
 export {fetchDataApi}
+
