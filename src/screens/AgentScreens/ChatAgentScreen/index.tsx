@@ -19,12 +19,15 @@ export function ChatAgentScreen(){
         setLoading(true)
         fetchDataApi({path:"/chatMessages",funcSetArray:setChatMessages,funcLoad:setLoading,funcToOrder:funcToOrderByDate})
     },[])
+    useEffect(()=>{
+
+    },[chatMessages])
 
     return(
         <ChatContainerMessages>
             {loading && <Spinner padding={20} size="large" />}
             <ChatMessages  messagesData={chatMessages} />
-            <InputMessageChat isActive={true}/>
+            <InputMessageChat messages={chatMessages} setChatMessages={setChatMessages} isActive={true}/>
         </ChatContainerMessages>
     )
 }

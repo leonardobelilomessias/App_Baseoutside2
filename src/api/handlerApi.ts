@@ -15,5 +15,10 @@ function fetchDataApi({path,funcLoad,funcSetArray,funcToOrder}:{path:string, fun
         funcLoad(false)
     })
 }
+
+function postApi({path,funcSetArray,data}:{path:string,funcSetArray:(any:[])=>void, data:{}}){
+    fakeApi.post(path,data).then
+}
+
 export {fetchDataApi}
 

@@ -1,17 +1,15 @@
 import { CardChatType } from "@/types/ComponetsTypes/chatTypes"
 import { linkToChatAgent } from "@/utils/aplicationRouterLinks"
 import { HStack, VStack, Pressable, Text,  } from "@gluestack-ui/themed"
-import { format } from "date-fns"
 import { router } from "expo-router"
 import { BadgeNotification } from "../BadgeNotification"
-import { baseURL } from "@/utils/params"
 import { AvatarImageAgent } from "../AvatarImageAgent"
+import { formatHourAndMinutes } from "@/utils/functions/functionTimes"
 
 export function ChatCard({dataCard}:{dataCard:CardChatType}){
     const formatedText = formatText(dataCard.lastMessage.text) 
-    const formatedTime = formatTime(dataCard.lastMessage.time)
+    const formatedTime = formatHourAndMinutes(dataCard.lastMessage.time)
     const unviewedMessages = (!dataCard.unviewed)? false:true
-    const imageChatUser = `${baseURL}/Agent/${dataCard.avatar}`
     return(
         <Pressable onPress={()=>{router.push({pathname:linkToChatAgent, params:{name:dataCard.userName}})}}>
             <HStack space="lg" paddingVertical={16} borderBottomWidth={1} borderColor="$gray200"  flex={1}>
@@ -38,8 +36,4 @@ export function ChatCard({dataCard}:{dataCard:CardChatType}){
 function formatText(text:string){
     if (text.length>15) return text.slice(0,40)+"..."
     return text
-}
-
-function formatTime(time:Date){
-    return format(time,"hh:mm")
 }

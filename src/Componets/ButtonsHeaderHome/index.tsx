@@ -36,7 +36,7 @@ export function ButtonsHeaderHome(){
                     <BadgeNotification amount={amountMessage} />
                 </VStack>
             </Pressable>
-            <Pressable  onPress={()=>{ handleLogout()}}>
+            <Pressable  onPress={()=>{ console.log("logout"); handleLogout()}}>
                 <Feather name="power" style={{marginHorizontal:8}} size={24} color="black" />
             </Pressable>
         </HStack>

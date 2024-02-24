@@ -11,8 +11,12 @@ function formatDataExtensive(date:Date){
         hours:arrayDateFormated[4],
         minutes:arrayDateFormated[5],
         extensive:format(date,"dd MMMM yyyy" ,{locale:ptBR}).split(" ").join(" de ")
-        
     }
     return dateFormated
 }
-export{formatDataExtensive}
+
+function formatHourAndMinutes(time:Date){
+    return format(time, "HH:mm")
+}
+
+export{formatDataExtensive,formatHourAndMinutes}
