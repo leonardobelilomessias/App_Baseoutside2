@@ -18,7 +18,8 @@ export function ChatMessages({messagesData}:{messagesData:DataMessagesType[]}){
         }
     })
     const DATA = result.map((item)=>{
-        const filtered = messagesData.filter((message)=>(message.time===item)).reverse()
+        
+        const filtered = messagesData.filter((message)=>(message.time===item ))
         return{title:item, data:filtered}
 
     })
@@ -26,18 +27,14 @@ export function ChatMessages({messagesData}:{messagesData:DataMessagesType[]}){
     return(
         <>
             <SectionList 
-                        sections={funcToOrderByDate(DATA)}
-                        renderSectionHeader={({section: {title}}) => (
-                            <HStack alignItems="center"  alignContent="center" justifyContent="center">
-                                <Text textAlign="center" size="2xs" bold marginVertical={8}  paddingHorizontal={8} color="$gray500" bg="$gray100"   >
-                                    { (!isToday(title) && !isYesterday(title))&&formatDataExtensive(title).extensive}
-                                    {isToday(title)&&<>Hoje</>}
-                                    {isYesterday(title)&&<>Ontem</>}
+                        
+                        sections={funcToOrderByDate(DATA).reverse()}
+                        inverted
+                        renderSectionFooter={({section: {title}})=>(
+                            <Label title={title} />
+                        )}
 
-                                    </Text>
-                            </HStack>
-                            )}
-                        renderItem={({item})=>(
+                        renderItem={({item,index})=>(
                             <HStack   alignSelf={item.send_by_id===dataAgent.id?"flex-end":"flex-start" } flexDirection={item.send_by_id!==dataAgent.id?"row-reverse":"row" } margin={4} space="xs">
                                 <Text p={8} borderRadius={'$lg'} alignSelf={item.userName==='eu'?"flex-end":"flex-start" }bg={item.send_by_id===dataAgent.id?"$green300":"$gray100"}  maxWidth={'85%'} >
                                     <Text color={item.send_by_id===dataAgent.id?"$white":"$gray800"} >{item.text}</Text>
@@ -62,7 +59,17 @@ export function ChatMessages({messagesData}:{messagesData:DataMessagesType[]}){
 }
 
 
-
+function Label({title}:{title:Date}){
+    return(
+        <HStack  alignItems="center"  alignContent="center" justifyContent="center">
+            <Text textAlign="center" size="2xs" bold marginVertical={8}  paddingHorizontal={8} color="$gray500" bg="$gray100"   >
+            { (!isToday(title) && !isYesterday(title))&&formatDataExtensive(title).extensive}
+            {isToday(title)&&<>Hoje</>}
+            {isYesterday(title)&&<>Ontem</>}
+            </Text>
+        </HStack>
+    )
+}
 function formatHour(time:Date){
     return format(time, "hh:mm")
 }
