@@ -21,7 +21,7 @@ export function ButtonsHeaderHome(){
     const {handleLogout}= useDataAgent()
     return(
         <HStack style={{marginHorizontal:18}} space='sm' >
-            <Pressable  onPress={()=>{ setAmountUpdate(0)}}>
+            <Pressable  onPress={()=>{ setAmountUpdate(0) ;router.push("/(tabs)/routesAgent/updatesAgent")}}>
             <VStack style={{marginHorizontal:8}} width={'$full'}>
                 <Feather name="heart"  size={24} color="black" />
                 <BadgeNotification amount={amountUpdate} />
