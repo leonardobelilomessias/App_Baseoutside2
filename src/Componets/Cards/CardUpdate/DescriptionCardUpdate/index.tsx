@@ -16,5 +16,4 @@ export function DescriptionCardUpdate({ name, target, type, text_body }: Descrpt
     if (target === "sponsor" && type == "new_sponsor") return (<Text size="sm"><Text bold size="sm">{name}</Text> se tornou um novo patriocinador</Text>)
     if (target === "colab" && type == "new_colab") return (<Text size="sm"><Text bold size="sm">{name}</Text> se tornou um novo colaborador</Text>)
     if (target === "comment" && type == "response_comment") return (<Text size="sm"><Text bold size="sm">{name}</Text> respondeu seu comentario:</Text>)
-
 }

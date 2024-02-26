@@ -11,7 +11,7 @@ import { fetchDataApi } from "@/api/handlerApi";
 
 export function UpdatesAgentScreen() {
     const [updates, setUpdates] = useState([] as UpdateType[])
-    const [load, setLoad] = useState(false)
+    const [load, setLoad] = useState(true)
     useEffect(()=>{
         setLoad(true)
         fetchDataApi({path:"/updatesAgent",funcLoad:setLoad,funcSetArray:setUpdates})
