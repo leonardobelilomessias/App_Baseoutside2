@@ -1,24 +1,17 @@
 import { DepoimentCardProps } from "@/types/ComponetsTypes/cardTypes";
-import { linkNotFoundImageAvatar } from "@/utils/aplicationRouterLinks";
+import { linkNotFoundImageAvatar, linkToProfileAgent } from "@/utils/aplicationRouterLinks";
 import { baseURL } from "@/utils/params";
 import { VStack, HStack, Avatar, AvatarFallbackText, AvatarImage, Text } from "@gluestack-ui/themed";
+import { HeaderPublication } from "../HeaderPublication";
 
 
-export function DepoimentCard({imageCover,text,userName,id}:DepoimentCardProps){
-    const image = (imageCover === null || imageCover === undefined)?linkNotFoundImageAvatar:imageCover
+export function DepoimentCard({image_profile,text,userName,id,created_by,created_to}:DepoimentCardProps){
     return(
-        <VStack borderColor="$gray200" borderRadius={8} height={150} width={260} borderWidth={1} key={id} marginRight={8} p={12}>
-            <HStack alignItems="center">
-                
-                <Avatar size="sm" bgColor="$green400" marginRight={8}>
-                    <AvatarFallbackText >name user</AvatarFallbackText>
-                    <AvatarImage source={{uri:image}}></AvatarImage>
-
-                </Avatar>
-                <Text fontWeight="$bold">{userName}</Text>
-            </HStack>
+        <VStack bg="white" borderColor="$gray200" borderRadius={8} height={150} width={260} borderWidth={1} key={id} marginRight={8} p={12}>
+            <HeaderPublication user_name={userName} image_profile={image_profile} infoRoute={{pathName:linkToProfileAgent, params:{id:created_by}} } />
             <Text size="sm" fontWeight="$light">
-                {text}
+                {!!text&& text.slice(0,160)}
+                {(!!text && text?.length) && " ..." }
             </Text>
         </VStack>
     )

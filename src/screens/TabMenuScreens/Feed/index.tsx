@@ -19,6 +19,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { BottonItemFeed } from "@/Componets/BottonItemFeed";
 import { VideoCardPublication } from "@/Componets/Cards/VideoCardPublication";
 import { linkToProfileAgent } from "@/utils/aplicationRouterLinks";
+import { DepoimentCard } from "@/Componets/Cards/DepoimentCard";
 
 export function Feed(){
     const {dataAgent} = useDataAgent()
@@ -72,8 +73,8 @@ function RestComponets(){
     return(
         <VStack >
             <Text bold bg={'$green400'} color="white" textAlign="center" size="lg"> Render  rest components Test below</Text>
-            <VideoCardPublication id="0001" isSaved={true} nick_name="JohnDoe" url_video="" amountComments={452} created_at={new Date()} description={videoDescption} id_creator={dataAgent.id} image_profile={dataAgent.image_profile} userName={dataAgent.name} isLiked={false} />
             <DepoimentTemp/>
+            <VideoCardPublication id="0001" isSaved={true} nick_name="JohnDoe" url_video="" amountComments={452} created_at={new Date()} description={videoDescption} id_creator={dataAgent.id} image_profile={dataAgent.image_profile} userName={dataAgent.name} isLiked={false} />
             <DailyPostCard amountComents={8} date={new Date()} id="0212154" isLike={true} isSaved={false} text={text} title={text} userAvatar={dataAgent.image_profile} userName="John Land"/>
         </VStack>
     )
@@ -84,13 +85,17 @@ function RestComponets(){
 
 function DepoimentTemp(){
     const {dataAgent} = useDataAgent()
+    const text=` bom dia para poder pensar sobre as coisas dessa  vida . hoje passamos por mais uma etapa crucial do nosso projetoe espero que todos estejam acompanhando. cada um pode oferecer aquilo que recebe então vamos fazendo nossa parte aqui`
+
 
     return(
-        <VStack  borderBottomColor="$gray200" borderBottomWidth={1} padding={12} bgColor="white" minHeight={250} space="lg">
-                    <Text size="xs" color="$gray500" fontWeight="$medium">Publicou um  depoimento para <Text bold size="xs">@baseoutside</Text></Text>
-                    <HeaderPublication infoRoute={{pathName:linkToProfileAgent, params:{id:dataAgent.id}}} direction="horizontal" user_name={dataAgent.name} image_profile={dataAgent.image_profile}/>
+        <VStack   borderBottomColor="$gray200" borderBottomWidth={1} padding={12} bgColor="white" minHeight={250} space="md">
 
-                <Text> Foi muito incrivel Patriocinar de tudo isso espero ver essa missão crescer cada vez mais.</Text>
+                    <Text size="xs" color="$gray500" fontWeight="$medium">Publicou um  depoimento para <Text bold size="xs">@baseoutside</Text></Text>
+            <VStack alignItems="center" bg="$green100" p={8}>
+                    <DepoimentCard id={dataAgent.id} created_by="0122" created_to="6659" image_profile={dataAgent.image_profile} text={text} userName={dataAgent.name}  />
+            </VStack>
+                    
                 <Pressable  bg="$green400" padding={8} borderRadius={'$md'}>
                     <Text color="white" textAlign="center" fontWeight="$medium">Ver Depoimento</Text>
                 </Pressable>

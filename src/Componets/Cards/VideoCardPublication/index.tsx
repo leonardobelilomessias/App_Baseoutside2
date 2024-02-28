@@ -57,7 +57,7 @@ export function VideoCardPublication({id,userName,isLiked, description,format,cr
                     }
              </Pressable>
             </VStack>    
-                <Text p={4} textBreakStrategy="highQuality"><Text bold >{nick_name}</Text>  {!!description && (description).slice(0,78)}{ description?.length>=80 &&"..."}</Text>         
+                <Text p={4} textBreakStrategy="highQuality"><Text bold >{nick_name}</Text>  {!!description && (description).slice(0,78)}{ description?.length>=78 &&"..."}</Text>         
            
         <BottonItemFeed amountComments={amountComments} isLiked={isLiked} isSaved={isSaved} />
         </VStack>

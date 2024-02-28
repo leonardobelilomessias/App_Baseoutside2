@@ -4,7 +4,7 @@ import { router } from "expo-router"
 import { linkToProfileAgent } from "@/utils/aplicationRouterLinks"
 
 type HeaderPublicationType={
-    image_profile:string | null,
+    image_profile:string | null | undefined,
      user_name:string, 
      direction?:"horizontal"| "vertical", 
      infoRoute:{

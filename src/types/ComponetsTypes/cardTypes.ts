@@ -13,8 +13,10 @@ type ActionCardProps = {
 type DepoimentCardProps ={
     id:string
     userName:string
-    imageCover:string | null | undefined
+    image_profile:string | null | undefined
     text:string
+    created_by:string
+    created_to:string
 }
 
 
