@@ -21,7 +21,7 @@ type DepoimentCardProps ={
 type DailyPostCardProps={
     id:string
     userName:string
-    userAvatar:string
+    userAvatar:string |null
     title:string
     text:string
     date:Date
