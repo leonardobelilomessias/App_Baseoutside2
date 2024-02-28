@@ -7,8 +7,8 @@ import ImageComment from '@/assets/develop.jpg'
 import { FlatList } from "react-native-gesture-handler";
 
 const fakecoments =[1,2,3,4,5,6]
-export function BottonItemFeed({children,amountComments}:{children?:ReactElement,amountComments:number}){
-    const [like,setLike] = useState(false)
+export function BottonItemFeed({children,amountComments, isLiked, isSaved}:{children?:ReactElement,amountComments:number, isLiked:boolean,isSaved:boolean}){
+    const [like,setLike] = useState(isLiked)
     const [mark,setMark] = useState(false)
     const [modalVisible, setModalVisible] = useState(false);
     return(
