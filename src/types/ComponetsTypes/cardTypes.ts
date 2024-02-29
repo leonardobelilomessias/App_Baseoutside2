@@ -72,6 +72,9 @@ type PhotoPublicationCardProps={
     publication_id: string
     url: string
     type:string
+    is_liked:boolean
+    is_saved:boolean
+    amount_comments:number
 }
 type CardUserPressableSimpleProps={
     name:string

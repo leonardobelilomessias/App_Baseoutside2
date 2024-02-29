@@ -20,6 +20,7 @@ import { BottonItemFeed } from "@/Componets/BottonItemFeed";
 import { VideoCardPublication } from "@/Componets/Cards/VideoCardPublication";
 import { linkToProfileAgent } from "@/utils/aplicationRouterLinks";
 import { DepoimentCard } from "@/Componets/Cards/DepoimentCard";
+import { DepoimentPublicationCard } from "@/Componets/Cards/DepoimentPublicationCard";
 
 export function Feed(){
     const {dataAgent} = useDataAgent()
@@ -37,13 +38,10 @@ export function Feed(){
         getContent()
     },[])
     return(
-        <VStack space={'md'}  >
+        <VStack space={'md'} bg="$backgroundLight0" >
             <FlatList 
             ListHeaderComponent={()=>(
             <>
-                <Button onPress={()=>{router.push(goToSelectScreen.link)}}>
-                    <ButtonText>Go to   {goToSelectScreen.name}</ButtonText>
-                </Button>
                 <RestComponets/>
             </>
             )}
@@ -51,13 +49,13 @@ export function Feed(){
             showsVerticalScrollIndicator={false}
             data={content}  
             renderItem={(content)=>
-                    <>
+                    <VStack marginVertical={4}>
                         {
                         content.item.type==='photo'&&
-                        <PhotoPublicationCard type={content.item.type}  description={content.item.description} image_profile={content.item.image_profile}id_colab={content.item.id_colab}
+                        <PhotoPublicationCard is_liked={false}is_saved={false} amount_comments={2415} type={content.item.type}  description={content.item.description} image_profile={content.item.image_profile}id_colab={content.item.id_colab}
                         name={content.item.name} publication_id={content.item.publication_id} url={content.item.url}/>
                         }
-                    </>
+                    </VStack>
             }/>
             
         </VStack>
@@ -73,8 +71,8 @@ function RestComponets(){
     return(
         <VStack >
             <Text bold bg={'$green400'} color="white" textAlign="center" size="lg"> Render  rest components Test below</Text>
-            <DepoimentTemp/>
-            <VideoCardPublication id="0001" isSaved={true} nick_name="JohnDoe" url_video="" amountComments={452} created_at={new Date()} description={videoDescption} id_creator={dataAgent.id} image_profile={dataAgent.image_profile} userName={dataAgent.name} isLiked={false} />
+            <DepoimentPublicationCard id_depoiment="01" send_by_id={dataAgent.id} send_by_image_profile={dataAgent.image_profile} send_by_name={dataAgent.name} send_to_id={dataAgent.id} send_to_image_profile={dataAgent.image_profile} send_to_name={dataAgent.name} text_body={text} send_to_nickName={dataAgent.user_name}/>
+            <VideoCardPublication id="0001" isSaved={true} nick_name="JohnDoe" url_video="" amountComments={453} created_at={new Date()} description={videoDescption} id_creator={dataAgent.id} image_profile={dataAgent.image_profile} userName={dataAgent.name} isLiked={false} />
             <DailyPostCard amountComents={8} date={new Date()} id="0212154" isLike={true} isSaved={false} text={text} title={text} userAvatar={dataAgent.image_profile} userName="John Land"/>
         </VStack>
     )
@@ -83,22 +81,3 @@ function RestComponets(){
 
 
 
-function DepoimentTemp(){
-    const {dataAgent} = useDataAgent()
-    const text=` bom dia para poder pensar sobre as coisas dessa  vida . hoje passamos por mais uma etapa crucial do nosso projetoe espero que todos estejam acompanhando. cada um pode oferecer aquilo que recebe então vamos fazendo nossa parte aqui`
-
-
-    return(
-        <VStack   borderBottomColor="$gray200" borderBottomWidth={1} padding={12} bgColor="white" minHeight={250} space="md">
-
-                    <Text size="xs" color="$gray500" fontWeight="$medium">Publicou um  depoimento para <Text bold size="xs">@baseoutside</Text></Text>
-            <VStack alignItems="center" bg="$green100" p={8}>
-                    <DepoimentCard id={dataAgent.id} created_by="0122" created_to="6659" image_profile={dataAgent.image_profile} text={text} userName={dataAgent.name}  />
-            </VStack>
-                    
-                <Pressable  bg="$green400" padding={8} borderRadius={'$md'}>
-                    <Text color="white" textAlign="center" fontWeight="$medium">Ver Depoimento</Text>
-                </Pressable>
-            </VStack>
-    )
-}

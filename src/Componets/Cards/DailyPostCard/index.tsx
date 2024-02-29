@@ -13,7 +13,7 @@ export function DailyPostCard({id,userName,title,userAvatar,text,date,amountCome
     const dateFormated =  formatDataExtensive(date)
     
     return(
-        <VStack bgColor="$white" p={12} space="lg" paddingBottom={32}  borderBottomColor="$gray200" borderBottomWidth={1} >
+        <VStack bgColor="$white" p={12} space="sm" paddingBottom={32}  borderBottomColor="$gray200" borderBottomWidth={1} >
             <HeaderPublication image_profile={userAvatar} user_name={userName}  infoRoute={{pathName:linkToProfileAgent,params:{id:id}}}/>
             <HStack  space="xl" p={8}  alignContent="center" alignItems="center">
                 <VStack   h={50}  alignContent="center" alignItems="center" justifyContent="center" >
