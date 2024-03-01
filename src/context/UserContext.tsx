@@ -27,6 +27,7 @@ const [tokenAgent,setTokenAgent] = useState('')
 const [dataAgent, setDataAgent] = useState({} as FullAgentDTO)
 const [dataLogin, setDataLogin] = useState({} as FormatResponseAuthenticate)
 async function handleSign({ email, password }: HandleSignProps) {
+  setLoading(true)
     try{
     
         const result = await AxiosApi.post('/sessions',{email, password})
@@ -61,13 +62,18 @@ async function handleSign({ email, password }: HandleSignProps) {
       setLoading(false)
       throw error
     }
+    finally{
+      setLoading(false)
+    }
   }
   /**handle logout cleaning all data agent to redirect to signr */
   async function handleLogout(){
+    setLoading(true)
     await storageAuthTokenRemove()
     await storageRemoveUser()
     setDataAgent({} as FullAgentDTO)
     setTokenAgent('')
+    setLoading(false)
   }
   
   /* fetch data at storage when open the app  */
@@ -90,6 +96,7 @@ async function handleSign({ email, password }: HandleSignProps) {
 
   /*load data */
   useEffect(() => {
+    setLoading(true)
     fetchData()
   }, [])
 useEffect(()=>{

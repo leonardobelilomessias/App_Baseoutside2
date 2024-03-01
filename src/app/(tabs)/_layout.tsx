@@ -1,4 +1,4 @@
-import { Tabs, router } from 'expo-router';
+import { Redirect, Tabs, router } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -8,15 +8,30 @@ import { Pressable, Text } from '@gluestack-ui/themed';
 import React from 'react';
 import { ButtonShare } from '@/Componets/ButtonShare';
 import { ButtonsHeaderHome } from '@/Componets/ButtonsHeaderHome';
+import { useDataAgent } from '@/context/UserContext';
+import { View } from 'react-native';
 
 export const unstable_settings = {
     // Ensure any route can link back to `/`
-    initialRouteName: 'home',
+    initialRouteName: '(tabs)',
   };
 
 const colorSelected = extendedConfig.tokens.colors.green400
 
 export default function Root(){
+const {dataAgent,tokenAgent, loading} = useDataAgent()
+
+    
+if(loading)return(
+    <View>
+      <Text>Loading</Text>
+    </View>
+  )
+  if(!tokenAgent){
+    return(
+      <Redirect href={'/sign-in'}/>
+    )
+  }
     return(
             <Tabs screenOptions={{tabBarShowLabel:false, tabBarHideOnKeyboard:true, headerStatusBarHeight:-1}}>
                     <Tabs.Screen

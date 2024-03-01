@@ -4,7 +4,7 @@ import { Singin } from "@/screens/AccessScreens/Singin";
 export function singin(){
     return(
     
-            <Singin/>
+           <></>
 
     )
 }

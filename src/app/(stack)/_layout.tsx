@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export const unstable_settings = {
   // Ensure any route can link back to `/`
-  initialRouteName: 'singup',
+  initialRouteName: '(stack)',
 };
 
 export default function Layout() {
