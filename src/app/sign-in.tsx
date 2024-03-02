@@ -1,27 +1,25 @@
 import { WrapperScreens } from '@/Componets/WrapperScreens';
 import { AgentDataProvider, useDataAgent } from '@/context/UserContext';
 import { Singin } from '@/screens/AccessScreens/Singin';
+import { LoadingAuthRoutes } from '@/screens/Load/LoadingAuthRoutes';
 import { Text } from '@gluestack-ui/themed';
-import { Redirect } from 'expo-router';
+import { Redirect, router } from 'expo-router';
+import { useEffect } from 'react';
 import { View } from 'react-native';
 
-export default function singin() {
+export default function SingIn() {
 const {dataAgent,tokenAgent, loading} = useDataAgent()
+
 if(loading)return(
-  <View>
-    <Text>Loading</Text>
-  </View>
+<LoadingAuthRoutes/>
 )
 if(tokenAgent){
-  return(
-    <Redirect href={'/(tabs)'}/>
-  )
+  return<Redirect href={'/'}/>
+  
 }
   return (
-      <AgentDataProvider>
-        <WrapperScreens >
+
           <Singin/>
-        </WrapperScreens>
-      </AgentDataProvider>
+
   );
 }

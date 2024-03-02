@@ -22,7 +22,6 @@ export function ButtonShare({focused}:{focused:boolean}){
     const [showActionsheet, setShowActionsheet] = React.useState(false)
     const handleClose = () => setShowActionsheet(!showActionsheet)
     function handleShare(route:string,choice:string){
-      console.log(choice)
         router.push({ pathname: route, params: { choice:choice } })
         handleClose()
     }

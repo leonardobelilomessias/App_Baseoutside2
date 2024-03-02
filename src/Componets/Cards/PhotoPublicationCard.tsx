@@ -6,7 +6,6 @@ import { linkToProfileAgent } from "@/utils/aplicationRouterLinks";
 import { HeaderPublication } from "../HeaderPublication";
 
 export function PhotoPublicationCard({ description,id_colab,image_profile,name,publication_id,type,url,amount_comments,is_liked,is_saved}:PhotoPublicationCardProps){
-    console.log(name)
     return(
         <>
         <Box borderBottomColor="$gray300" borderBottomWidth={0}>

@@ -1,7 +1,7 @@
-import { Image, KeyboardAvoidingView,  } from "react-native";
+import { Image, KeyboardAvoidingView, View,  } from "react-native";
 import { Box, Button, ButtonText, HStack, Input, InputField, Pressable, Text, Toast, ToastDescription, ToastTitle, VStack, useToast } from "@gluestack-ui/themed";
 import {Logo} from '@/assets/logoSingin.png';
-import { Link, router } from "expo-router";
+import { Link, Redirect, router } from "expo-router";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -18,7 +18,17 @@ const schema = yup.object({
 
 
 export function Singin(){
-
+  const {loading,tokenAgent} = useDataAgent()
+  // if(loading)return(
+  //   <View>
+  //     <Text>Loading</Text>
+  //   </View>
+  // )
+  // if(tokenAgent){
+  //   return(
+  //     <Redirect href={'/'}/>
+  //   )
+  // }
     return(
         <VStack flex={1} alignItems="center" bg="$white" justifyContent="space-between">
 
@@ -60,7 +70,7 @@ export function Singin(){
 
 function FieldsSingIn(){
     const toast = useToast()
-    const {dataAgent,loading,handleSign}= useDataAgent()
+    const {dataAgent,loading,handleSign, tokenAgent}= useDataAgent()
     const { control, handleSubmit, formState: { errors } } = useForm({
     resolver:yupResolver(schema),
     defaultValues: {
@@ -71,8 +81,11 @@ function FieldsSingIn(){
   async function  onSubmit ({email, password}:{email:string,password:string}){
    
     try{
+        await  handleSign({email,password})
+        router.replace("/(tabs)")
+   
 
-        await handleSign({email,password})
+      
         
     }catch(e){
         if(e instanceof AppError){
@@ -104,6 +117,7 @@ function FieldsSingIn(){
 
     }
   }
+
     return(
     <VStack>
      <Controller

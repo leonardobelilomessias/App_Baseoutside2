@@ -49,7 +49,6 @@ export default function editProfile(){
                 const responseEditimage = await  AxiosApi.patch(`/agent/imageProfile`,formPhoto,config)
                  const userUpdate = dataAgent
                  userUpdate.image_profile = responseEditimage.data.image_profile
-                 console.log(userUpdate)
                  storageUserSave(userUpdate)
             }catch(e){
                 console.log(e)

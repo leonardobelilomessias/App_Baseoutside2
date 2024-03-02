@@ -14,7 +14,6 @@ export function ButtonsHeaderHome(){
             setAmountMessage((amount)=>(amount+1))
         },3000)
         setTimeout(()=>{
-            console.log(amountUpdate)
             setAmountUpdate(()=>(amountUpdate+1))
         },80000)
     },[])

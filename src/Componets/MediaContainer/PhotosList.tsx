@@ -30,7 +30,7 @@ export function PhotoList(){
                 setLoadPhoto(true)
                 setDataPhoto(result.data.slice(0,8) );
             })
-        .finally(()=>console.log("finaly"))
+        
 
     },[]))
 

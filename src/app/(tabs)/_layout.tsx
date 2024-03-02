@@ -5,27 +5,21 @@ import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { extendedConfig } from '@/theme/config';
 import { Pressable, Text } from '@gluestack-ui/themed';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ButtonShare } from '@/Componets/ButtonShare';
 import { ButtonsHeaderHome } from '@/Componets/ButtonsHeaderHome';
 import { useDataAgent } from '@/context/UserContext';
 import { View } from 'react-native';
+import { LoadingAuthRoutes } from '@/screens/Load/LoadingAuthRoutes';
 
-export const unstable_settings = {
-    // Ensure any route can link back to `/`
-    initialRouteName: '(tabs)',
-  };
 
 const colorSelected = extendedConfig.tokens.colors.green400
 
 export default function Root(){
 const {dataAgent,tokenAgent, loading} = useDataAgent()
 
-    
 if(loading)return(
-    <View>
-      <Text>Loading</Text>
-    </View>
+<LoadingAuthRoutes/>
   )
   if(!tokenAgent){
     return(

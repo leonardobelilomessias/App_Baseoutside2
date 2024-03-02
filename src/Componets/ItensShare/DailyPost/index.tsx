@@ -9,7 +9,6 @@ export function DailyPost({status}:{status:"create" | "creating"| "error" | "cre
     const [statusPublication,setStatusPublication] = useState(status)
     const [createdPublication, setCreatedPublication] = useState(false)
     function publisher(){
-        console.log("publicando", statusPublication)
         setLoadPublisher(true)
         setStatusPublication("creating")
         setCreatedPublication(true)
