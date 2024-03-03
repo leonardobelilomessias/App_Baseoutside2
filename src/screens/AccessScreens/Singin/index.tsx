@@ -92,7 +92,6 @@ function FieldsSingIn(){
             const id = "test-toast"
             const myerror = e.message ==='Error de Conexão'?{title:"Error de Conexão",message:"Houve um erro no servidor, tente novamente mais tarde!"}:{title:"Houve um erro",message:e.message}
             if (!toast.isActive(id)){
-                console.log(id)
                 toast.show({
                 placement: "top",
                 id:id,

@@ -22,7 +22,6 @@ export function PhotoList(){
     const windowWidth = Dimensions.get('window').width;
     const sizeSquarePhoto = (windowWidth-32)/3
     const [loadPhoto,setLoadPhoto] = useState(false)
-    console.log(dataPhoto.length===0 && loadPhoto ===true)
     const {dataAgent} = useDataAgent()
     useFocusEffect(useCallback(()=>{
         AxiosApi.get('/agent/publications',{params:{id:dataAgent.id}})

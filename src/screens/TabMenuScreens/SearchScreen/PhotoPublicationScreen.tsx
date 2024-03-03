@@ -73,9 +73,6 @@ export function PhotoPublicationScreen(){
 
             setDataPublication(responseEditimage.data)
             setStatePublication('created')
-         //    const userUpdate = dataAgent
-          //   userUpdate.image_profile = responseEditimage.data.image_profile
-        //     console.log(userUpdate)
 
         }catch(e){
             console.log(e)

@@ -8,7 +8,6 @@ import { CreateQuoteAgentScreen } from '@/screens/AgentScreens/PublicationsAgent
 
 export  function ShareScreen() {
   const {choice} = useLocalSearchParams();
-  console.log(choice)
   return (
 
     <VStack p={8} flex={1} bgColor='$white'>

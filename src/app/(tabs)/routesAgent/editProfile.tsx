@@ -39,7 +39,6 @@ export default function editProfile(){
                 setImageProfile(result.assets[0].uri)
                  const userUpdate = dataAgent
                  userUpdate.image_profile = responseEditimage.data.image_profile
-                 console.log(userUpdate)
                  storageUserSave(userUpdate)
             }catch(e){
                 console.log(e)

@@ -100,7 +100,6 @@ export function AgentDataProvider({ children }: { children: ReactNode }) {
       const agent = result.data  as FullAgentDTO
       return agent
     }catch(e){
-      console.log(' fetch agentPRfile')
       throw e
     }
 }
